@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 @Mod(
     modid = WrenchBridge.ID,
     name = "Wrench Bridge",
-    version = "0.1.0-alpha.12",
+    version = "0.1.0-alpha.13",
     acceptedMinecraftVersions = "[1.12.2]",
     guiFactory = "dev.wrenchbridge.client.ConfigGuiFactory",
     dependencies = "required-after:mixinbooter@[11.18,);")

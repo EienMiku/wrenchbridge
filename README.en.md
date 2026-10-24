@@ -4,7 +4,7 @@
 
 A universal wrench and a compatibility bridge for modded Minecraft. Share supported dismantling protocols between wrench-like tools, and borrow the native functions of tools you carry through a configurable mode palette.
 
-Downloads cover **Forge 1.12.2, 1.16.5, 1.20.1 and NeoForge 1.21.1, 26.1.2, 26.2**, all at **0.1.0-alpha.12**. Install the matching game/loader file on both client and server. Single-player requires only the client installation. **Forge 1.12.2 also requires MixinBooter 11.18 or newer.**
+Downloads cover **Forge 1.12.2, 1.16.5, 1.20.1 and NeoForge 1.21.1, 26.1.2, 26.2**, all at **0.1.0-alpha.13**. Install the matching game/loader file on both client and server. Single-player requires only the client installation. **Forge 1.12.2 also requires MixinBooter 11.18 or newer.**
 
 ## Use
 
@@ -34,7 +34,7 @@ The **1.21.1** lab covers representative tools and blocks from AE2, Mekanism, Cr
 
 Compatibility is determined from tool tags, capabilities, supported mode APIs, and known native block protocols. It does not make every block dismantleable. Denied or failed native actions do not fall back to forcibly destroying a machine. Pipez's native wrench interaction configures connections; Pretty Pipes' wrench retrieves pipes, while its terminals and pressurizers retain their native mining behavior.
 
-Alpha.12 expands the client configuration page and adds an independent settings key on all six platforms. See the [settings and verification record](docs/alpha12-client-settings.md). Original feedback, protection rules, and real tool costs are retained.
+Alpha.13 gives item tooltips gray instructions, a yellow mode-key binding and an aqua selected profile. The key hint follows the actual binding in Controls. See the [client settings and verification record](docs/alpha12-client-settings.md). Original feedback, protection rules, and real tool costs are retained.
 
 Validation includes **71 server feedback comparisons across 15 tools and 53 client scenarios**, alongside the existing protection, offhand, real-cost, inventory, and container-menu checks. These cover specific pinned mod versions and representative actions, rather than every block, network, multipart attachment, or protection plugin. In the automated Refined Storage scenario, the original wrench also refuses the action; only refusal parity is established there.
 

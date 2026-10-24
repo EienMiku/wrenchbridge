@@ -9,6 +9,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -41,9 +42,17 @@ public class UniversalWrenchItem extends Item {
   public void appendHoverText(
       ItemStack stack, World context, List<ITextComponent> lines, ITooltipFlag flag) {
     lines.add(
-        new net.minecraft.util.text.TranslationTextComponent("tooltip.wrenchbridge.dismantle"));
-    lines.add(new net.minecraft.util.text.TranslationTextComponent("tooltip.wrenchbridge.modes"));
-    lines.add(new net.minecraft.util.text.TranslationTextComponent("tooltip.wrenchbridge.native"));
+        new net.minecraft.util.text.TranslationTextComponent("tooltip.wrenchbridge.dismantle")
+            .withStyle(TextFormatting.GRAY));
+    lines.add(
+        new net.minecraft.util.text.TranslationTextComponent(
+                "tooltip.wrenchbridge.modes",
+                new net.minecraft.util.text.KeybindTextComponent("key.wrenchbridge.modes")
+                    .withStyle(TextFormatting.YELLOW))
+            .withStyle(TextFormatting.GRAY));
+    lines.add(
+        new net.minecraft.util.text.TranslationTextComponent("tooltip.wrenchbridge.native")
+            .withStyle(TextFormatting.GRAY));
     if (VirtualModes.isNative(stack)) {
       var id = net.minecraft.util.ResourceLocation.tryParse(VirtualModes.item(stack));
       ITextComponent selection =
@@ -54,7 +63,8 @@ public class UniversalWrenchItem extends Item {
               : new net.minecraft.util.text.StringTextComponent(VirtualModes.item(stack));
       lines.add(
           new net.minecraft.util.text.TranslationTextComponent(
-              "tooltip.wrenchbridge.profile", selection));
+                  "tooltip.wrenchbridge.profile", selection.copy().withStyle(TextFormatting.AQUA))
+              .withStyle(TextFormatting.GRAY));
     }
   }
 }

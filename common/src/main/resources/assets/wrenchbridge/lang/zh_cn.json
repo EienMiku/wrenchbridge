@@ -3,7 +3,7 @@
   "key.categories.wrenchbridge": "扳手互通",
   "key.wrenchbridge.modes": "打开扳手模式",
   "tooltip.wrenchbridge.dismantle": "潜行 + 使用：共享拆卸",
-  "tooltip.wrenchbridge.modes": "按扳手模式键（默认 G），或对空气使用",
+  "tooltip.wrenchbridge.modes": "模式菜单：%s（可在控制设置中修改）",
   "tooltip.wrenchbridge.native": "原生模式使用背包中的真实工具，保留其状态与消耗",
   "screen.wrenchbridge.title": "扳手模式",
   "screen.wrenchbridge.description": "共享拆卸，或切到随身工具的原生模式",

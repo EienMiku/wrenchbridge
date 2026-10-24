@@ -2,7 +2,7 @@
 
 [English](README.en.md) · [下载 / Releases](https://github.com/EienMiku/wrenchbridge/releases) · [反馈问题](https://github.com/EienMiku/wrenchbridge/issues)
 
-当前六个平台统一为 **`0.1.0-alpha.12`**，支持从模组列表或独立快捷键进入配置页，无需手持扳手，并可调整拆卸互通、模拟配置叠层、菜单图标和模式说明，见[配置与验证记录](docs/alpha12-client-settings.md)。手中始终保留通用扳手，G 菜单只修改它的模拟配置；原工具提供能力与实际消耗，选择模式不会移动或转换原工具。
+当前六个平台统一为 **`0.1.0-alpha.13`**，物品提示采用灰色说明、黄色实际快捷键与青色当前模式。支持从模组列表或独立快捷键进入配置页，无需手持扳手，并可调整拆卸互通、模拟配置叠层、菜单图标和模式说明，见[配置与验证记录](docs/alpha12-client-settings.md)。手中始终保留通用扳手，G 菜单只修改它的模拟配置；原工具提供能力与实际消耗，选择模式不会移动或转换原工具。
 
 支持 Forge 1.12.2、1.16.5、1.20.1 与 NeoForge 1.21.1、26.1.2、26.2，各平台提供独立 JAR。原生协议覆盖与移植范围见 [移植记录](docs/alpha10-ports.md)。
 

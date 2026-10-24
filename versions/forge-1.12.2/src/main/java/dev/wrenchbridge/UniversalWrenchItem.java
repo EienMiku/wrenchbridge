@@ -10,6 +10,10 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponentKeybind;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -43,8 +47,14 @@ public class UniversalWrenchItem extends Item {
   @net.minecraftforge.fml.relauncher.SideOnly(net.minecraftforge.fml.relauncher.Side.CLIENT)
   @Override
   public void addInformation(ItemStack stack, World world, List<String> lines, ITooltipFlag flag) {
-    lines.add(I18n.translateToLocal("tooltip.wrenchbridge.dismantle"));
-    lines.add(I18n.translateToLocal("tooltip.wrenchbridge.modes"));
-    lines.add(I18n.translateToLocal("tooltip.wrenchbridge.native"));
+    lines.add(TextFormatting.GRAY + I18n.translateToLocal("tooltip.wrenchbridge.dismantle"));
+    lines.add(
+        new TextComponentTranslation(
+                "tooltip.wrenchbridge.modes",
+                new TextComponentKeybind("key.wrenchbridge.modes")
+                    .setStyle(new Style().setColor(TextFormatting.YELLOW)))
+            .setStyle(new Style().setColor(TextFormatting.GRAY))
+            .getFormattedText());
+    lines.add(TextFormatting.GRAY + I18n.translateToLocal("tooltip.wrenchbridge.native"));
   }
 }

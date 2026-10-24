@@ -1,5 +1,5 @@
 plugins { id 'java-library'; id 'net.neoforged.moddev' version '2.0.143' }
-version = '0.1.0-alpha.12'
+version = '0.1.0-alpha.13'
 group='dev.wrenchbridge'
 base.archivesName='wrenchbridge-neoforge-26.1.2'
 java.toolchain.languageVersion=JavaLanguageVersion.of(25)

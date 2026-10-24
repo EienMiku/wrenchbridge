@@ -3,7 +3,7 @@
   "key.categories.wrenchbridge": "Wrench Bridge",
   "key.wrenchbridge.modes": "Open Wrench Modes",
   "tooltip.wrenchbridge.dismantle": "Universal mode: sneak + use to dismantle",
-  "tooltip.wrenchbridge.modes": "Press the mode key to open the menu (default G, configurable)",
+  "tooltip.wrenchbridge.modes": "Mode menu: %s (change in Controls)",
   "tooltip.wrenchbridge.native": "Other modes draw power or durability from carried tools",
   "screen.wrenchbridge.title": "Wrench Modes",
   "screen.wrenchbridge.description": "Choose a function",

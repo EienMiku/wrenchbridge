@@ -3,7 +3,7 @@
   "key.categories.wrenchbridge": "扳手互通",
   "key.wrenchbridge.modes": "打开扳手模式",
   "tooltip.wrenchbridge.dismantle": "通用模式：潜行 + 使用以拆卸",
-  "tooltip.wrenchbridge.modes": "按模式键打开菜单（默认 G，可修改）",
+  "tooltip.wrenchbridge.modes": "模式菜单：%s（可在控制设置中修改）",
   "tooltip.wrenchbridge.native": "其他模式由随身原工具提供电量或耐久",
   "screen.wrenchbridge.title": "扳手模式",
   "screen.wrenchbridge.description": "选择要使用的功能",

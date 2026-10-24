@@ -1,6 +1,7 @@
 package dev.wrenchbridge;
 
 import java.util.List;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -48,9 +49,14 @@ public final class UniversalWrenchItem extends Item {
   @Override
   public void appendHoverText(
       ItemStack stack, Level context, List<Component> lines, TooltipFlag flag) {
-    lines.add(Component.translatable("tooltip.wrenchbridge.dismantle"));
-    lines.add(Component.translatable("tooltip.wrenchbridge.modes"));
-    lines.add(Component.translatable("tooltip.wrenchbridge.native"));
+    lines.add(
+        Component.translatable("tooltip.wrenchbridge.dismantle").withStyle(ChatFormatting.GRAY));
+    lines.add(
+        Component.translatable(
+                "tooltip.wrenchbridge.modes",
+                Component.keybind("key.wrenchbridge.modes").withStyle(ChatFormatting.YELLOW))
+            .withStyle(ChatFormatting.GRAY));
+    lines.add(Component.translatable("tooltip.wrenchbridge.native").withStyle(ChatFormatting.GRAY));
     if (VirtualModes.isNative(stack)) {
       var id = net.minecraft.resources.ResourceLocation.tryParse(VirtualModes.item(stack));
       Component selection =
@@ -59,7 +65,10 @@ public final class UniversalWrenchItem extends Item {
                   new ItemStack(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(id)),
                   VirtualModes.mode(stack))
               : Component.literal(VirtualModes.item(stack));
-      lines.add(Component.translatable("tooltip.wrenchbridge.profile", selection));
+      lines.add(
+          Component.translatable(
+                  "tooltip.wrenchbridge.profile", selection.copy().withStyle(ChatFormatting.AQUA))
+              .withStyle(ChatFormatting.GRAY));
     }
   }
 }

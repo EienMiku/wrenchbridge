@@ -3,7 +3,7 @@
   "key.categories.wrenchbridge": "Wrench Bridge",
   "key.wrenchbridge.modes": "Open Wrench Modes",
   "tooltip.wrenchbridge.dismantle": "Sneak + use: shared dismantling",
-  "tooltip.wrenchbridge.modes": "Press the Wrench Modes key (default G) or use in air",
+  "tooltip.wrenchbridge.modes": "Mode menu: %s (change in Controls)",
   "tooltip.wrenchbridge.native": "Native modes use the real tools carried in your inventory",
   "screen.wrenchbridge.title": "Wrench Modes",
   "screen.wrenchbridge.description": "Shared dismantling or a carried tool's native mode",
