@@ -23,9 +23,13 @@ dependencies {
  compileOnly 'io.github.llamalad7:mixinextras-common:0.5.5'
  embedded 'io.github.llamalad7:mixinextras-common:0.5.5'
 }
-tasks.withType(JavaCompile).configureEach {
- javaCompiler=javaToolchains.compilerFor { languageVersion=JavaLanguageVersion.of(17) }
- sourceCompatibility='17'; targetCompatibility='8'; options.release=8
+// Jabel is for our sources. ForgeGradle creates its own Java 8 compilation tasks
+// while resolving Minecraft; those must not inherit the Java 17 --release option.
+sourceSets.configureEach { sourceSet ->
+ tasks.named(sourceSet.compileJavaTaskName, JavaCompile) {
+  javaCompiler=javaToolchains.compilerFor { languageVersion=JavaLanguageVersion.of(17) }
+  sourceCompatibility='17'; targetCompatibility='8'; options.release=8
+ }
 }
 jar { from { configurations.embedded.collect { zipTree(it) } }; manifest { attributes 'MixinConfigs':'wrenchbridge.mixins.json' } }
 
