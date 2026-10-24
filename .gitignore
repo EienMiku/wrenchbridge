@@ -1,0 +1,24 @@
+.gradle/
+**/build/
+**/run/
+**/runs/
+**/run-*/
+dist/
+.idea/
+*.iml
+.toolchains/
+**/.gradle/
+**/__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+/wrenchbridge/
+
+# Local launcher helpers and texture import scripts contain machine-specific paths.
+/scripts/apply_handdrawn16.py
+/scripts/apply_texture_refresh.py
+/scripts/install_expanded_lab.py
+/scripts/launch_lab_smoke.py
+/scripts/repair_lab_memory.py
+/scripts/update_lab_profile.ps1

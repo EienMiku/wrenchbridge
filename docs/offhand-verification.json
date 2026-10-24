@@ -1,0 +1,2795 @@
+[
+  {
+    "source": "mekanism:configurator",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "create:wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "create:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "create:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "create:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "create:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "create:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "ae2:interface",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "create:shaft",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "refinedstorage:controller",
+    "simulated": false,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "prettypipes:pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "minecraft:observer",
+    "simulated": false,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "wrenchbridge:universal_wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": false,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "mekanism:configurator",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "ae2:certus_quartz_wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "create:wrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "create:wrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "create:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "create:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "create:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "create:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "create:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "create:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "anvilcraft:anvil_hammer",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "refinedstorage:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "enderio:yeta_wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pneumaticcraft:pneumatic_wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "prettypipes:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "powah:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "rftoolsbase:smartwrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "integrateddynamics:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "moderndynamics:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "pipez:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "ae2:interface",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "mekanism:basic_energy_cube",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "create:shaft",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "anvilcraft:royal_steel_block",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "refinedstorage:controller",
+    "simulated": true,
+    "removed": false,
+    "result": "FAIL",
+    "reference": "main-hand native wrench also denied; denial parity only"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "enderio:alloy_smelter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "prettypipes:pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "powah:energy_cell_starter",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "rftoolsutility:crafter1",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "integrateddynamics:energy_battery",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "moderndynamics:item_pipe",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "minecraft:observer",
+    "simulated": true,
+    "removed": true,
+    "result": "CONSUME"
+  },
+  {
+    "source": "supplementaries:wrench",
+    "target": "integrateddynamics:mechanical_squeezer",
+    "simulated": true,
+    "removed": true,
+    "result": "SUCCESS"
+  }
+]

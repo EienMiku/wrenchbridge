@@ -1,0 +1,22 @@
+{
+  "source": "universal_wrench_2_soft.png",
+  "source_sha256": "54a189b587e9f32b5314f52cdcd53522172d19ba054fa3d1e472cd8a7f8ab62e",
+  "output": "universal_wrench_2_soft_corner.png",
+  "coordinates": "zero-based, from top left",
+  "pixel": [
+    10,
+    5
+  ],
+  "before_rgba": [
+    169,
+    170,
+    170,
+    255
+  ],
+  "after_rgba": [
+    128,
+    130,
+    131,
+    255
+  ]
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "hand": "MAIN_HAND",
+    "ordinary_mekanism_rotation": false,
+    "explicit_simulated_rotation": true,
+    "native_configurator_wrench_create_rotation": true,
+    "simulated_configurator_wrench_create_rotation": true,
+    "shared_sneak_dismantle": true,
+    "protection": true,
+    "unknown_native_sneak_compatibility": true,
+    "exception_cleanup": true
+  },
+  {
+    "hand": "OFF_HAND",
+    "ordinary_mekanism_rotation": false,
+    "explicit_simulated_rotation": true,
+    "native_configurator_wrench_create_rotation": true,
+    "simulated_configurator_wrench_create_rotation": true,
+    "shared_sneak_dismantle": true,
+    "protection": true,
+    "unknown_native_sneak_compatibility": true,
+    "exception_cleanup": true
+  }
+]

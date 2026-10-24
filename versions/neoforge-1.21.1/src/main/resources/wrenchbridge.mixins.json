@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.wrenchbridge.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["WrenchTraitsMixin", "WrenchHolderTraitsMixin", "PneumaticWrenchEventMixin", "SupplementariesWrenchEventMixin", "AE2WrenchHandMixin", "McJtyWrenchHandMixin", "IntegratedMachineHandMixin", "SharedWrenchIntentServerMixin", "AE2MenuSourceMixin", "AE2ContainerMenuActionsMixin", "ServerFeedbackMixin"],
+  "client": ["MekanismConfiguratorRenderMixin", "SharedWrenchIntentClientMixin"],
+  "injectors": {"defaultRequire": 1}
+}

@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shaped", "pattern": ["I I", " R ", " S "], "key": {"I": {"item": "minecraft:iron_ingot"}, "R": {"item": "minecraft:redstone"}, "S": {"item": "minecraft:stick"}}, "result": {"item": "wrenchbridge:universal_wrench", "count": 1}}

@@ -1,0 +1,18 @@
+[
+  {
+    "hand": "MAIN_HAND",
+    "source_slot": 9,
+    "clicked_network_bound": true,
+    "native_packet_roundtrip": true,
+    "missing_source_invalidates": true,
+    "scope_cleanup": true
+  },
+  {
+    "hand": "OFF_HAND",
+    "source_slot": 9,
+    "clicked_network_bound": true,
+    "native_packet_roundtrip": true,
+    "missing_source_invalidates": true,
+    "scope_cleanup": true
+  }
+]

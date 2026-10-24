@@ -1,0 +1,406 @@
+[
+  {
+    "name": "PneumaticCraft: Repressurized",
+    "slug": "pneumaticcraft-repressurized",
+    "project_id": "ncAcdgk7",
+    "version_id": "TNzeuLH3",
+    "version": "8.2.23",
+    "release_type": "release",
+    "file": "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar",
+    "url": "https://cdn.modrinth.com/data/ncAcdgk7/versions/TNzeuLH3/pneumaticcraft-repressurized-8.2.23%2Bmc1.21.1.jar",
+    "sha512": "1863243c4e76ecdef60c541e332808df48f50e01d7f75f5b1bd52e38f086925aa715a199775cf885746e3869cfc78ee5ac463fd33a1ac55cccab5394d19e2bfa",
+    "bytes": 11884697,
+    "project_url": "https://modrinth.com/mod/pneumaticcraft-repressurized",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "nU0bVIaL",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "sha256": "647ce20d52cf139f3b693b9b4c4753966a95a6dafc82d9e538ae4ae5b0249f9c"
+  },
+  {
+    "name": "Pretty Pipes",
+    "slug": "pretty-pipes",
+    "project_id": "XExdLWCQ",
+    "version_id": "PJOPj4Jz",
+    "version": "1.22.1",
+    "release_type": "release",
+    "file": "PrettyPipes-1.22.1-all.jar",
+    "url": "https://cdn.modrinth.com/data/XExdLWCQ/versions/PJOPj4Jz/PrettyPipes-1.22.1-all.jar",
+    "sha512": "7e33dcc8cf8b969b209b2e0bc032b6a7474cef3fde54665bfac67fb27c03c326ef646956658ff5c77317ef43dcfb558779ccc9b18eb69f06b76d8d12be9f3e4b",
+    "bytes": 2416077,
+    "project_url": "https://modrinth.com/mod/pretty-pipes",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "sha256": "9654677fff808c6d2096e3a5f3086c4866f288dd8dbf4eb9345a2dd955b04caa"
+  },
+  {
+    "name": "Refined Storage",
+    "slug": "refined-storage",
+    "project_id": "KDvYkUg3",
+    "version_id": "lHHiI26k",
+    "version": "2.0.9",
+    "release_type": "release",
+    "file": "refinedstorage-neoforge-2.0.9.jar",
+    "url": "https://cdn.modrinth.com/data/KDvYkUg3/versions/lHHiI26k/refinedstorage-neoforge-2.0.9.jar",
+    "sha512": "b98a938b8af859f1952bfb35fb6db712835a7dead88fa15258ac0f4f06b26b08ebfa49fd9a35b2c81f7a745b3cd4370ced98c242d0fe7473ba019d92da8f6c57",
+    "bytes": 4360871,
+    "project_url": "https://modrinth.com/mod/refined-storage",
+    "dependencies": [],
+    "sha256": "e9c758dddcdfa9c02a7370ca3f4f972a285a1e38ca434bd1fc15cb223ffa06ab"
+  },
+  {
+    "name": "Powah!",
+    "slug": "powah",
+    "project_id": "KZO4S4DO",
+    "version_id": "1prWLuga",
+    "version": "6.2.10-neoforge",
+    "release_type": "release",
+    "file": "Powah-6.2.10.jar",
+    "url": "https://cdn.modrinth.com/data/KZO4S4DO/versions/1prWLuga/Powah-6.2.10.jar",
+    "sha512": "41d616d3d944faaee2cde4d15b3fc35cdd154690169f43d8436e6432df50db90355ca5fef78bd0f7864d97d9a14039280c8fb78d8c3e1d407618c7ccff47d97f",
+    "bytes": 2737991,
+    "project_url": "https://modrinth.com/mod/powah",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "Ck4E7v7R",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "sha256": "0e604a7356111c1dd44a00ea42fc1aa960d9faeb978261349df1138fcee4d0b4"
+  },
+  {
+    "name": "Ender IO",
+    "slug": "enderio",
+    "project_id": "49ZofO4f",
+    "version_id": "2bHl1dCW",
+    "version": "v8.2.12-beta",
+    "release_type": "beta",
+    "file": "enderio-8.2.12-beta.jar",
+    "url": "https://cdn.modrinth.com/data/49ZofO4f/versions/2bHl1dCW/enderio-8.2.12-beta.jar",
+    "sha512": "c4415c1e835fa7eaf7f4528fd685412151968b092e9be91528add11dd981943ba6243eee41ff73923df64d59d8f907901cb006edcb5c02783e73ab656524c995",
+    "bytes": 6598496,
+    "project_url": "https://modrinth.com/mod/enderio",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "XxWD5pD3",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "b1ZV3DIJ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "gu7yAYhd",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "Ce6I4WUE",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "sha256": "5fe098153dddc2e7ccd9d38b0341dbc61f3072150958c916e5ef63f395e4eab1"
+  },
+  {
+    "name": "RFTools Base",
+    "slug": "rftools-base",
+    "project_id": "hIO8IsD8",
+    "version_id": "f8Tk2cfj",
+    "version": "1.21-6.0.11",
+    "release_type": "beta",
+    "file": "rftoolsbase-1.21-6.0.11.jar",
+    "url": "https://cdn.modrinth.com/data/hIO8IsD8/versions/f8Tk2cfj/rftoolsbase-1.21-6.0.11.jar",
+    "sha512": "8c6f8f7dee9dd1c02651304beaab69c439f8524cdacd5776814a57c55db0713e8ae30306875a64e66253fe004bb0254e82031f51c0371e7f443400a2f26ead3f",
+    "bytes": 463973,
+    "project_url": "https://modrinth.com/mod/rftools-base",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Eyw0UxEx",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "1Zu0uTEE",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "sha256": "5195ba530e6cf9ba61c9954a3297679e6d29aa1b6182e27ae14ea43463dd4b00"
+  },
+  {
+    "name": "RFTools Utility",
+    "slug": "rftools-utility",
+    "project_id": "7n3HbHSE",
+    "version_id": "xOoMr4zS",
+    "version": "1.21-7.0.12",
+    "release_type": "beta",
+    "file": "rftoolsutility-1.21-7.0.12.jar",
+    "url": "https://cdn.modrinth.com/data/7n3HbHSE/versions/xOoMr4zS/rftoolsutility-1.21-7.0.12.jar",
+    "sha512": "ab46b45e8b867fbdeb8c8b69a219088d748727d34c1fa947383ed24370fd2111863f3cf373c100647406fcde8dc51522f2ceb02ccf1dbe0e827aa17fb1a323aa",
+    "bytes": 1434987,
+    "project_url": "https://modrinth.com/mod/rftools-utility",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "hIO8IsD8",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "1Zu0uTEE",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "Eyw0UxEx",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "sha256": "1fdbf7505c6d6f4ef93b8b15961c9c1a6a4d35a5d676297f8f647916238f4d2a"
+  },
+  {
+    "name": "Integrated Dynamics",
+    "slug": "integrated-dynamics",
+    "project_id": "yYzdQHJI",
+    "version_id": "Hmh0d3qf",
+    "version": "1.21.1-1.38.1",
+    "release_type": "release",
+    "file": "integrateddynamics-1.21.1-neoforge-1.38.1.jar",
+    "url": "https://cdn.modrinth.com/data/yYzdQHJI/versions/Hmh0d3qf/integrateddynamics-1.21.1-neoforge-1.38.1.jar",
+    "sha512": "59435d00141668f1758e43d536eeb8a6f9f286f22ec902b7502390ca38dbab3674d954e4bc547b51530fa06bc9f4b17c3036ee7c06171ce516056a1de0470eca",
+    "bytes": 4500305,
+    "project_url": "https://modrinth.com/mod/integrated-dynamics",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "oFXrCkDI",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "Z9DM0LJ4",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "sha256": "b157b220d90d58501c8bce1161d03b1d307c940e2b5ad79b9f318eda6c0f2a89"
+  },
+  {
+    "name": "Modern Dynamics",
+    "slug": "modern-dynamics",
+    "project_id": "fMpvLrnF",
+    "version_id": "TTPA9hxb",
+    "version": "0.9.6",
+    "release_type": "release",
+    "file": "Modern-Dynamics-0.9.6.jar",
+    "url": "https://cdn.modrinth.com/data/fMpvLrnF/versions/TTPA9hxb/Modern-Dynamics-0.9.6.jar",
+    "sha512": "c97a73c675fcc76054be257c05bfae5a44db8f211ff01ccb5e286e4d98cc14efd59985a1d1f787ef8675af9c7476d57d1db66d2ac976b083162ad26209d06697",
+    "bytes": 707745,
+    "project_url": "https://modrinth.com/mod/modern-dynamics",
+    "dependencies": [],
+    "sha256": "4357833f16a8f890e4399de3c606a27644add1384d5d1e7246648a818e9cbdab"
+  },
+  {
+    "name": "Pipez",
+    "slug": "pipez",
+    "project_id": "iRmWy6ga",
+    "version_id": "BPGKb8pi",
+    "version": "neoforge-1.21.1-1.2.31",
+    "release_type": "beta",
+    "file": "pipez-neoforge-1.21.1-1.2.31.jar",
+    "url": "https://cdn.modrinth.com/data/iRmWy6ga/versions/BPGKb8pi/pipez-neoforge-1.21.1-1.2.31.jar",
+    "sha512": "7291230b62104b73b04564d6d39ba18d11134a5713ee79242c7ae8885d07c4efb5f5d0ab75b8ff9aba3119ed8163d0c5488ad603a2db21b92dc35715b723ce5e",
+    "bytes": 456599,
+    "project_url": "https://modrinth.com/mod/pipez",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "Eyw0UxEx",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "nvQzSEkH",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "Ce6I4WUE",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "sha256": "9b37e922443ea3452daeacbfba4bcf69de07692183c4ee09f1d1e82c9fc5cc5f"
+  },
+  {
+    "name": "Supplementaries",
+    "slug": "supplementaries",
+    "project_id": "fFEIiSDQ",
+    "version_id": "rWq0ko29",
+    "version": "1.21.1-4.0.2",
+    "release_type": "release",
+    "file": "supplementaries-1.21.1-4.0.2-neoforge.jar",
+    "url": "https://cdn.modrinth.com/data/fFEIiSDQ/versions/rWq0ko29/supplementaries-1.21.1-4.0.2-neoforge.jar",
+    "sha512": "092034ac007c327c9dd58c68ae585df59fa523a5ca40da88b34ad8f1c6347523d302e490acc1650eae6837f46979442ea8a8c151802074de2da99c396ec28894",
+    "bytes": 13840377,
+    "project_url": "https://modrinth.com/mod/supplementaries",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "twkfQtEc",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "sha256": "2c2e0c98e0cc21874d8b2130bc773a2a5a6cadd854b9c8163d0e1f32e2ddffb0"
+  },
+  {
+    "name": "Cloth Config API",
+    "slug": "cloth-config",
+    "project_id": "9s6osm5g",
+    "version_id": "izKINKFg",
+    "version": "15.0.140+neoforge",
+    "release_type": "release",
+    "file": "cloth-config-15.0.140-neoforge.jar",
+    "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/izKINKFg/cloth-config-15.0.140-neoforge.jar",
+    "sha512": "aaf9b010955b8cd294e5a92f069985b18729fd5e2cf22d351f1dff9680f15488688803ec41e77e941cbde130ceb535014ca4c868047d80ab69c2d508e216654d",
+    "bytes": 1163890,
+    "project_url": "https://modrinth.com/mod/cloth-config",
+    "dependencies": [],
+    "sha256": "65e722e0d98431a07c45f8bdd8d529a217cc8c175fde1740248bd5c1b4f3c0d4"
+  },
+  {
+    "name": "GuideME",
+    "slug": "guideme",
+    "project_id": "Ck4E7v7R",
+    "version_id": "mUlgxNj8",
+    "version": "21.1.20",
+    "release_type": "release",
+    "file": "guideme-21.1.20.jar",
+    "url": "https://cdn.modrinth.com/data/Ck4E7v7R/versions/mUlgxNj8/guideme-21.1.20.jar",
+    "sha512": "5e87550a56f97a23996b4c2e06a067a985f9dbbb3a79dd07a302fab275ff24637ed875e50eeafce030dd828799d323e50d86cc2509d53011069c895886a1cbdb",
+    "bytes": 9325132,
+    "project_url": "https://modrinth.com/mod/guideme",
+    "dependencies": [],
+    "sha256": "94139e34b8b4e025f1c3e56cc1c677d86b2b2f0bba2dca1c44003042993d16ed"
+  },
+  {
+    "name": "McJtyLib",
+    "slug": "mcjtylib",
+    "project_id": "1Zu0uTEE",
+    "version_id": "9B2CiAN5",
+    "version": "1.21-9.0.21",
+    "release_type": "beta",
+    "file": "mcjtylib-1.21-9.0.21.jar",
+    "url": "https://cdn.modrinth.com/data/1Zu0uTEE/versions/9B2CiAN5/mcjtylib-1.21-9.0.21.jar",
+    "sha512": "3a349ea3718db9da87a6a8603d6beda5c132824cfeaf4dae7fbf3d463b7cab78b65f7deefd4a845bee3f7c3c60b9e062a27197fcd30d33f21cb9f0c4109d0e5c",
+    "bytes": 699982,
+    "project_url": "https://modrinth.com/mod/mcjtylib",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Eyw0UxEx",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "sha256": "b8eca900d4fe77a495c74137bd6be79c67281e5d7ae67ca55f59980c64960a0e"
+  },
+  {
+    "name": "Common Capabilities",
+    "slug": "common-capabilities",
+    "project_id": "oFXrCkDI",
+    "version_id": "R9PufPlP",
+    "version": "1.21.1-2.11.6",
+    "release_type": "release",
+    "file": "commoncapabilities-1.21.1-neoforge-2.11.6.jar",
+    "url": "https://cdn.modrinth.com/data/oFXrCkDI/versions/R9PufPlP/commoncapabilities-1.21.1-neoforge-2.11.6.jar",
+    "sha512": "c4da165077a02106b0bafb07859a8665fc1246f1ac6f4898167b83cd695dd78abf686350e5b62d102623cf48d0284e02565b6541707b5597b5405a0a38043f56",
+    "bytes": 283980,
+    "project_url": "https://modrinth.com/mod/common-capabilities",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Z9DM0LJ4",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "sha256": "494fd342065cad35c8a729cb66dfc1287fc592e6800809e8f461362cf73ef520"
+  },
+  {
+    "name": "Cyclops Core",
+    "slug": "cyclops-core",
+    "project_id": "Z9DM0LJ4",
+    "version_id": "2Z0ruVBB",
+    "version": "1.21.1-1.30.0",
+    "release_type": "release",
+    "file": "cyclopscore-1.21.1-neoforge-1.30.0.jar",
+    "url": "https://cdn.modrinth.com/data/Z9DM0LJ4/versions/2Z0ruVBB/cyclopscore-1.21.1-neoforge-1.30.0.jar",
+    "sha512": "7a3a8f3a4806045e8724c6c61a177c19530f03611bb8843533a630ed97943d66fe010285c36755135cd460899fe01a2d298223f15de9ec841ba27a2b62208d24",
+    "bytes": 1163177,
+    "project_url": "https://modrinth.com/mod/cyclops-core",
+    "dependencies": [],
+    "sha256": "45b36d7ac402096a71beb0d1538d04a77f1e05f84e181a03b15fddcd2175e98b"
+  },
+  {
+    "name": "Moonlight Lib",
+    "slug": "moonlight",
+    "project_id": "twkfQtEc",
+    "version_id": "fAIfWX6M",
+    "version": "1.21.1-3.7.2",
+    "release_type": "release",
+    "file": "moonlight-1.21.1-3.7.2-neoforge.jar",
+    "url": "https://cdn.modrinth.com/data/twkfQtEc/versions/fAIfWX6M/moonlight-1.21.1-3.7.2-neoforge.jar",
+    "sha512": "b4e8efba91e5f46729928335cce8952ad70af3e33b851e8cf4887a24346f7bbdfe3609f8cc482f76a715aa050bf39e7048ee97b33183e5c358f149bc3678183c",
+    "bytes": 2299162,
+    "project_url": "https://modrinth.com/mod/moonlight",
+    "dependencies": [],
+    "sha256": "4a9f15108607cc70273f8a0b6eb24e1e99af8eef44bc3ae8681767ca7ce21b0f"
+  }
+]

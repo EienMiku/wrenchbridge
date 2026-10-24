@@ -1,0 +1,768 @@
+[
+  {
+    "tool": "ae2:network_tool",
+    "target": "ae2:interface",
+    "variant": "native-main",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 1,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "ae2:network_tool",
+    "target": "ae2:interface",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "ae2:network_tool",
+    "target": "ae2:interface",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "ae2:network_tool",
+    "target": "ae2:interface",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 1,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "ae2:network_tool",
+    "target": "ae2:interface",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 1,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "ae2:certus_quartz_wrench",
+    "target": "ae2:interface",
+    "variant": "native-main",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 1,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "ae2:certus_quartz_wrench",
+    "target": "ae2:interface",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "ae2:certus_quartz_wrench",
+    "target": "ae2:interface",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "ae2:certus_quartz_wrench",
+    "target": "ae2:interface",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 1,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "ae2:certus_quartz_wrench",
+    "target": "ae2:interface",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 1,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "mekanism:configurator",
+    "target": "mekanism:basic_energy_cube",
+    "variant": "native-main",
+    "native_feedback": [
+      "sound:minecraft:entity.item.pickup:PLAYERS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "mekanism:configurator",
+    "target": "mekanism:basic_energy_cube",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item.pickup:PLAYERS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "mekanism:configurator",
+    "target": "mekanism:basic_energy_cube",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item.pickup:PLAYERS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "mekanism:configurator",
+    "target": "mekanism:basic_energy_cube",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item.pickup:PLAYERS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "mekanism:configurator",
+    "target": "mekanism:basic_energy_cube",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item.pickup:PLAYERS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "create:wrench",
+    "target": "create:shaft",
+    "variant": "native-main",
+    "native_feedback": [
+      "level_event:2001",
+      "sound:create:wrench_remove:BLOCKS",
+      "sound:create:wrench_remove_compounded_1:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "create:wrench",
+    "target": "create:shaft",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [
+      "level_event:2001",
+      "sound:create:wrench_remove:BLOCKS",
+      "sound:create:wrench_remove_compounded_1:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "create:wrench",
+    "target": "create:shaft",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [
+      "level_event:2001",
+      "sound:create:wrench_remove:BLOCKS",
+      "sound:create:wrench_remove_compounded_1:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "create:wrench",
+    "target": "create:shaft",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [
+      "level_event:2001",
+      "sound:create:wrench_remove:BLOCKS",
+      "sound:create:wrench_remove_compounded_1:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "create:wrench",
+    "target": "create:shaft",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [
+      "level_event:2001",
+      "sound:create:wrench_remove:BLOCKS",
+      "sound:create:wrench_remove_compounded_1:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "anvilcraft:anvil_hammer",
+    "target": "anvilcraft:royal_steel_block",
+    "variant": "native-main",
+    "native_feedback": [
+      "level_event:2001",
+      "level_event:2001"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "anvilcraft:anvil_hammer",
+    "target": "anvilcraft:royal_steel_block",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [
+      "level_event:2001",
+      "level_event:2001"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "anvilcraft:anvil_hammer",
+    "target": "anvilcraft:royal_steel_block",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [
+      "level_event:2001",
+      "level_event:2001"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "anvilcraft:anvil_hammer",
+    "target": "anvilcraft:royal_steel_block",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [
+      "level_event:2001",
+      "level_event:2001"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "anvilcraft:anvil_hammer",
+    "target": "anvilcraft:royal_steel_block",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [
+      "level_event:2001",
+      "level_event:2001"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "pneumaticcraft:pneumatic_wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "variant": "native-main",
+    "native_feedback": [
+      "pneumaticcraft:pneumatic_wrench"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "pneumaticcraft:pneumatic_wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [
+      "pneumaticcraft:pneumatic_wrench"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "pneumaticcraft:pneumatic_wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [
+      "pneumaticcraft:pneumatic_wrench"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "pneumaticcraft:pneumatic_wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [
+      "pneumaticcraft:pneumatic_wrench"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "pneumaticcraft:pneumatic_wrench",
+    "target": "pneumaticcraft:air_compressor",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [
+      "pneumaticcraft:pneumatic_wrench"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "prettypipes:wrench",
+    "target": "prettypipes:pipe",
+    "variant": "native-main",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:PLAYERS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "prettypipes:wrench",
+    "target": "prettypipes:pipe",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:PLAYERS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "prettypipes:wrench",
+    "target": "prettypipes:pipe",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:PLAYERS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "prettypipes:wrench",
+    "target": "prettypipes:pipe",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:PLAYERS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "prettypipes:wrench",
+    "target": "prettypipes:pipe",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:entity.item_frame.remove_item:PLAYERS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "refinedstorage:wrench",
+    "target": "refinedstorage:disk_drive",
+    "variant": "native-main",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{refinedstorage:disk_drive}[direction\u003dnorth]",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "refinedstorage:wrench",
+    "target": "refinedstorage:disk_drive",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{refinedstorage:disk_drive}[direction\u003dnorth]",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "refinedstorage:wrench",
+    "target": "refinedstorage:disk_drive",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{refinedstorage:disk_drive}[direction\u003dnorth]",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "refinedstorage:wrench",
+    "target": "refinedstorage:disk_drive",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{refinedstorage:disk_drive}[direction\u003dnorth]",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "refinedstorage:wrench",
+    "target": "refinedstorage:disk_drive",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{refinedstorage:disk_drive}[direction\u003dnorth]",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "enderio:yeta_wrench",
+    "target": "enderio:alloy_smelter",
+    "variant": "native-main",
+    "native_feedback": [
+      "level_event:2001"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "enderio:yeta_wrench",
+    "target": "enderio:alloy_smelter",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [
+      "level_event:2001"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "enderio:yeta_wrench",
+    "target": "enderio:alloy_smelter",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [
+      "level_event:2001"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "enderio:yeta_wrench",
+    "target": "enderio:alloy_smelter",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [
+      "level_event:2001"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "enderio:yeta_wrench",
+    "target": "enderio:alloy_smelter",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [
+      "level_event:2001"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "powah:wrench",
+    "target": "powah:energy_cell_starter",
+    "variant": "native-main",
+    "native_feedback": [
+      "sound:minecraft:block.metal.break:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 1,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "powah:wrench",
+    "target": "powah:energy_cell_starter",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:block.metal.break:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "powah:wrench",
+    "target": "powah:energy_cell_starter",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:block.metal.break:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "powah:wrench",
+    "target": "powah:energy_cell_starter",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:block.metal.break:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 1,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "powah:wrench",
+    "target": "powah:energy_cell_starter",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:block.metal.break:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 1,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "rftoolsbase:smartwrench",
+    "target": "rftoolsbase:machine_infuser",
+    "variant": "native-main",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "rftoolsbase:smartwrench",
+    "target": "rftoolsbase:machine_infuser",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "rftoolsbase:smartwrench",
+    "target": "rftoolsbase:machine_infuser",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "rftoolsbase:smartwrench",
+    "target": "rftoolsbase:machine_infuser",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "rftoolsbase:smartwrench",
+    "target": "rftoolsbase:machine_infuser",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "integrateddynamics:wrench",
+    "target": "integrateddynamics:cable",
+    "variant": "native-main",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "integrateddynamics:wrench",
+    "target": "integrateddynamics:cable",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "integrateddynamics:wrench",
+    "target": "integrateddynamics:cable",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "integrateddynamics:wrench",
+    "target": "integrateddynamics:cable",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "integrateddynamics:wrench",
+    "target": "integrateddynamics:cable",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "moderndynamics:wrench",
+    "target": "moderndynamics:item_pipe",
+    "variant": "native-main",
+    "native_feedback": [
+      "sound:minecraft:block.stone.break:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 1,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "moderndynamics:wrench",
+    "target": "moderndynamics:item_pipe",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:block.stone.break:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "moderndynamics:wrench",
+    "target": "moderndynamics:item_pipe",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:block.stone.break:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "moderndynamics:wrench",
+    "target": "moderndynamics:item_pipe",
+    "variant": "shared-MAIN_HAND",
+    "native_feedback": [
+      "sound:minecraft:block.stone.break:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "moderndynamics:wrench",
+    "target": "moderndynamics:item_pipe",
+    "variant": "shared-OFF_HAND",
+    "native_feedback": [
+      "sound:minecraft:block.stone.break:BLOCKS"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:air}",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "pipez:wrench",
+    "target": "pipez:item_pipe",
+    "variant": "native-main",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{pipez:item_pipe}[down\u003dfalse,east\u003dtrue,has_data\u003dtrue,north\u003dfalse,south\u003dfalse,up\u003dfalse,waterlogged\u003dfalse,west\u003dfalse]",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "pipez:wrench",
+    "target": "pipez:item_pipe",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{pipez:item_pipe}[down\u003dfalse,east\u003dtrue,has_data\u003dtrue,north\u003dfalse,south\u003dfalse,up\u003dfalse,waterlogged\u003dfalse,west\u003dfalse]",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "pipez:wrench",
+    "target": "pipez:item_pipe",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{pipez:item_pipe}[down\u003dfalse,east\u003dtrue,has_data\u003dtrue,north\u003dfalse,south\u003dfalse,up\u003dfalse,waterlogged\u003dfalse,west\u003dfalse]",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "supplementaries:wrench",
+    "target": "minecraft:white_glazed_terracotta",
+    "variant": "native-main",
+    "native_feedback": [
+      "entity_sound:supplementaries:item.wrench.rotate:PLAYERS",
+      "sound:supplementaries:block.rotate:BLOCKS",
+      "supplementaries:wrench_rotation_particles"
+    ],
+    "excluded_actor_broadcasts": 2,
+    "state": "Block{minecraft:white_glazed_terracotta}[facing\u003deast]",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "supplementaries:wrench",
+    "target": "minecraft:white_glazed_terracotta",
+    "variant": "simulated-MAIN_HAND",
+    "native_feedback": [
+      "entity_sound:supplementaries:item.wrench.rotate:PLAYERS",
+      "sound:supplementaries:block.rotate:BLOCKS",
+      "supplementaries:wrench_rotation_particles"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:white_glazed_terracotta}[facing\u003deast]",
+    "held_item_preserved": true
+  },
+  {
+    "tool": "supplementaries:wrench",
+    "target": "minecraft:white_glazed_terracotta",
+    "variant": "simulated-OFF_HAND",
+    "native_feedback": [
+      "entity_sound:supplementaries:item.wrench.rotate:PLAYERS",
+      "sound:supplementaries:block.rotate:BLOCKS",
+      "supplementaries:wrench_rotation_particles"
+    ],
+    "excluded_actor_broadcasts": 0,
+    "state": "Block{minecraft:white_glazed_terracotta}[facing\u003deast]",
+    "held_item_preserved": true
+  }
+]

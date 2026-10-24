@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [" I ", " SI", "S  "],
+  "key": {
+    "I": {"tag": "c:ingots"},
+    "S": {"tag": "c:rods"}
+  },
+  "result": {"id": "wrenchbridge:universal_wrench", "count": 1}
+}

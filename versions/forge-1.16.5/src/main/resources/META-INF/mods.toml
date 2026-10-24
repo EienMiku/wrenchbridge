@@ -1,0 +1,20 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT"
+[[mods]]
+modId="wrenchbridge"
+version="${version}"
+displayName="Wrench Bridge"
+description="Shared wrench protocols and a native-tool mode palette."
+[[dependencies.wrenchbridge]]
+modId="forge"
+mandatory=true
+versionRange="[36.2,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.wrenchbridge]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.16.5,1.17)"
+ordering="NONE"
+side="BOTH"

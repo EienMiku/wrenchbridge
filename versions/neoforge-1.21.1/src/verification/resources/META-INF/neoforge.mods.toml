@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+[[mixins]]
+config="wrenchbridge-verification.mixins.json"
+[[mods]]
+modId="wrenchbridge_verification"
+version="1"
+displayName="Wrench Bridge verification fixture"
+[[dependencies.wrenchbridge_verification]]
+modId="wrenchbridge"
+type="required"
+versionRange="[0.1.0-alpha.1,)"
+ordering="AFTER"
+side="BOTH"

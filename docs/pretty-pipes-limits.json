@@ -1,0 +1,142 @@
+[
+  {
+    "block": "prettypipes:item_terminal",
+    "hand": "MAIN_HAND",
+    "source": "prettypipes:wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:item_terminal",
+    "hand": "MAIN_HAND",
+    "source": "wrenchbridge:universal_wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:item_terminal",
+    "hand": "MAIN_HAND",
+    "source": "mekanism:configurator",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:item_terminal",
+    "hand": "MAIN_HAND",
+    "source": "ae2:certus_quartz_wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:item_terminal",
+    "hand": "MAIN_HAND",
+    "source": "simulate_pretty",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:item_terminal",
+    "hand": "OFF_HAND",
+    "source": "prettypipes:wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:item_terminal",
+    "hand": "OFF_HAND",
+    "source": "wrenchbridge:universal_wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:item_terminal",
+    "hand": "OFF_HAND",
+    "source": "mekanism:configurator",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:item_terminal",
+    "hand": "OFF_HAND",
+    "source": "ae2:certus_quartz_wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:item_terminal",
+    "hand": "OFF_HAND",
+    "source": "simulate_pretty",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:pressurizer",
+    "hand": "MAIN_HAND",
+    "source": "prettypipes:wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:pressurizer",
+    "hand": "MAIN_HAND",
+    "source": "wrenchbridge:universal_wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:pressurizer",
+    "hand": "MAIN_HAND",
+    "source": "mekanism:configurator",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:pressurizer",
+    "hand": "MAIN_HAND",
+    "source": "ae2:certus_quartz_wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:pressurizer",
+    "hand": "MAIN_HAND",
+    "source": "simulate_pretty",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:pressurizer",
+    "hand": "OFF_HAND",
+    "source": "prettypipes:wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:pressurizer",
+    "hand": "OFF_HAND",
+    "source": "wrenchbridge:universal_wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:pressurizer",
+    "hand": "OFF_HAND",
+    "source": "mekanism:configurator",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:pressurizer",
+    "hand": "OFF_HAND",
+    "source": "ae2:certus_quartz_wrench",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  },
+  {
+    "block": "prettypipes:pressurizer",
+    "hand": "OFF_HAND",
+    "source": "simulate_pretty",
+    "removed": false,
+    "reference": "native Pretty Pipes wrench only picks up PipeBlock; mine these machines normally"
+  }
+]

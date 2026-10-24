@@ -1,0 +1,1 @@
+PASS: native and simulated Mekanism face overlays in main/offhand, selected transmission, backpack source, missing-source/shared rejection after catalog refresh, real held item and donor mode preserved, mixed ingot/rod crafting recipe

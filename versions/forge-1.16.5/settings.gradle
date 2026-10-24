@@ -1,0 +1,2 @@
+pluginManagement { repositories { gradlePluginPortal(); maven { url = 'https://maven.minecraftforge.net' } } }
+rootProject.name = 'wrenchbridge-forge-1.16.5'

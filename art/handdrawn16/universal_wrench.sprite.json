@@ -1,0 +1,34 @@
+{
+  "size": [16, 16],
+  "description": "Original hand-placed pixel grid. Steel crescent head, dark grip, two teal pixels and a brass adjuster.",
+  "palette": {
+    ".": "#00000000",
+    "d": "#252D34FF",
+    "h": "#F2F0D9FF",
+    "s": "#BECDC9FF",
+    "m": "#718992FF",
+    "b": "#344B58FF",
+    "p": "#567381FF",
+    "c": "#4DB6BDFF",
+    "g": "#D0AC64FF",
+    "a": "#967142FF"
+  },
+  "pixels": [
+    "................",
+    "...........ddd..",
+    "..........dhhhd.",
+    ".........dhsd...",
+    ".........dsm..d.",
+    ".........dsm.hd.",
+    "........dhsmsd..",
+    ".......dhsgmd...",
+    "......dhsadd....",
+    ".....dhsmd......",
+    "....dmmdd.......",
+    "...dbcbd........",
+    "..dbcbd.........",
+    ".dbpbd..........",
+    ".dbbd...........",
+    "................"
+  ]
+}

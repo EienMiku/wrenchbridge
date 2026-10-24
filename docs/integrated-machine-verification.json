@@ -1,0 +1,585 @@
+[
+  {
+    "block": "integrateddynamics:variablestore",
+    "hand": "MAIN_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1
+  },
+  {
+    "block": "integrateddynamics:variablestore",
+    "hand": "MAIN_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:variablestore",
+    "hand": "MAIN_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:variablestore",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:variablestore",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:variablestore",
+    "hand": "OFF_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:variablestore",
+    "hand": "OFF_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:variablestore",
+    "hand": "OFF_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:variablestore",
+    "hand": "OFF_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:variablestore",
+    "hand": "OFF_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:coal_generator",
+    "hand": "MAIN_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1
+  },
+  {
+    "block": "integrateddynamics:coal_generator",
+    "hand": "MAIN_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:coal_generator",
+    "hand": "MAIN_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:coal_generator",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:coal_generator",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:coal_generator",
+    "hand": "OFF_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:coal_generator",
+    "hand": "OFF_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:coal_generator",
+    "hand": "OFF_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:coal_generator",
+    "hand": "OFF_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:coal_generator",
+    "hand": "OFF_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:proxy",
+    "hand": "MAIN_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1
+  },
+  {
+    "block": "integrateddynamics:proxy",
+    "hand": "MAIN_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:proxy",
+    "hand": "MAIN_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:proxy",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:proxy",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:proxy",
+    "hand": "OFF_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:proxy",
+    "hand": "OFF_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:proxy",
+    "hand": "OFF_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:proxy",
+    "hand": "OFF_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:proxy",
+    "hand": "OFF_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:materializer",
+    "hand": "MAIN_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1
+  },
+  {
+    "block": "integrateddynamics:materializer",
+    "hand": "MAIN_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:materializer",
+    "hand": "MAIN_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:materializer",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:materializer",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:materializer",
+    "hand": "OFF_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:materializer",
+    "hand": "OFF_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:materializer",
+    "hand": "OFF_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:materializer",
+    "hand": "OFF_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:materializer",
+    "hand": "OFF_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:delay",
+    "hand": "MAIN_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1
+  },
+  {
+    "block": "integrateddynamics:delay",
+    "hand": "MAIN_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:delay",
+    "hand": "MAIN_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:delay",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:delay",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:delay",
+    "hand": "OFF_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:delay",
+    "hand": "OFF_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:delay",
+    "hand": "OFF_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:delay",
+    "hand": "OFF_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:delay",
+    "hand": "OFF_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_squeezer",
+    "hand": "MAIN_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1,
+    "contents": 7,
+    "restored_energy": 12345,
+    "restored_water_mb": 750
+  },
+  {
+    "block": "integrateddynamics:mechanical_squeezer",
+    "hand": "MAIN_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "contents": 7,
+    "restored_energy": 12345,
+    "restored_water_mb": 750,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_squeezer",
+    "hand": "MAIN_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "contents": 7,
+    "restored_energy": 12345,
+    "restored_water_mb": 750,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_squeezer",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "contents": 7,
+    "restored_energy": 12345,
+    "restored_water_mb": 750,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_squeezer",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "contents": 7,
+    "restored_energy": 12345,
+    "restored_water_mb": 750,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_squeezer",
+    "hand": "OFF_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1,
+    "contents": 7,
+    "restored_energy": 12345,
+    "restored_water_mb": 750,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_squeezer",
+    "hand": "OFF_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "contents": 7,
+    "restored_energy": 12345,
+    "restored_water_mb": 750,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_squeezer",
+    "hand": "OFF_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "contents": 7,
+    "restored_energy": 12345,
+    "restored_water_mb": 750,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_squeezer",
+    "hand": "OFF_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "contents": 7,
+    "restored_energy": 12345,
+    "restored_water_mb": 750,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_squeezer",
+    "hand": "OFF_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "contents": 7,
+    "restored_energy": 12345,
+    "restored_water_mb": 750,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_drying_basin",
+    "hand": "MAIN_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1
+  },
+  {
+    "block": "integrateddynamics:mechanical_drying_basin",
+    "hand": "MAIN_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_drying_basin",
+    "hand": "MAIN_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_drying_basin",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_drying_basin",
+    "hand": "MAIN_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_drying_basin",
+    "hand": "OFF_HAND",
+    "flow": "native",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_drying_basin",
+    "hand": "OFF_HAND",
+    "flow": "universal",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_drying_basin",
+    "hand": "OFF_HAND",
+    "flow": "mekanism",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_drying_basin",
+    "hand": "OFF_HAND",
+    "flow": "simulate_id",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  },
+  {
+    "block": "integrateddynamics:mechanical_drying_basin",
+    "hand": "OFF_HAND",
+    "flow": "simulate_supplementaries",
+    "removed": true,
+    "machine_drops": 1,
+    "protected": true
+  }
+]

@@ -1,0 +1,14 @@
+plugins { id 'java-library' }
+group = 'dev.wrenchbridge'
+version = '0.1.0-alpha.9'
+repositories { mavenCentral() }
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+sourceSets.main.java.srcDir 'common/src/main/java'
+sourceSets.test.java.srcDir 'common/src/test/java'
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+tasks.named('compileJava') { options.release = 8 }
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+test { useJUnitPlatform() }

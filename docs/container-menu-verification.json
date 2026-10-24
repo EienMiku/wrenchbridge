@@ -1,0 +1,30 @@
+[
+  {
+    "hand": "MAIN_HAND",
+    "full_player_inventory": true,
+    "native_cards_insert_remove_saved": true,
+    "callback_failure_preserves_tool": true,
+    "detached_bag_rejected": true,
+    "held_item_preserved": true
+  },
+  {
+    "hand": "OFF_HAND",
+    "full_player_inventory": true,
+    "native_cards_insert_remove_saved": true,
+    "callback_failure_preserves_tool": true,
+    "detached_bag_rejected": true,
+    "held_item_preserved": true
+  },
+  {
+    "case": "extract-denied",
+    "tool_conserved": true
+  },
+  {
+    "case": "return-denied",
+    "tool_conserved": true
+  },
+  {
+    "case": "return-throws",
+    "tool_conserved": true
+  }
+]

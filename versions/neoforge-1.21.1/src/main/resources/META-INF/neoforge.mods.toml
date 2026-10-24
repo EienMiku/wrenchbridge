@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+[[mixins]]
+config="wrenchbridge.mixins.json"
+[[mods]]
+modId="wrenchbridge"
+version="${version}"
+displayName="Wrench Bridge"
+description='''A probing wrench compatibility bridge with a native-tool mode palette. Press G to open the palette; native tools retain their own state and costs.'''
+[[dependencies.wrenchbridge]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.200,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.wrenchbridge]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"

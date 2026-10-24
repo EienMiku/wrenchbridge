@@ -1,0 +1,34 @@
+{
+  "size": [16, 16],
+  "description": "Manual color and shading refinement of the user's universal_wrench_2.png. Original silhouette and every transparent pixel are preserved.",
+  "palette": {
+    ".": "#00000000",
+    "o": "#20262EFF",
+    "s": "#4D5C68FF",
+    "m": "#98A5AEFF",
+    "l": "#D4DDE1FF",
+    "h": "#F0F2E9FF",
+    "b": "#293D4BFF",
+    "g": "#3A5D6AFF",
+    "t": "#3996A0FF",
+    "a": "#78CAD0FF"
+  },
+  "pixels": [
+    "................",
+    "..........ms....",
+    ".........mhs....",
+    "........mls.....",
+    "........mls..ms.",
+    "........mllsshs.",
+    ".......shllmls..",
+    "......sllmsss...",
+    ".....omlmo......",
+    "....ogbso.......",
+    "...ogago........",
+    "..ogtbo.........",
+    ".obtgo..........",
+    ".obbo...........",
+    ".ooo............",
+    "................"
+  ]
+}

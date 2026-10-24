@@ -1,0 +1,60 @@
+# Wrench Bridge
+
+[简体中文](README.md) · [Download](https://github.com/EienMiku/wrenchbridge/releases) · [Report an issue](https://github.com/EienMiku/wrenchbridge/issues)
+
+A universal wrench and a compatibility bridge for modded Minecraft. Share supported dismantling protocols between wrench-like tools, and borrow the native functions of tools you carry through a configurable mode palette.
+
+The first public preview is **0.1.0-alpha.9 for Minecraft 1.21.1, NeoForge 21.1.200+, and Java 21**. The tested loader is NeoForge 21.1.248. Install the same mod version on the client and server. Single-player requires only the client installation.
+
+## Use
+
+- Hold the universal wrench in either hand. Sneak and use a supported block to dismantle it through its native mod protocol. Shared dismantling does not require carrying the original wrench.
+- Press **G** to open the searchable mode palette. Change this binding in Minecraft's controls. Ordinary right-click does not open the palette.
+- Select a carried native tool to simulate its functions. The universal wrench stays in your hand; the real source tool supplies its data, energy, air, and durability. Its selected mode is restored after the action.
+- In the default shared mode, ordinary use keeps the block's normal interaction, such as opening a machine. Explicit native modes retain their intended rotation or configuration behavior.
+- Public item-handler containers, including supported Sophisticated Backpacks, can supply tools. One container level is searched; remote storage and nested container chains are not scanned.
+- Simulated AE2 network tools can open native network statistics and card storage from carried containers, even with a full player inventory. Card changes persist to the real tool.
+
+Craft the wrench with two ingots (`c:ingots`) and two rods (`c:rods`). Different materials may be mixed:
+
+```text
+ I 
+ SI
+S  
+```
+
+`I` = ingot; `S` = rod. The item is also available in the creative tools tab as `wrenchbridge:universal_wrench`.
+
+## Compatibility
+
+The current lab covers representative tools and blocks from AE2, Mekanism, Create, AnvilCraft, PneumaticCraft, Pretty Pipes, Refined Storage, Ender IO, Powah, RFTools, Integrated Dynamics, Modern Dynamics, Pipez, and Supplementaries. These mods and container integrations are optional.
+
+Compatibility is determined from tool tags, capabilities, supported mode APIs, and known native block protocols. It does not make every block dismantleable. Denied or failed native actions do not fall back to forcibly destroying a machine. Pipez's native wrench interaction configures connections; Pretty Pipes' wrench retrieves pipes, while its terminals and pressurizers retain their native mining behavior.
+
+Alpha.9 restores missing native sounds and block effects for server-side proxy actions, avoids duplicate AnvilCraft swings, and lets empty-main-hand sneak interactions reach an offhand universal wrench. Original feedback, protection rules, and real tool costs are retained.
+
+Validation includes **71 server feedback comparisons across 15 tools and 53 client scenarios**, alongside the existing protection, offhand, real-cost, inventory, and container-menu checks. These cover specific pinned mod versions and representative actions, rather than every block, network, multipart attachment, or protection plugin. In the automated Refined Storage scenario, the original wrench also refuses the action; only refusal parity is established there.
+
+## Other Minecraft versions
+
+Source ports for Forge 1.12.2, 1.16.5, and 1.20.1, and NeoForge 26.1.2 and 26.2 are included in this repository. They remain at the earlier alpha.1 behavior, with build validation only. The first public release download targets the tested 1.21.1 implementation.
+
+## Build
+
+With JDK 21 installed:
+
+```sh
+bash gradlew :test
+cd versions/neoforge-1.21.1
+bash gradlew build
+```
+
+On Windows use `gradlew.bat`. Outputs are in the module's `build/libs/`. Each version directory has its own Gradle wrapper; other ports require their corresponding Java toolchain. See the Chinese README for the full build matrix.
+
+The optional integration verification mod is in `src/verification` and is excluded from release JARs. Its complete lab needs the pinned third-party mods; ordinary builds and shared unit tests do not.
+
+## Development and license
+
+EienMiku leads the concept, feature decisions, pixel-art texture, iterative in-game testing, and feedback. Most implementation code, automated checks, and documentation were generated with OpenAI Codex. The mod makes no runtime calls to AI services. See [CREDITS.md](CREDITS.md) for asset provenance and third-party acknowledgements.
+
+MIT license. This is an independent project, not an official release of the supported mods, Mojang, or Microsoft.
