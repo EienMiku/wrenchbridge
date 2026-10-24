@@ -6,6 +6,8 @@ import dev.wrenchbridge.Tools;
 import dev.wrenchbridge.WrenchBridge;
 import dev.wrenchbridge.core.ModeMenuLayout;
 import dev.wrenchbridge.core.NativeModes;
+import dev.wrenchbridge.core.SharingPreferences;
+import dev.wrenchbridge.core.SharingPreferences.ClientOption;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -52,6 +54,7 @@ public final class ModesScreen extends Screen {
     int firstVisible = page * pageSize;
     rows.clear();
     layout = ModeMenuLayout.forScreen(width, height);
+    int iconOffset = SharingPreferences.enabled(ClientOption.MENU_ICONS) ? 24 : 0;
     pageSize = layout.rows;
     page = firstVisible / pageSize;
     boolean requestCatalog = choices.isEmpty();
@@ -101,9 +104,9 @@ public final class ModesScreen extends Screen {
           addRenderableWidget(
               Button.builder(Component.empty(), button -> choose(row))
                   .bounds(
-                      layout.left + 24,
+                      layout.left + iconOffset,
                       layout.rowY(i),
-                      layout.width - 24,
+                      layout.width - iconOffset,
                       ModeMenuLayout.ROW_HEIGHT)
                   .build()));
     }
@@ -197,7 +200,11 @@ public final class ModesScreen extends Screen {
       if (button.visible) {
         Choice choice = list.get(index);
         button.setMessage(choice.label);
-        button.setTooltip(Tooltip.create(choice.label.copy().append("\n").append(choice.hint)));
+        button.setTooltip(
+            Tooltip.create(
+                (SharingPreferences.enabled(ClientOption.MODE_HINTS)
+                    ? choice.label.copy().append("\n").append(choice.hint)
+                    : choice.label)));
       }
     }
     if (previous != null) previous.active = page > 0;
@@ -227,7 +234,7 @@ public final class ModesScreen extends Screen {
     List<Choice> list = filtered();
     for (int row = 0; row < rows.size(); row++) {
       int index = page * pageSize + row;
-      if (index < list.size())
+      if (SharingPreferences.enabled(ClientOption.MENU_ICONS) && index < list.size())
         graphics.renderItem(list.get(index).icon, layout.left + 2, layout.rowY(row) + 2);
     }
     graphics.drawCenteredString(

@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
     id 'net.neoforged.moddev' version '2.0.143'
 }
-version = '0.1.0-alpha.11'
+version = '0.1.0-alpha.12'
 group = 'dev.wrenchbridge'
 base.archivesName = 'wrenchbridge-neoforge-1.21.1'
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -43,6 +43,14 @@ neoForge {
             systemProperty 'wrenchbridge.verifySharingClient', 'true'
             systemProperty 'wrenchbridge.verifySharingResume', providers.gradleProperty('verifySharingResume').getOrElse('false')
             programArguments.addAll '--quickPlaySingleplayer', 'Sharing-Check', '--width', '960', '--height', '600'
+        }
+        settingsOfflineClient {
+            client()
+            jvmArgument '-Xmx2G'
+            gameDirectory = project.file('run-settings-offline')
+            systemProperty 'wrenchbridge.verifySharingClient', 'true'
+            systemProperty 'wrenchbridge.verifySettingsOffline', 'true'
+            programArguments.addAll '--width', '960', '--height', '600'
         }
     }
     mods {

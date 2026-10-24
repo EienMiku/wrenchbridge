@@ -7,6 +7,7 @@ import java.nio.file.AtomicMoveNotSupportedException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.EnumMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
@@ -16,19 +17,44 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class SharingPreferences {
   public static final String KEY = "shareOtherWrenches";
   private static final Map<UUID, Boolean> SERVER = new ConcurrentHashMap<UUID, Boolean>();
-  private static volatile boolean clientEnabled = true;
+
+  public enum ClientOption {
+    OTHER_WRENCHES(KEY, "other_wrenches"),
+    CONFIGURATOR_OVERLAY("showConfiguratorOverlay", "configurator_overlay"),
+    MENU_ICONS("showMenuIcons", "menu_icons"),
+    MODE_HINTS("showModeHints", "mode_hints");
+    public final String property, translationKey, hintKey;
+
+    ClientOption(String property, String translation) {
+      this.property = property;
+      translationKey = "setting.wrenchbridge." + translation;
+      hintKey = translationKey + "_hint";
+    }
+  }
+
+  // Publish a complete snapshot after a successful save; readers never see a partial reset.
+  private static volatile Map<ClientOption, Boolean> clientOptions = readOptions(new Properties());
   private static Path file;
   private static Properties properties = new Properties();
 
   private SharingPreferences() {}
 
   public static boolean clientEnabled() {
-    return clientEnabled;
+    return enabled(ClientOption.OTHER_WRENCHES);
+  }
+
+  public static boolean enabled(ClientOption option) {
+    return Boolean.TRUE.equals(clientOptions.get(option));
+  }
+
+  public static boolean clientDefaults() {
+    for (ClientOption option : ClientOption.values()) if (!enabled(option)) return false;
+    return true;
   }
 
   public static boolean allows(UUID player, boolean clientSide, boolean universal) {
     if (universal) return true;
-    return clientSide ? clientEnabled : !Boolean.FALSE.equals(SERVER.get(player));
+    return clientSide ? clientEnabled() : !Boolean.FALSE.equals(SERVER.get(player));
   }
 
   /**
@@ -50,19 +76,43 @@ public final class SharingPreferences {
   public static synchronized void load(Path configFile) throws IOException {
     file = configFile.toAbsolutePath().normalize();
     properties = new Properties();
-    clientEnabled = true;
+    clientOptions = readOptions(properties);
     if (!Files.exists(file)) return;
     try (InputStream input = Files.newInputStream(file)) {
       properties.load(input);
     }
-    clientEnabled = !"false".equalsIgnoreCase(properties.getProperty(KEY, "true").trim());
+    clientOptions = readOptions(properties);
   }
 
   public static synchronized void setClientEnabled(boolean enabled) throws IOException {
-    if (file == null) throw new IOException("Client preference file has not been initialized");
+    setClientOption(ClientOption.OTHER_WRENCHES, enabled);
+  }
+
+  public static synchronized void setClientOption(ClientOption option, boolean enabled)
+      throws IOException {
     Properties next = new Properties();
     next.putAll(properties);
-    next.setProperty(KEY, Boolean.toString(enabled));
+    next.setProperty(option.property, Boolean.toString(enabled));
+    save(next);
+  }
+
+  public static synchronized void resetClientOptions() throws IOException {
+    Properties next = new Properties();
+    next.putAll(properties);
+    for (ClientOption option : ClientOption.values()) next.setProperty(option.property, "true");
+    save(next);
+  }
+
+  private static Map<ClientOption, Boolean> readOptions(Properties values) {
+    Map<ClientOption, Boolean> result = new EnumMap<ClientOption, Boolean>(ClientOption.class);
+    for (ClientOption option : ClientOption.values())
+      result.put(
+          option, !"false".equalsIgnoreCase(values.getProperty(option.property, "true").trim()));
+    return result;
+  }
+
+  private static void save(Properties next) throws IOException {
+    if (file == null) throw new IOException("Client preference file has not been initialized");
     Files.createDirectories(file.getParent());
     Path temporary = Files.createTempFile(file.getParent(), "wrenchbridge-client-", ".tmp");
     try {
@@ -76,7 +126,7 @@ public final class SharingPreferences {
         Files.move(temporary, file, StandardCopyOption.REPLACE_EXISTING);
       }
       properties = next;
-      clientEnabled = enabled;
+      clientOptions = readOptions(next);
     } finally {
       Files.deleteIfExists(temporary);
     }

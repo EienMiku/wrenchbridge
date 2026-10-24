@@ -48,6 +48,17 @@ public final class SharingClient {
     }
   }
 
+  public static void toggle(dev.wrenchbridge.core.SharingPreferences.ClientOption option)
+      throws IOException {
+    SharingPreferences.setClientOption(option, !SharingPreferences.enabled(option));
+    tick();
+  }
+
+  public static void reset() throws IOException {
+    SharingPreferences.resetClientOptions();
+    tick();
+  }
+
   public static void toggle() throws IOException {
     SharingPreferences.setClientEnabled(!SharingPreferences.clientEnabled());
     tick();

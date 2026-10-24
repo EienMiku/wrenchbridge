@@ -34,5 +34,18 @@
   "setting.wrenchbridge.scope": "Controls extra sharing for other wrenches.",
   "setting.wrenchbridge.native": "Native mod compatibility is preserved.",
   "setting.wrenchbridge.universal": "The universal wrench keeps all its abilities.",
-  "setting.wrenchbridge.save_failed": "Could not save the setting."
+  "setting.wrenchbridge.save_failed": "Could not save the setting.",
+  "key.wrenchbridge.settings": "Open Wrench Bridge settings",
+  "screen.wrenchbridge.settings_title": "Wrench Bridge settings",
+  "screen.wrenchbridge.settings_saved": "Changes are saved automatically",
+  "screen.wrenchbridge.settings_key_hint": "Bind the separate settings key in Controls",
+  "setting.wrenchbridge.other_wrenches_hint": "Controls extra sharing added to other wrenches. Native compatibility, the universal wrench and simulated modes remain available.",
+  "setting.wrenchbridge.configurator_overlay": "Simulated configuration overlay: %s",
+  "setting.wrenchbridge.configurator_overlay_hint": "Show the face overlay while simulating a Mekanism Configurator. Actual tool functions are unchanged.",
+  "setting.wrenchbridge.menu_icons": "Mode menu icons: %s",
+  "setting.wrenchbridge.menu_icons_hint": "Show tool icons beside entries in the mode palette.",
+  "setting.wrenchbridge.mode_hints": "Mode instructions: %s",
+  "setting.wrenchbridge.mode_hints_hint": "Include usage instructions in mode palette tooltips.",
+  "setting.wrenchbridge.reset": "Reset to defaults",
+  "setting.wrenchbridge.reset_hint": "Restore the options above without changing your key bindings."
 }

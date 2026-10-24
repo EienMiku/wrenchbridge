@@ -7,6 +7,8 @@ import dev.wrenchbridge.Tools;
 import dev.wrenchbridge.WrenchBridge;
 import dev.wrenchbridge.core.ModeMenuLayout;
 import dev.wrenchbridge.core.NativeModes;
+import dev.wrenchbridge.core.SharingPreferences;
+import dev.wrenchbridge.core.SharingPreferences.ClientOption;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -99,6 +101,7 @@ public final class ModesScreen extends Screen {
     int firstVisible = page * pageSize;
     rows.clear();
     layout = ModeMenuLayout.forScreen(width, height);
+    int iconOffset = SharingPreferences.enabled(ClientOption.MENU_ICONS) ? 24 : 0;
     pageSize = layout.rows;
     page = firstVisible / pageSize;
     boolean requestCatalog = choices.isEmpty();
@@ -148,9 +151,9 @@ public final class ModesScreen extends Screen {
       rows.add(
           addButton(
               new Button(
-                  layout.left + 24,
+                  layout.left + iconOffset,
                   layout.rowY(i),
-                  layout.width - 24,
+                  layout.width - iconOffset,
                   ModeMenuLayout.ROW_HEIGHT,
                   new net.minecraft.util.text.StringTextComponent(""),
                   button -> choose(row))));
@@ -293,7 +296,7 @@ public final class ModesScreen extends Screen {
     List<Choice> list = filtered();
     for (int row = 0; row < rows.size(); row++) {
       int index = page * pageSize + row;
-      if (index < list.size())
+      if (SharingPreferences.enabled(ClientOption.MENU_ICONS) && index < list.size())
         minecraft
             .getItemRenderer()
             .renderAndDecorateItem(list.get(index).icon, layout.left + 2, layout.rowY(row) + 2);
@@ -308,7 +311,13 @@ public final class ModesScreen extends Screen {
     for (int row = 0; row < rows.size(); row++)
       if (rows.get(row).visible && rows.get(row).isHovered()) {
         Choice c = list.get(page * pageSize + row);
-        renderComponentTooltip(graphics, java.util.Arrays.asList(c.label, c.hint), mouseX, mouseY);
+        renderComponentTooltip(
+            graphics,
+            SharingPreferences.enabled(ClientOption.MODE_HINTS)
+                ? java.util.Arrays.asList(c.label, c.hint)
+                : java.util.Collections.singletonList(c.label),
+            mouseX,
+            mouseY);
       }
     if (list.isEmpty())
       drawCenteredString(

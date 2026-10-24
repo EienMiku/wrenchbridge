@@ -74,4 +74,34 @@ class SharingPreferencesTest {
     assertThrows(java.io.IOException.class, () -> SharingPreferences.setClientEnabled(false));
     assertTrue(SharingPreferences.clientEnabled());
   }
+
+  @Test
+  void displayOptionsAreIndependentPersistAndResetWithoutChangingServerState() throws Exception {
+    assertTrue(SharingPreferences.clientDefaults());
+    SharingPreferences.receive(first, false);
+    for (SharingPreferences.ClientOption option : SharingPreferences.ClientOption.values()) {
+      SharingPreferences.setClientOption(option, false);
+      SharingPreferences.load(directory.resolve("client.properties"));
+      assertFalse(SharingPreferences.enabled(option));
+      assertFalse(SharingPreferences.clientDefaults());
+    }
+    SharingPreferences.resetClientOptions();
+    SharingPreferences.load(directory.resolve("client.properties"));
+    assertTrue(SharingPreferences.clientDefaults());
+    assertFalse(SharingPreferences.allows(first, false, false));
+    assertTrue(SharingPreferences.allows(second, false, false));
+  }
+
+  @Test
+  void oldSharingConfigKeepsItsValueAndDefaultsNewDisplayOptionsOn() throws Exception {
+    Path config = directory.resolve("client.properties");
+    Files.write(config, "shareOtherWrenches=false\nfutureSetting=kept\n".getBytes("UTF-8"));
+    SharingPreferences.load(config);
+    assertFalse(SharingPreferences.clientEnabled());
+    assertTrue(SharingPreferences.enabled(SharingPreferences.ClientOption.CONFIGURATOR_OVERLAY));
+    assertTrue(SharingPreferences.enabled(SharingPreferences.ClientOption.MENU_ICONS));
+    assertTrue(SharingPreferences.enabled(SharingPreferences.ClientOption.MODE_HINTS));
+    SharingPreferences.resetClientOptions();
+    assertTrue(new String(Files.readAllBytes(config), "UTF-8").contains("futureSetting=kept"));
+  }
 }

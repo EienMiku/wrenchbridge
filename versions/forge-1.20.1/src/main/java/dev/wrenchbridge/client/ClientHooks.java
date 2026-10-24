@@ -11,7 +11,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import org.lwjgl.glfw.GLFW;
 
 public final class ClientHooks {
-  private static KeyMapping modes;
+  private static KeyMapping modes, settings;
 
   private ClientHooks() {}
 
@@ -26,6 +26,13 @@ public final class ClientHooks {
                   GLFW.GLFW_KEY_G,
                   "key.categories.wrenchbridge");
           event.register(modes);
+          settings =
+              new KeyMapping(
+                  "key.wrenchbridge.settings",
+                  InputConstants.Type.KEYSYM,
+                  GLFW.GLFW_KEY_UNKNOWN,
+                  "key.categories.wrenchbridge");
+          event.register(settings);
         });
     MinecraftForge.EVENT_BUS.addListener(
         (TickEvent.ClientTickEvent event) -> {
@@ -33,10 +40,18 @@ public final class ClientHooks {
           var game = Minecraft.getInstance();
           NativeRenderTools.tick(game.player);
           if (modes == null) return;
+          while (settings.consumeClick()) {
+            if (game.screen == null) openSettings();
+          }
           while (modes.consumeClick()) {
             if (game.screen == null) open();
           }
         });
+  }
+
+  public static void openSettings() {
+    var game = Minecraft.getInstance();
+    game.setScreen(new SharingSettingsScreen(game.screen));
   }
 
   public static void open() {

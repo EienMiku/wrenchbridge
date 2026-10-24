@@ -4,6 +4,8 @@ import dev.wrenchbridge.ModePacket;
 import dev.wrenchbridge.Tools;
 import dev.wrenchbridge.WrenchBridge;
 import dev.wrenchbridge.core.NativeModes;
+import dev.wrenchbridge.core.SharingPreferences;
+import dev.wrenchbridge.core.SharingPreferences.ClientOption;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -50,6 +52,7 @@ public final class ModesScreen extends GuiScreen {
     buttonList.clear();
     page = 0;
     layout = dev.wrenchbridge.core.ModeMenuLayout.forScreen(width, height);
+    int iconOffset = SharingPreferences.enabled(ClientOption.MENU_ICONS) ? 24 : 0;
     pageSize = layout.rows;
     footer = layout.footerY;
     choices.add(
@@ -86,9 +89,9 @@ public final class ModesScreen extends GuiScreen {
       GuiButton button =
           new GuiButton(
               row,
-              left + 24,
+              left + iconOffset,
               layout.rowY(row),
-              layout.width - 24,
+              layout.width - iconOffset,
               dev.wrenchbridge.core.ModeMenuLayout.ROW_HEIGHT,
               "");
       rows.add(button);
@@ -225,7 +228,7 @@ public final class ModesScreen extends GuiScreen {
     List<Choice> list = filtered();
     for (int row = 0; row < pageSize; row++) {
       int index = page * pageSize + row;
-      if (index < list.size())
+      if (SharingPreferences.enabled(ClientOption.MENU_ICONS) && index < list.size())
         mc.getRenderItem()
             .renderItemAndEffectIntoGUI(
                 list.get(index).icon, layout.left + 2, layout.rowY(row) + 2);
@@ -236,6 +239,30 @@ public final class ModesScreen extends GuiScreen {
         width / 2,
         footer + 6,
         0xFFFFFF);
+    if (SharingPreferences.enabled(ClientOption.MODE_HINTS)) {
+      for (int row = 0; row < rows.size(); row++) {
+        GuiButton button = rows.get(row);
+        int index = page * pageSize + row;
+        if (button.visible
+            && index < list.size()
+            && x >= button.x
+            && x < button.x + button.width
+            && y >= button.y
+            && y < button.y + button.height) {
+          Choice choice = list.get(index);
+          String key =
+              choice.itemId.equals("wrenchbridge:universal_wrench")
+                  ? "screen.wrenchbridge.shared_hint"
+                  : "screen.wrenchbridge.simulate_hint";
+          drawHoveringText(
+              fontRenderer.listFormattedStringToWidth(
+                  choice.label + "\n" + I18n.format(key), Math.min(280, width - 24)),
+              x,
+              y);
+          break;
+        }
+      }
+    }
     if (choices.size() == 1)
       drawCenteredString(
           fontRenderer, I18n.format("screen.wrenchbridge.carry"), width / 2, footer - 11, 0xE9BD70);

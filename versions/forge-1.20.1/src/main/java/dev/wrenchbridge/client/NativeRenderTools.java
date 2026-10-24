@@ -4,6 +4,8 @@ import dev.wrenchbridge.CatalogPacket;
 import dev.wrenchbridge.ConfiguratorViews;
 import dev.wrenchbridge.Tools;
 import dev.wrenchbridge.VirtualModes;
+import dev.wrenchbridge.core.SharingPreferences;
+import dev.wrenchbridge.core.SharingPreferences.ClientOption;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -42,6 +44,13 @@ public final class NativeRenderTools {
       replyAt = -100;
     }
     if (player == null) return;
+    if (!SharingPreferences.enabled(ClientOption.CONFIGURATOR_OVERLAY)) {
+      views[0] = views[1] = null;
+      stored.clear();
+      replyAt = -100;
+      refreshAt = ticks;
+      return;
+    }
     ticks++;
     boolean needsCatalog = false;
     for (InteractionHand hand : InteractionHand.values()) {
@@ -78,6 +87,7 @@ public final class NativeRenderTools {
 
   public static ItemStack itemInHand(Player player, InteractionHand hand) {
     ItemStack actual = player.getItemInHand(hand);
+    if (!SharingPreferences.enabled(ClientOption.CONFIGURATOR_OVERLAY)) return actual;
     View view = owner == player ? views[hand.ordinal()] : null;
     return view != null
             && view.held == actual

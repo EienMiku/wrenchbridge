@@ -12,7 +12,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import org.lwjgl.glfw.GLFW;
 
 public final class ClientHooks {
-  private static KeyMapping modes;
+  private static KeyMapping modes, settings;
 
   private ClientHooks() {}
 
@@ -28,16 +28,31 @@ public final class ClientHooks {
                   KeyMapping.Category.register(
                       Identifier.fromNamespaceAndPath("wrenchbridge", "modes")));
           event.register(modes);
+          settings =
+              new KeyMapping(
+                  "key.wrenchbridge.settings",
+                  InputConstants.Type.KEYSYM,
+                  GLFW.GLFW_KEY_UNKNOWN,
+                  modes.getCategory());
+          event.register(settings);
         });
     NeoForge.EVENT_BUS.addListener(
         (ClientTickEvent.Post event) -> {
           var game = Minecraft.getInstance();
           NativeRenderTools.tick(game.player);
           if (modes == null) return;
+          while (settings.consumeClick()) {
+            if (game.screen == null) openSettings();
+          }
           while (modes.consumeClick()) {
             if (game.screen == null) open();
           }
         });
+  }
+
+  public static void openSettings() {
+    var game = Minecraft.getInstance();
+    game.setScreen(new SharingSettingsScreen(game.screen));
   }
 
   public static void open() {

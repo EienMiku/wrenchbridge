@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.lwjgl.input.Keyboard;
 
 public final class ClientHooks {
-  private static KeyBinding modes;
+  private static KeyBinding modes, settings;
 
   private ClientHooks() {}
 
@@ -22,6 +22,10 @@ public final class ClientHooks {
     SharingClient.register();
     modes = new KeyBinding("key.wrenchbridge.modes", Keyboard.KEY_G, "key.categories.wrenchbridge");
     ClientRegistry.registerKeyBinding(modes);
+    settings =
+        new KeyBinding(
+            "key.wrenchbridge.settings", Keyboard.KEY_NONE, "key.categories.wrenchbridge");
+    ClientRegistry.registerKeyBinding(settings);
     MinecraftForge.EVENT_BUS.register(ClientHooks.class);
   }
 
@@ -29,12 +33,20 @@ public final class ClientHooks {
   public static void tick(TickEvent.ClientTickEvent event) {
     if (event.phase != TickEvent.Phase.END || modes == null) return;
     NativeRenderTools.tick(Minecraft.getMinecraft().player);
+    while (settings.isPressed()) {
+      if (Minecraft.getMinecraft().currentScreen == null) openSettings();
+    }
     while (modes.isPressed()) {
       Minecraft game = Minecraft.getMinecraft();
       if (game.currentScreen == null
           && game.player != null
           && Tools.universalHand(game.player) != null) open();
     }
+  }
+
+  public static void openSettings() {
+    Minecraft game = Minecraft.getMinecraft();
+    game.displayGuiScreen(new SharingSettingsScreen(game.currentScreen));
   }
 
   public static void open() {

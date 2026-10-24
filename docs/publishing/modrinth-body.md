@@ -9,7 +9,7 @@ Wrench Bridge adds a universal wrench and lets compatible wrench-like tools from
 - Keep the universal wrench in your hand. The actual source tool supplies its data, energy, air, and durability.
 - Use supported carried containers, including Sophisticated Backpacks, as tool sources.
 - Use either hand, with the normal priority for meaningful main-hand actions.
-- Toggle extra sharing for other wrenches in **Sharing settings**; enabled by default, with an independent choice for each player.
+- Open the configuration page from the **Mods** list, or assign its separate key in Controls; no held tool is required. Configure other-wrench sharing, simulated overlays, menu icons and mode instructions, all enabled by default.
 
 The default shared mode preserves ordinary block interactions, such as opening a machine. Explicit native modes retain their intended rotation and configuration behavior. Ordinary right-click does not open the mode menu.
 
@@ -35,7 +35,7 @@ Created by EienMiku, with AI-assisted development. MIT license. Source and issue
 - **G 键**：打开模式菜单，可在控制设置中改键。普通右键不会打开模式菜单。
 - **模拟模式**：借用随身真实工具的功能、电量、气压和耐久；通用扳手始终留在手中，原工具保留自己的设置。
 - 支持主副手，以及精妙背包等可识别的随身容器。
-- 「互通设置」可关闭为其它扳手额外添加的共享拆卸，默认开启，按玩家独立保存。
+- 从模组列表进入配置页，或在控制设置中绑定独立快捷键，无需手持扳手。可调整其它扳手互通、模拟配置叠层、菜单图标和模式说明，默认均开启。
 
 合成需要两块任意锭和两根任意棍，允许混用材料。
 
