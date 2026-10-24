@@ -11,24 +11,42 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import org.lwjgl.glfw.GLFW;
 
 public final class ClientHooks {
-    private static KeyMapping modes;
-    private ClientHooks() {}
-    public static void register(IEventBus bus) {
-        bus.addListener((RegisterKeyMappingsEvent event) -> {
-            modes = new KeyMapping("key.wrenchbridge.modes", InputConstants.Type.KEYSYM,
-                    GLFW.GLFW_KEY_G, "key.categories.wrenchbridge");
-            event.register(modes);
+  private static KeyMapping modes;
+
+  private ClientHooks() {}
+
+  public static void register(IEventBus bus) {
+    bus.addListener(
+        (RegisterKeyMappingsEvent event) -> {
+          modes =
+              new KeyMapping(
+                  "key.wrenchbridge.modes",
+                  InputConstants.Type.KEYSYM,
+                  GLFW.GLFW_KEY_G,
+                  "key.categories.wrenchbridge");
+          event.register(modes);
         });
-        MinecraftForge.EVENT_BUS.addListener((TickEvent.ClientTickEvent event) -> {
-            if (event.phase != TickEvent.Phase.END || modes == null) return;
-            while (modes.consumeClick()) {
-                var game = Minecraft.getInstance();
-                if (game.screen == null && game.player != null && Tools.universalSlot(game.player) >= 0) open();
-            }
+    MinecraftForge.EVENT_BUS.addListener(
+        (TickEvent.ClientTickEvent event) -> {
+          if (event.phase != TickEvent.Phase.END) return;
+          var game = Minecraft.getInstance();
+          NativeRenderTools.tick(game.player);
+          if (modes == null) return;
+          while (modes.consumeClick()) {
+            if (game.screen == null) open();
+          }
         });
-    }
-    public static void open() { Minecraft.getInstance().setScreen(new ModesScreen()); }
-    public static void catalog(java.util.List<String> rows) {
-        if (Minecraft.getInstance().screen instanceof ModesScreen screen) screen.catalog(rows);
-    }
+  }
+
+  public static void open() {
+    var game = Minecraft.getInstance();
+    if (game.player == null) return;
+    var hand = Tools.universalHand(game.player);
+    if (hand != null) game.setScreen(new ModesScreen(hand));
+  }
+
+  public static void catalog(java.util.List<String> rows) {
+    NativeRenderTools.catalog(rows);
+    if (Minecraft.getInstance().screen instanceof ModesScreen screen) screen.catalog(rows);
+  }
 }

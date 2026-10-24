@@ -1,5 +1,5 @@
 plugins { id 'java-library'; id 'com.gtnewhorizons.retrofuturagradle' version '1.4.5' }
-version='0.1.0-alpha.1'
+version='0.1.0-alpha.10'
 group='dev.wrenchbridge'
 base.archivesName='wrenchbridge-forge-1.12.2'
 java.toolchain.languageVersion=JavaLanguageVersion.of(8)
@@ -9,3 +9,37 @@ sourceSets.main.resources.srcDir '../../common/src/main/resources'
 minecraft { mcVersion='1.12.2' }
 repositories { mavenCentral() }
 tasks.withType(JavaCompile).configureEach { options.encoding='UTF-8' }
+
+repositories { maven { url='https://maven.cleanroommc.com' } }
+dependencies {
+ implementation('zone.rong:mixinbooter:11.18') { transitive=false }
+ annotationProcessor(modUtils.enableMixins('zone.rong:mixinbooter:11.18','wrenchbridge.refmap.json'))
+ annotationProcessor 'com.github.bsideup.jabel:jabel-javac-plugin:1.0.0'
+}
+tasks.withType(JavaCompile).configureEach {
+ javaCompiler=javaToolchains.compilerFor { languageVersion=JavaLanguageVersion.of(17) }
+ sourceCompatibility='17';targetCompatibility='8';options.release=8
+}
+jar { manifest { attributes 'MixinConfigs':'wrenchbridge.mixins.json' } }
+
+tasks.named('sourcesJar') { duplicatesStrategy=DuplicatesStrategy.EXCLUDE }
+
+sourceSets { verification { compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath; runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath } }
+configurations.verificationAnnotationProcessor.extendsFrom(configurations.annotationProcessor)
+jar { manifest { attributes 'FMLCorePlugin':'dev.wrenchbridge.LegacyLoadingPlugin', 'FMLCorePluginContainsFMLMod':'true', 'ForceLoadAsMod':'true' } }
+if(providers.gradleProperty('portVerification').isPresent()) {
+ tasks.named('runServer') {
+  dependsOn tasks.named('verificationClasses')
+  classpath += sourceSets.verification.output
+  workingDir project.file('run-port-verification')
+  extraJvmArgs.addAll('-Xmx2G','-Dwrenchbridge.verify=true','-Dfml.coreMods.load=dev.wrenchbridge.LegacyLoadingPlugin')
+ }
+}
+
+if(providers.gradleProperty('nativeVerification').isPresent()) {
+ repositories { maven { url='https://cursemaven.com' };maven { url='https://api.modrinth.com/maven' } }
+ dependencies {
+  runtimeOnly(modUtils.deobfuscate('curse.maven:applied-energistics-2-223794:2747063'))
+  runtimeOnly(modUtils.deobfuscate('maven.modrinth:mekanism:KIzASRO5'))
+ }
+}

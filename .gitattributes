@@ -5,6 +5,9 @@
 *.md text eol=lf
 *.md whitespace=-blank-at-eol
 *.json text eol=lf
+*.lang text eol=lf
+*.info text eol=lf
+*.toml text eol=lf
 *.txt text eol=lf
 *.yml text eol=lf
 *.py text eol=lf

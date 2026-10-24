@@ -1,1 +1,20 @@
-{"type": "minecraft:crafting_shaped", "category": "equipment", "pattern": ["I I", " R ", " S "], "key": {"I": {"item": "minecraft:iron_ingot"}, "R": {"item": "minecraft:redstone"}, "S": {"item": "minecraft:stick"}}, "result": {"item": "wrenchbridge:universal_wrench", "count": 1}}
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    " SI",
+    "S  "
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:ingots"
+    },
+    "S": {
+      "tag": "forge:rods"
+    }
+  },
+  "result": {
+    "item": "wrenchbridge:universal_wrench",
+    "count": 1
+  }
+}

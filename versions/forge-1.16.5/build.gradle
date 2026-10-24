@@ -1,5 +1,8 @@
+buildscript { repositories { maven { url='https://repo.spongepowered.org/repository/maven-public/' } }; dependencies { classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT' } }
 plugins { id 'java-library'; id 'net.minecraftforge.gradle' version '6.0.54' }
-version='0.1.0-alpha.1'
+apply plugin: 'org.spongepowered.mixin'
+mixin { add sourceSets.main, 'wrenchbridge.refmap.json'; config 'wrenchbridge.mixins.json' }
+version='0.1.0-alpha.10'
 group='dev.wrenchbridge'
 base.archivesName='wrenchbridge-forge-1.16.5'
 java.toolchain.languageVersion=JavaLanguageVersion.of(8)
@@ -12,3 +15,34 @@ dependencies { minecraft 'net.minecraftforge:forge:1.16.5-36.2.42' }
 tasks.withType(JavaCompile).configureEach { options.encoding='UTF-8' }
 processResources { inputs.property 'version',project.version; filesMatching('META-INF/mods.toml') { expand version:project.version } }
 jar.finalizedBy('reobfJar')
+
+configurations { embedded }
+dependencies {
+ annotationProcessor 'org.spongepowered:mixin:0.8.4:processor'
+ annotationProcessor 'com.github.bsideup.jabel:jabel-javac-plugin:1.0.0'
+ compileOnly 'io.github.llamalad7:mixinextras-common:0.5.5'
+ embedded 'io.github.llamalad7:mixinextras-common:0.5.5'
+}
+tasks.withType(JavaCompile).configureEach {
+ javaCompiler=javaToolchains.compilerFor { languageVersion=JavaLanguageVersion.of(17) }
+ sourceCompatibility='17'; targetCompatibility='8'; options.release=8
+}
+jar { from { configurations.embedded.collect { zipTree(it) } }; manifest { attributes 'MixinConfigs':'wrenchbridge.mixins.json' } }
+
+sourceSets { verification { compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath; runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath } }
+minecraft.runs { verificationServer { parent project.minecraft.runs.server; workingDirectory project.file('run-port-verification'); jvmArgs '-Xmx2G'; property 'wrenchbridge.verify','true'; mods { wrenchbridge_verification { source sourceSets.verification } } } }
+
+configurations.verificationAnnotationProcessor.extendsFrom(configurations.annotationProcessor)
+
+configurations.runtimeClasspath.extendsFrom(configurations.embedded)
+
+processResources { duplicatesStrategy=DuplicatesStrategy.EXCLUDE }
+
+tasks.named('sourcesJar') { duplicatesStrategy=DuplicatesStrategy.EXCLUDE }
+
+if(providers.gradleProperty('nativeVerification').isPresent()) {
+ repositories { maven { url='https://api.modrinth.com/maven' }; maven { url='https://modmaven.dev' } }
+ dependencies { runtimeOnly fg.deobf('appeng:appliedenergistics2:8.4.7'); runtimeOnly fg.deobf('maven.modrinth:mekanism:10.1.2.457');  }
+}
+
+dependencies { annotationProcessor 'io.github.llamalad7:mixinextras-common:0.5.5' }

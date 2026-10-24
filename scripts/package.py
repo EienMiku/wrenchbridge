@@ -6,6 +6,7 @@ import json
 import re
 import shutil
 import struct
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = re.search(r"version\s*=\s*'([^']+)'", (ROOT / 'build.gradle').read_text(encoding='utf-8')).group(1)
@@ -51,8 +52,11 @@ if result.exists():
 source_zip = DIST / f'wrenchbridge-{VERSION}-source.zip'
 excluded = {'.gradle', '.toolchains', '.idea', '.git', 'build', 'dist', '__pycache__'}
 with ZipFile(source_zip, 'w', ZIP_DEFLATED) as archive:
-    for file in sorted(ROOT.rglob('*')):
-        relative = file.relative_to(ROOT)
+    # An allowlist from Git excludes local launcher helpers and other ignored files.
+    tracked = subprocess.check_output(['git', 'ls-files', '-z'], cwd=ROOT).decode('utf-8').split('\0')
+    for name in sorted(filter(None, tracked)):
+        relative = Path(name)
+        file = ROOT / relative
         if not file.is_file() or any(part in excluded or part == 'run' or part == 'runs' or part.startswith('run-') for part in relative.parts):
             continue
         archive.write(file, Path('wrenchbridge') / relative)

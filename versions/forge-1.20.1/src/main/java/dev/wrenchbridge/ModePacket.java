@@ -1,66 +1,70 @@
 package dev.wrenchbridge;
-import dev.wrenchbridge.core.NativeModes;
+
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
-public record ModePacket(String itemId, String mode) {
-    static final SimpleChannel CHANNEL = NetworkRegistry.ChannelBuilder
-            .named(new ResourceLocation(WrenchBridge.ID, "mode"))
-            .networkProtocolVersion(() -> "1").clientAcceptedVersions("1"::equals).serverAcceptedVersions("1"::equals)
-            .simpleChannel();
-    public static void register() {
-        CatalogPacket.register();
-        CHANNEL.messageBuilder(ModePacket.class, 0, NetworkDirection.PLAY_TO_SERVER)
-                .encoder((packet, buffer) -> { buffer.writeUtf(packet.itemId, 128); buffer.writeUtf(packet.mode, 64); })
-                .decoder(buffer -> new ModePacket(buffer.readUtf(128), buffer.readUtf(64)))
-                .consumerMainThread((packet, context) -> { handle(packet, context.get().getSender()); context.get().setPacketHandled(true); })
-                .add();
+
+public record ModePacket(String itemId, String mode, boolean offhand) {
+  public ModePacket(String id, String mode) {
+    this(id, mode, false);
+  }
+
+  public InteractionHand hand() {
+    return offhand ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND;
+  }
+
+  static final SimpleChannel CHANNEL =
+      NetworkRegistry.ChannelBuilder.named(new ResourceLocation(WrenchBridge.ID, "mode"))
+          .networkProtocolVersion(() -> "4")
+          .clientAcceptedVersions("4"::equals)
+          .serverAcceptedVersions("4"::equals)
+          .simpleChannel();
+
+  public static void register() {
+    CatalogPacket.register();
+    CHANNEL
+        .messageBuilder(ModePacket.class, 0, NetworkDirection.PLAY_TO_SERVER)
+        .encoder(ModePacket::encode)
+        .decoder(ModePacket::decode)
+        .consumerMainThread(
+            (p, c) -> {
+              if (c.get().getSender() != null) select(p, c.get().getSender());
+              c.get().setPacketHandled(true);
+            })
+        .add();
+  }
+
+  public static void encode(ModePacket p, net.minecraft.network.FriendlyByteBuf b) {
+    b.writeUtf(p.itemId, 128);
+    b.writeUtf(p.mode, 64);
+    b.writeBoolean(p.offhand);
+  }
+
+  public static ModePacket decode(net.minecraft.network.FriendlyByteBuf b) {
+    return new ModePacket(b.readUtf(128), b.readUtf(64), b.readBoolean());
+  }
+
+  public static void send(ModePacket p) {
+    CHANNEL.sendToServer(p);
+  }
+
+  static void select(ModePacket packet, ServerPlayer player) {
+    if (VirtualModes.select(player, packet.hand(), packet.itemId, packet.mode)) {
+      ItemStack wrench = player.getItemInHand(packet.hand());
+      var id = net.minecraft.resources.ResourceLocation.tryParse(VirtualModes.item(wrench));
+      Component selection =
+          id == null
+              ? Component.translatable("screen.wrenchbridge.shared")
+              : NativeModeNames.choice(
+                  new ItemStack(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(id)),
+                  VirtualModes.mode(wrench));
+      player.displayClientMessage(
+          Component.translatable("message.wrenchbridge.selected", selection), true);
     }
-    public static void send(ModePacket packet) { CHANNEL.sendToServer(packet); }
-    private static void handle(ModePacket packet, ServerPlayer player) {
-        if (player == null || player.isSpectator()) return;
-        int wrench = Tools.universalSlot(player);
-        if (wrench < 0) return;
-        int target = -1;
-        if (packet.itemId.equals("wrenchbridge:universal_wrench") && packet.mode.isEmpty()) {
-            StoredTools.returnBorrowed(player); target = wrench;
-        }
-        else {
-            for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
-                if (slot >= 36 && slot != 40) continue;
-                ItemStack stack = player.getInventory().getItem(slot);
-                if (!Tools.candidate(stack) || !Tools.id(stack).equals(packet.itemId)) continue;
-                ItemStack copy = packet.mode.isEmpty() ? stack : stack.copy();
-                if (!packet.mode.isEmpty()) {
-                    try {
-                        if (!NativeModes.select(copy.getItem(), copy, player, packet.mode)) return;
-                    } catch (ReflectiveOperationException | RuntimeException error) {
-                        WrenchBridge.LOG.warn("Mode setter rejected {} / {}", packet.itemId, packet.mode, error);
-                        return;
-                    }
-                }
-                // Native mode changes are committed only after validation; inventory swaps never synthesize tools.
-                player.getInventory().setItem(slot, copy);
-                StoredTools.replaced(player, stack, copy);
-                target = slot;
-                break;
-            }
-        }
-        if (target < 0) { StoredTools.take(player, packet.itemId, packet.mode); return; }
-        int hand = player.getInventory().selected;
-        if (target != hand) {
-            ItemStack original = player.getInventory().getItem(hand);
-            ItemStack selected = player.getInventory().getItem(target);
-            player.getInventory().setItem(hand, selected);
-            player.getInventory().setItem(target, original);
-        }
-        player.getInventory().setChanged();
-        player.inventoryMenu.broadcastChanges();
-        player.containerMenu.broadcastChanges();
-        player.displayClientMessage(Component.translatable("message.wrenchbridge.selected", player.getMainHandItem().getHoverName()), true);
-    }
+  }
 }

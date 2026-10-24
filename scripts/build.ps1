@@ -32,10 +32,15 @@ try {
             & .\gradlew.bat build --console=plain
             if ($LASTEXITCODE -ne 0) { throw "Build failed: $taskVersion" }
         } finally { Pop-Location }
-        $taskJars = Get-ChildItem -LiteralPath (Join-Path $taskModule 'build/libs') -Filter '*.jar' -File
-        foreach ($taskJar in $taskJars) {
-            if ($taskJar.Name -like '*-sources.jar') { Copy-Item -LiteralPath $taskJar.FullName -Destination (Join-Path $taskDist 'sources') }
-            elseif ($taskJar.Name -notmatch '-(dev|deobf|all)\.jar$') { Copy-Item -LiteralPath $taskJar.FullName -Destination $taskDist }
+        $taskBuildText = Get-Content -LiteralPath (Join-Path $taskModule 'build.gradle') -Raw
+        $taskModuleVersion = [regex]::Match($taskBuildText, "version\s*=\s*'([^']+)'").Groups[1].Value
+        if (-not $taskModuleVersion) { throw "Missing version: $taskVersion" }
+        $taskStem = "wrenchbridge-$taskVersion-$taskModuleVersion"
+        foreach ($taskSuffix in @('.jar', '-sources.jar')) {
+            $taskJarPath = Join-Path $taskModule "build/libs/$taskStem$taskSuffix"
+            if (-not (Test-Path -LiteralPath $taskJarPath)) { throw "Missing release JAR: $taskJarPath" }
+            $taskDestination = if ($taskSuffix -eq '-sources.jar') { Join-Path $taskDist 'sources' } else { $taskDist }
+            Copy-Item -LiteralPath $taskJarPath -Destination $taskDestination
         }
     }
     Copy-Item -LiteralPath (Join-Path $taskRoot 'README.md'),(Join-Path $taskRoot 'LICENSE') -Destination $taskDist

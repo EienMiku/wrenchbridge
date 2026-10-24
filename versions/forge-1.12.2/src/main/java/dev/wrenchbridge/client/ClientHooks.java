@@ -10,22 +10,43 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.lwjgl.input.Keyboard;
 
 public final class ClientHooks {
-    private static KeyBinding modes;
-    private ClientHooks() {}
-    public static void register() {
-        modes = new KeyBinding("key.wrenchbridge.modes", Keyboard.KEY_G, "key.categories.wrenchbridge");
-        ClientRegistry.registerKeyBinding(modes);
-        MinecraftForge.EVENT_BUS.register(ClientHooks.class);
+  private static KeyBinding modes;
+
+  private ClientHooks() {}
+
+  public static void nativeSnapshot(Runnable action) {
+    net.minecraft.client.Minecraft.getMinecraft().addScheduledTask(action);
+  }
+
+  public static void register() {
+    modes = new KeyBinding("key.wrenchbridge.modes", Keyboard.KEY_G, "key.categories.wrenchbridge");
+    ClientRegistry.registerKeyBinding(modes);
+    MinecraftForge.EVENT_BUS.register(ClientHooks.class);
+  }
+
+  @SubscribeEvent
+  public static void tick(TickEvent.ClientTickEvent event) {
+    if (event.phase != TickEvent.Phase.END || modes == null) return;
+    NativeRenderTools.tick(Minecraft.getMinecraft().player);
+    while (modes.isPressed()) {
+      Minecraft game = Minecraft.getMinecraft();
+      if (game.currentScreen == null
+          && game.player != null
+          && Tools.universalHand(game.player) != null) open();
     }
-    @SubscribeEvent public static void tick(TickEvent.ClientTickEvent event) {
-        if (event.phase != TickEvent.Phase.END || modes == null) return;
-        while (modes.isPressed()) {
-            Minecraft game = Minecraft.getMinecraft();
-            if (game.currentScreen == null && game.player != null && Tools.universalSlot(game.player) >= 0) open();
-        }
-    }
-    public static void open() { Minecraft.getMinecraft().displayGuiScreen(new ModesScreen()); }
-    public static void catalog(java.util.List<String> rows) {
-        if (Minecraft.getMinecraft().currentScreen instanceof ModesScreen) ((ModesScreen) Minecraft.getMinecraft().currentScreen).catalog(rows);
-    }
+  }
+
+  public static void open() {
+    Minecraft.getMinecraft()
+        .displayGuiScreen(
+            new ModesScreen(
+                dev.wrenchbridge.Tools.universalHand(
+                    net.minecraft.client.Minecraft.getMinecraft().player)));
+  }
+
+  public static void catalog(java.util.List<String> rows) {
+    NativeRenderTools.catalog(rows);
+    if (Minecraft.getMinecraft().currentScreen instanceof ModesScreen)
+      ((ModesScreen) Minecraft.getMinecraft().currentScreen).catalog(rows);
+  }
 }

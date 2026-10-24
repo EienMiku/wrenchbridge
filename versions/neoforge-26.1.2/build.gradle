@@ -1,5 +1,5 @@
 plugins { id 'java-library'; id 'net.neoforged.moddev' version '2.0.143' }
-version='0.1.0-alpha.1'
+version='0.1.0-alpha.10'
 group='dev.wrenchbridge'
 base.archivesName='wrenchbridge-neoforge-26.1.2'
 java.toolchain.languageVersion=JavaLanguageVersion.of(25)
@@ -9,3 +9,15 @@ sourceSets.main.resources.srcDir '../../common/src/main/resources'
 neoForge { enable { version='26.1.2.122'; disableRecompilation=true }; runs { client { client() }; server { server(); programArgument '--nogui' } }; mods { wrenchbridge { sourceSet sourceSets.main } } }
 tasks.withType(JavaCompile).configureEach { options.encoding='UTF-8' }
 processResources { inputs.property 'version',project.version; filesMatching('META-INF/neoforge.mods.toml') { expand version:project.version } }
+
+sourceSets { verification { compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath; runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath } }
+neoForge { runs { verificationServer { server(); jvmArgument '-Xmx2G'; programArgument '--nogui'; gameDirectory = project.file('run-port-verification'); systemProperty 'wrenchbridge.verify', 'true' } }; mods { wrenchbridge_verification { sourceSet sourceSets.verification } } }
+
+processResources { duplicatesStrategy=DuplicatesStrategy.EXCLUDE }
+
+tasks.named('sourcesJar') { duplicatesStrategy=DuplicatesStrategy.EXCLUDE }
+
+if(providers.gradleProperty('nativeVerification').isPresent()) {
+ repositories { maven { url='https://api.modrinth.com/maven' } }
+ dependencies { runtimeOnly 'maven.modrinth:ae2:nVSxZcom';runtimeOnly 'maven.modrinth:guideme:JnplCcod' }
+}

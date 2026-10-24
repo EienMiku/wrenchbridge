@@ -1,0 +1,31 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.wrenchbridge.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "WrenchTraitsMixin",
+    "PneumaticWrenchEventMixin",
+    "SupplementariesWrenchEventMixin",
+    "AE2WrenchHandMixin",
+    "McJtyWrenchHandMixin",
+    "IntegratedMachineHandMixin",
+    "SharedWrenchIntentServerMixin",
+    "ServerFeedbackMixin",
+    "AE2LegacyHostMixin",
+    "AE2ToolValidationMixin",
+    "AE2ToolContentsMixin",
+    "AE2ContainerActionsMixin",
+    "NativeMenuClickMixin",
+    "AE2LegacyWrenchMixin"
+  ],
+  "client": [
+    "MekanismConfiguratorRenderMixin",
+    "SharedWrenchIntentClientMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "wrenchbridge.refmap.json",
+  "plugin": "dev.wrenchbridge.mixin.BridgeMixinPlugin"
+}

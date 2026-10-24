@@ -1,6 +1,6 @@
-# Wrench Bridge 0.1.0-alpha.9 — Minecraft 1.21.1 / NeoForge
+# Wrench Bridge alpha previews — Forge / NeoForge
 
-First public alpha preview of Wrench Bridge, a universal wrench and native-tool compatibility bridge.
+Alpha previews of Wrench Bridge, a universal wrench and native-tool compatibility bridge. NeoForge 1.21.1 uses alpha.9; the five additional ports use alpha.10.
 
 ## Features
 
@@ -13,9 +13,9 @@ First public alpha preview of Wrench Bridge, a universal wrench and native-tool 
 
 ## Install
 
-Download `wrenchbridge-neoforge-1.21.1-0.1.0-alpha.9.jar`. Requires **Minecraft 1.21.1, NeoForge 21.1.200+, and Java 21**; tested with NeoForge 21.1.248. Install on both the client and server. In single-player, install in the client. Supported third-party mods are optional.
+For 1.21.1, download `wrenchbridge-neoforge-1.21.1-0.1.0-alpha.9.jar`. Requires **Minecraft 1.21.1, NeoForge 21.1.200+, and Java 21**; tested with NeoForge 21.1.248. Other game versions are listed below. Install the matching file on both the client and server. In single-player, install in the client. Supported third-party mods are optional.
 
-This release provides the tested 1.21.1 implementation. Other source ports in the repository retain alpha.1 behavior and have build-only validation.
+The original 1.21.1 alpha.9 files are retained. Five alpha.10 ports are also available below; choose the file for your exact game version and loader.
 
 ## Validation and limits
 
@@ -25,4 +25,20 @@ Use each mod's native behavior as the reference: Pipez's wrench configures conne
 
 MIT license. Source and source JAR downloads are provided.
 
-中文说明：本次公开的是 1.21.1 / NeoForge 的 alpha.9。G 切换模拟模式，潜行右键共享拆卸；模拟模式需要携带原工具。详细使用、配方和已知限制见仓库中文 README。
+中文说明：1.21.1 / NeoForge 继续使用 alpha.9，另追加下方五个 alpha.10 移植版。G 切换模拟模式，潜行右键共享拆卸；模拟模式需要携带原工具。详细使用、配方和已知限制见仓库中文 README。
+
+## Additional alpha.10 ports
+
+| Minecraft | Loader | Game Java |
+| --- | --- | --- |
+| 1.12.2 | Forge + **MixinBooter 11.18+** | 8 |
+| 1.16.5 | Forge | 8 |
+| 1.20.1 | Forge | 17 |
+| 26.1.2 | NeoForge | 25 |
+| 26.2 | NeoForge | 25 |
+
+These ports include held-tool simulation, real donor costs and mode restoration, carried-container sources and native AE2 menus, offhand routing, the adaptive key-bound palette, native feedback and the mixed-material recipe. The universal wrench stays in its hand; native tools are not converted or selected in its place.
+
+All five passed isolated server checks. Real AE2/Mekanism dismantling was checked on the Forge ports; real AE2 was checked on 26.x. Native AE2 card changes persisted to tools in carried containers with a full player inventory. The new ports still need broader client/overlay playtesting. See [exact versions and validation scope](https://github.com/EienMiku/wrenchbridge/blob/main/docs/alpha10-ports.md).
+
+The additional source archive corresponds to [v0.1.0-alpha.10-ports](https://github.com/EienMiku/wrenchbridge/tree/v0.1.0-alpha.10-ports). `SHA256SUMS-ports-alpha10.txt` covers these new files; the original alpha.9 artifacts and checksums remain unchanged.

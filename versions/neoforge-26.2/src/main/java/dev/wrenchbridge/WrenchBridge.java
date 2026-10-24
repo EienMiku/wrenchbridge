@@ -1,7 +1,6 @@
 package dev.wrenchbridge;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -15,24 +14,41 @@ import org.slf4j.Logger;
 
 @Mod(WrenchBridge.ID)
 public final class WrenchBridge {
-    public static final String ID = "wrenchbridge";
-    public static final Logger LOG = LogUtils.getLogger();
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
-    public static final DeferredItem<UniversalWrenchItem> WRENCH = ITEMS.registerItem("universal_wrench",
-            properties -> new UniversalWrenchItem(properties.stacksTo(1)));
+  public static final String ID = "wrenchbridge";
+  public static final Logger LOG = LogUtils.getLogger();
+  public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
+  public static final DeferredItem<UniversalWrenchItem> WRENCH =
+      ITEMS.registerItem(
+          "universal_wrench", properties -> new UniversalWrenchItem(properties.stacksTo(1)));
 
-    public WrenchBridge(IEventBus bus) {
-        ITEMS.register(bus);
-        bus.addListener(ModePacket::register);
-        bus.addListener(CatalogPacket::register);
-        bus.addListener((BuildCreativeModeTabContentsEvent event) -> {
-            if (event.getTabKey().equals(CreativeModeTabs.TOOLS_AND_UTILITIES)) event.accept(WRENCH);
+  public WrenchBridge(IEventBus bus) {
+    ITEMS.register(bus);
+    bus.addListener(ModePacket::register);
+    bus.addListener(CatalogPacket::register);
+    bus.addListener(
+        (net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) ->
+            event.enqueueWork(
+                () -> {
+                  if (net.neoforged.fml.ModList.get().isLoaded("ae2")) ContainerMenus.register();
+                }));
+    bus.addListener(
+        (BuildCreativeModeTabContentsEvent event) -> {
+          if (event.getTabKey().equals(CreativeModeTabs.TOOLS_AND_UTILITIES)) event.accept(WRENCH);
         });
-        NeoForge.EVENT_BUS.register(BridgeEvents.class);
-        NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedOutEvent event) -> {
-            if (event.getEntity() instanceof net.minecraft.server.level.ServerPlayer player) StoredTools.forget(player);
+    NeoForge.EVENT_BUS.register(BridgeEvents.class);
+    NeoForge.EVENT_BUS.addListener(
+        (net.neoforged.neoforge.event.tick.PlayerTickEvent.Post event) -> {
+          if (event.getEntity() instanceof net.minecraft.server.level.ServerPlayer player)
+            ContainerMenus.tick(player);
         });
-        if (FMLEnvironment.getDist() == Dist.CLIENT) dev.wrenchbridge.client.ClientHooks.register(bus);
-        LOG.info("Wrench Bridge: probing tools by tags, abilities and mode APIs; no target mod is required.");
-    }
+    NeoForge.EVENT_BUS.addListener(
+        (net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedOutEvent event) -> {
+          if (event.getEntity() instanceof net.minecraft.server.level.ServerPlayer player)
+            StoredTools.forget(player);
+        });
+    if (FMLEnvironment.getDist() == Dist.CLIENT) dev.wrenchbridge.client.ClientHooks.register(bus);
+    LOG.info(
+        "Wrench Bridge: probing tools by tags, abilities and mode APIs; no target mod is"
+            + " required.");
+  }
 }
