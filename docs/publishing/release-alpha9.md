@@ -23,10 +23,6 @@ This release provides the tested 1.21.1 implementation. Other source ports in th
 
 Use each mod's native behavior as the reference: Pipez's wrench configures connections, and Pretty Pipes' terminals and pressurizers still require normal mining. Unknown blocks are never force-destroyed as a dismantling fallback.
 
-## Development disclosure
-
-Concept, feature decisions, original pixel-art texture, iterative in-game testing, and feedback are led by EienMiku. Most implementation code, automated checks, and documentation were generated with OpenAI Codex. The mod makes no runtime AI calls.
-
-MIT license. Source and source JAR downloads are provided. No third-party mod JARs or personal development worlds are included.
+MIT license. Source and source JAR downloads are provided.
 
 中文说明：本次公开的是 1.21.1 / NeoForge 的 alpha.9。G 切换模拟模式，潜行右键共享拆卸；模拟模式需要携带原工具。详细使用、配方和已知限制见仓库中文 README。

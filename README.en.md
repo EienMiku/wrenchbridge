@@ -55,6 +55,6 @@ The optional integration verification mod is in `src/verification` and is exclud
 
 ## Development and license
 
-EienMiku leads the concept, feature decisions, pixel-art texture, iterative in-game testing, and feedback. Most implementation code, automated checks, and documentation were generated with OpenAI Codex. The mod makes no runtime calls to AI services. See [CREDITS.md](CREDITS.md) for asset provenance and third-party acknowledgements.
+Created by EienMiku. See [credits](CREDITS.md).
 
 MIT license. This is an independent project, not an official release of the supported mods, Mojang, or Microsoft.

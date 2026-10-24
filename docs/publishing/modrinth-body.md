@@ -33,11 +33,7 @@ Compatibility depends on each mod's native protocols. It does not make every blo
 
 Alpha.9 passed 71 server feedback comparisons across 15 tools and 53 client scenarios, alongside existing protection, costs, inventory, offhand, and container-menu checks. These tests cover specific mod versions and representative actions. In the automated Refined Storage case, the original wrench also refuses dismantling, so only matching refusal is established there.
 
-## Development disclosure
-
-EienMiku originated the project, directed the interaction and feature decisions, painted the original pixel-art texture, and repeatedly tested builds in-game and supplied compatibility feedback. Most implementation code, automated verification, and documentation were generated with OpenAI Codex. The current texture is based on the author's artwork with small assisted pixel refinements. The mod does not call AI services at runtime.
-
-MIT license. Source, issue tracker, and detailed compatibility notes are available in the linked GitHub repository.
+Created by EienMiku, with AI-assisted development. MIT license. Source and issue tracker are linked above.
 
 ## 简体中文
 
@@ -45,4 +41,4 @@ MIT license. Source, issue tracker, and detailed compatibility notes are availab
 
 当前公开版本为 1.21.1 / NeoForge alpha；各第三方模组均为可选兼容对象。具体方块行为以原工具为准，未知或拒绝的目标不会被强制删除。
 
-项目创意、功能取舍、原始材质与持续游戏实测由 EienMiku 主导，主要代码与文档使用 Codex 编写。模组运行时不使用 AI 服务。
+作者与原始材质：EienMiku。开发过程使用了 AI 辅助。
