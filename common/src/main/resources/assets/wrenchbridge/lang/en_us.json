@@ -28,5 +28,11 @@
   "mode.wrenchbridge.config_settings": "Copy settings",
   "mode.wrenchbridge.config_aspect": "Copy aspects",
   "screen.wrenchbridge.storage": " (in storage)",
-  "message.wrenchbridge.inventory_full": "Leave one inventory slot empty to borrow a stored tool."
+  "message.wrenchbridge.inventory_full": "Leave one inventory slot empty to borrow a stored tool.",
+  "screen.wrenchbridge.settings": "Sharing settings",
+  "setting.wrenchbridge.other_wrenches": "Other wrenches: %s",
+  "setting.wrenchbridge.scope": "Controls extra sharing for other wrenches.",
+  "setting.wrenchbridge.native": "Native mod compatibility is preserved.",
+  "setting.wrenchbridge.universal": "The universal wrench keeps all its abilities.",
+  "setting.wrenchbridge.save_failed": "Could not save the setting."
 }

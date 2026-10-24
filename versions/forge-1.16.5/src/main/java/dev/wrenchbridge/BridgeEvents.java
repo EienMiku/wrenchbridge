@@ -28,6 +28,7 @@ public final class BridgeEvents {
   private BridgeEvents() {}
 
   public static boolean ownsPneumaticClick(PlayerInteractEvent.RightClickBlock event) {
+    if (!SharingControl.allows(event.getPlayer(), event.getItemStack())) return false;
     if (!event.getPlayer().isShiftKeyDown()) return false;
     BlockState state = event.getWorld().getBlockState(event.getPos());
     if (Targets.resolve(state, event.getWorld().getBlockEntity(event.getPos()))
@@ -37,6 +38,7 @@ public final class BridgeEvents {
   }
 
   public static boolean ownsSupplementariesClick(PlayerInteractEvent.RightClickBlock event) {
+    if (!SharingControl.allows(event.getPlayer(), event.getItemStack())) return false;
     if (!event.getPlayer().isShiftKeyDown()
         || !ClassProbe.is(
             event.getItemStack().getItem(),
@@ -67,6 +69,7 @@ public final class BridgeEvents {
       event.setCancellationResult(ActionResultType.PASS);
       return;
     }
+    if (!SharingControl.allows(event.getPlayer(), event.getItemStack())) return;
     if (VirtualModes.isNative(event.getItemStack())) {
       if (interactionDenied(event)
           || !event.getWorld().isClientSide
@@ -154,6 +157,7 @@ public final class BridgeEvents {
 
   @SubscribeEvent(priority = EventPriority.LOWEST)
   public static void rightClick(PlayerInteractEvent.RightClickBlock event) {
+    if (!SharingControl.allows(event.getPlayer(), event.getItemStack())) return;
     if (event.isCanceled() || REENTERING.get()) return;
     if (VirtualModes.isNative(event.getItemStack())) {
       boolean disabled = interactionDenied(event);

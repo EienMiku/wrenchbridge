@@ -87,8 +87,11 @@ public final class ModesScreen extends Screen {
                 .bounds(layout.left + layout.width - 35, layout.footerY, 35, 20)
                 .tooltip(Tooltip.create(Component.translatable("screen.wrenchbridge.next"))).build());
         addRenderableWidget(Button.builder(Component.translatable("gui.done"), button -> onClose())
-                .bounds(width / 2 - 50, layout.doneY, 100, 20).build());
+                .bounds(width / 2 + 4, layout.doneY, 100, 20).build());
         updateRows();
+        addRenderableWidget(Button.builder(Component.translatable("screen.wrenchbridge.settings"),
+                button -> minecraft.setScreen(new SharingSettingsScreen(this)))
+                .bounds(width / 2 - 104, layout.doneY, 100, 20).build());
         setInitialFocus(search);
         if (requestCatalog && minecraft.player != null)
             PacketDistributor.sendToServer(new dev.wrenchbridge.CatalogPacket.Request());

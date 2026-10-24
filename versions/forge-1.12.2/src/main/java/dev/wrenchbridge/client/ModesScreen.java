@@ -97,8 +97,16 @@ public final class ModesScreen extends GuiScreen {
     buttonList.add(new GuiButton(100, left, footer, 35, 20, "<"));
     buttonList.add(new GuiButton(101, left + layout.width - 35, footer, 35, 20, ">"));
     buttonList.add(
-        new GuiButton(102, width / 2 - 50, layout.doneY, 100, 20, I18n.format("gui.done")));
+        new GuiButton(102, width / 2 + 4, layout.doneY, 100, 20, I18n.format("gui.done")));
     updateRows();
+    buttonList.add(
+        new GuiButton(
+            103,
+            width / 2 - 104,
+            layout.doneY,
+            100,
+            20,
+            I18n.format("screen.wrenchbridge.settings")));
     dev.wrenchbridge.CatalogPacket.request();
   }
 
@@ -157,6 +165,10 @@ public final class ModesScreen extends GuiScreen {
     if (button.id == 101) {
       page = Math.min(Math.max(0, (filtered().size() - 1) / pageSize), page + 1);
       updateRows();
+      return;
+    }
+    if (button.id == 103) {
+      mc.displayGuiScreen(new SharingSettingsScreen(this));
       return;
     }
     if (button.id == 102) {

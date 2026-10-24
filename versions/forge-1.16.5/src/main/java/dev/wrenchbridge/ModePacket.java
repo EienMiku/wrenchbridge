@@ -54,12 +54,13 @@ public final class ModePacket {
 
   static final SimpleChannel CHANNEL =
       NetworkRegistry.ChannelBuilder.named(new ResourceLocation(WrenchBridge.ID, "mode"))
-          .networkProtocolVersion(() -> "4")
-          .clientAcceptedVersions("4"::equals)
-          .serverAcceptedVersions("4"::equals)
+          .networkProtocolVersion(() -> "5")
+          .clientAcceptedVersions("5"::equals)
+          .serverAcceptedVersions("5"::equals)
           .simpleChannel();
 
   public static void register() {
+    SharingPacket.register();
     CatalogPacket.register();
     CHANNEL
         .messageBuilder(ModePacket.class, 0, NetworkDirection.PLAY_TO_SERVER)

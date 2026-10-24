@@ -24,7 +24,7 @@ public final class CatalogPacket {
         @Override public Type<Reply> type() { return TYPE; }
     }
     public static void register(RegisterPayloadHandlersEvent event) {
-        var registrar = event.registrar("4");
+        var registrar = event.registrar("5");
         registrar.playToServer(Request.TYPE, Request.CODEC, (packet, context) -> {
             if (context.player() instanceof ServerPlayer player && !player.isSpectator())
                 PacketDistributor.sendToPlayer(player, new Reply(StoredTools.catalog(player)));

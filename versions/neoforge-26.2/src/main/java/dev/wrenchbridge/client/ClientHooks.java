@@ -17,6 +17,7 @@ public final class ClientHooks {
   private ClientHooks() {}
 
   public static void register(IEventBus bus) {
+    SharingClient.register();
     bus.addListener(
         (RegisterKeyMappingsEvent event) -> {
           modes =

@@ -52,6 +52,7 @@ public final class WrenchBridge {
           if (event.getTabKey().equals(CreativeModeTabs.TOOLS_AND_UTILITIES)) event.accept(WRENCH);
         });
     MinecraftForge.EVENT_BUS.register(BridgeEvents.class);
+    SharingControl.register();
     if (FMLEnvironment.dist == Dist.CLIENT) dev.wrenchbridge.client.ClientHooks.register(bus);
   }
 }

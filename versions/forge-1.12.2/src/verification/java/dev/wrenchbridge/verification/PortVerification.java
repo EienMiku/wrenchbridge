@@ -309,8 +309,8 @@ public final class PortVerification {
       check(!WrenchContext.serverOnly() && WrenchContext.hand() == null, "native context leaked");
     }
     return "main/offhand shared and simulated actions, real cost, mode preservation, replacement"
-               + " rejection, full inventory, container transactions, stale hand and protection"
-               + " checks";
+        + " rejection, full inventory, container transactions, stale hand and protection"
+        + " checks";
   }
 
   @Mod.EventHandler
@@ -324,7 +324,8 @@ public final class PortVerification {
           "PASS: "
               + verify(server.getWorld(0))
               + nativeMods(server.getWorld(0))
-              + nativeMenus(server.getWorld(0));
+              + nativeMenus(server.getWorld(0))
+              + SharingVerification.verify(server.getWorld(0));
     } catch (Throwable t) {
       WrenchBridge.LOG.error("Port verification failed", t);
       result = "FAIL: " + t;
@@ -482,6 +483,6 @@ public final class PortVerification {
       ContainerMenus.forget(p);
     }
     return "; native AE2 menus: both hands, full inventory, stored real tool, card"
-               + " insertion/removal and facade setting persisted";
+        + " insertion/removal and facade setting persisted";
   }
 }

@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
     id 'net.neoforged.moddev' version '2.0.143'
 }
-version = '0.1.0-alpha.9'
+version = '0.1.0-alpha.11'
 group = 'dev.wrenchbridge'
 base.archivesName = 'wrenchbridge-neoforge-1.21.1'
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -35,6 +35,14 @@ neoForge {
             systemProperty 'wrenchbridge.verifySoundOnly', providers.gradleProperty('verifySoundOnly').getOrElse('false')
             systemProperty 'wrenchbridge.verifyLevelOnly', providers.gradleProperty('verifyLevelOnly').getOrElse('false')
             programArguments.addAll '--quickPlaySingleplayer', 'WrenchBridge-RenderCheck', '--width', '800', '--height', '450'
+        }
+        sharingClient {
+            client()
+            jvmArgument '-Xmx2G'
+            gameDirectory = project.file('run-sharing-client')
+            systemProperty 'wrenchbridge.verifySharingClient', 'true'
+            systemProperty 'wrenchbridge.verifySharingResume', providers.gradleProperty('verifySharingResume').getOrElse('false')
+            programArguments.addAll '--quickPlaySingleplayer', 'Sharing-Check', '--width', '960', '--height', '600'
         }
     }
     mods {

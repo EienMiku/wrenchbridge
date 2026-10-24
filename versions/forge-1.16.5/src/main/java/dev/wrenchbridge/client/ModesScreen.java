@@ -181,13 +181,21 @@ public final class ModesScreen extends Screen {
                 }));
     addButton(
         new Button(
-            width / 2 - 50,
+            width / 2 + 4,
             layout.doneY,
             100,
             20,
             new net.minecraft.util.text.TranslationTextComponent("gui.done"),
             button -> onClose()));
     updateRows();
+    addButton(
+        new Button(
+            width / 2 - 104,
+            layout.doneY,
+            100,
+            20,
+            new net.minecraft.util.text.TranslationTextComponent("screen.wrenchbridge.settings"),
+            button -> minecraft.setScreen(new SharingSettingsScreen(this))));
     setInitialFocus(search);
     if (requestCatalog && minecraft.player != null) dev.wrenchbridge.CatalogPacket.request();
   }

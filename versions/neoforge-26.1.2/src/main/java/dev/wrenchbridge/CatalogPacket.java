@@ -35,7 +35,7 @@ public final class CatalogPacket {
   }
 
   public static void register(RegisterPayloadHandlersEvent event) {
-    var registrar = event.registrar("4");
+    var registrar = event.registrar("5");
     registrar.playToServer(
         Request.TYPE,
         Request.CODEC,

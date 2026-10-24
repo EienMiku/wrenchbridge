@@ -24,6 +24,7 @@ public final class WrenchBridge {
   public WrenchBridge(IEventBus bus) {
     ITEMS.register(bus);
     bus.addListener(ModePacket::register);
+    bus.addListener(SharingPacket::register);
     bus.addListener(CatalogPacket::register);
     bus.addListener(
         (net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) ->
@@ -36,6 +37,7 @@ public final class WrenchBridge {
           if (event.getTabKey().equals(CreativeModeTabs.TOOLS_AND_UTILITIES)) event.accept(WRENCH);
         });
     NeoForge.EVENT_BUS.register(BridgeEvents.class);
+    SharingControl.register();
     NeoForge.EVENT_BUS.addListener(
         (net.neoforged.neoforge.event.tick.PlayerTickEvent.Post event) -> {
           if (event.getEntity() instanceof net.minecraft.server.level.ServerPlayer player)

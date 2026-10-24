@@ -40,5 +40,11 @@
   "screen.wrenchbridge.previous": "Previous page",
   "screen.wrenchbridge.next": "Next page",
   "screen.wrenchbridge.no_results": "No matching tools or modes",
-  "key.category.wrenchbridge.modes": "Wrench Bridge"
+  "key.category.wrenchbridge.modes": "Wrench Bridge",
+  "screen.wrenchbridge.settings": "Sharing settings",
+  "setting.wrenchbridge.other_wrenches": "Other wrenches: %s",
+  "setting.wrenchbridge.scope": "Controls extra sharing for other wrenches.",
+  "setting.wrenchbridge.native": "Native mod compatibility is preserved.",
+  "setting.wrenchbridge.universal": "The universal wrench keeps all its abilities.",
+  "setting.wrenchbridge.save_failed": "Could not save the setting."
 }

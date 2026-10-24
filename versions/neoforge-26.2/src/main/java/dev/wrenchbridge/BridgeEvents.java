@@ -29,6 +29,7 @@ public final class BridgeEvents {
   private BridgeEvents() {}
 
   public static boolean ownsPneumaticClick(PlayerInteractEvent.RightClickBlock event) {
+    if (!SharingControl.allows(event.getEntity(), event.getItemStack())) return false;
     if (!event.getEntity().isShiftKeyDown()) return false;
     BlockState state = event.getLevel().getBlockState(event.getPos());
     if (Targets.resolve(state, event.getLevel().getBlockEntity(event.getPos()))
@@ -38,6 +39,7 @@ public final class BridgeEvents {
   }
 
   public static boolean ownsSupplementariesClick(PlayerInteractEvent.RightClickBlock event) {
+    if (!SharingControl.allows(event.getEntity(), event.getItemStack())) return false;
     if (!event.getEntity().isShiftKeyDown()
         || !ClassProbe.is(
             event.getItemStack().getItem(),
@@ -68,6 +70,7 @@ public final class BridgeEvents {
       event.setCancellationResult(InteractionResult.PASS);
       return;
     }
+    if (!SharingControl.allows(event.getEntity(), event.getItemStack())) return;
     if (VirtualModes.isNative(event.getItemStack())) {
       if (interactionDenied(event)
           || !event.getLevel().isClientSide() && denied((ServerPlayer) event.getEntity(), event)) {
@@ -149,6 +152,7 @@ public final class BridgeEvents {
 
   @SubscribeEvent(priority = EventPriority.LOWEST)
   public static void rightClick(PlayerInteractEvent.RightClickBlock event) {
+    if (!SharingControl.allows(event.getEntity(), event.getItemStack())) return;
     if (event.isCanceled() || REENTERING.get()) return;
     if (VirtualModes.isNative(event.getItemStack())) {
       boolean disabled = interactionDenied(event);

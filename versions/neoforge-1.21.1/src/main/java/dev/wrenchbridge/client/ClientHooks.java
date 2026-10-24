@@ -14,6 +14,7 @@ public final class ClientHooks {
     private static KeyMapping modes;
     private ClientHooks() {}
     public static void register(IEventBus bus) {
+        SharingClient.register();
         bus.addListener((RegisterKeyMappingsEvent event) -> {
             modes = new KeyMapping("key.wrenchbridge.modes", InputConstants.Type.KEYSYM,
                     GLFW.GLFW_KEY_G, "key.categories.wrenchbridge");

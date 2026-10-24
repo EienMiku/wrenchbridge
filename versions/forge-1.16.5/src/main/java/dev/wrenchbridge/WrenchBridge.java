@@ -44,6 +44,7 @@ public final class WrenchBridge {
             StoredTools.forget((net.minecraft.entity.player.ServerPlayerEntity) event.getPlayer());
         });
     MinecraftForge.EVENT_BUS.register(BridgeEvents.class);
+    SharingControl.register();
     if (FMLEnvironment.dist == Dist.CLIENT) dev.wrenchbridge.client.ClientHooks.register(bus);
   }
 }

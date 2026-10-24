@@ -16,11 +16,17 @@ import org.apache.logging.log4j.Logger;
 @Mod(
     modid = WrenchBridge.ID,
     name = "Wrench Bridge",
-    version = "0.1.0-alpha.10",
+    version = "0.1.0-alpha.11",
     acceptedMinecraftVersions = "[1.12.2]",
+    guiFactory = "dev.wrenchbridge.client.ConfigGuiFactory",
     dependencies = "required-after:mixinbooter@[11.18,);")
 @Mod.EventBusSubscriber(modid = WrenchBridge.ID)
 public final class WrenchBridge {
+  @Mod.EventHandler
+  public void serverStopped(net.minecraftforge.fml.common.event.FMLServerStoppedEvent event) {
+    dev.wrenchbridge.core.SharingPreferences.clearServer();
+  }
+
   public static final String ID = "wrenchbridge";
   public static final Logger LOG = LogManager.getLogger();
   public static UniversalWrenchItem WRENCH;
@@ -36,6 +42,7 @@ public final class WrenchBridge {
     ModePacket.register();
     ContainerMenus.register();
     net.minecraftforge.common.MinecraftForge.EVENT_BUS.register(BridgeEvents.class);
+    SharingControl.register();
     if (event.getSide().isClient()) dev.wrenchbridge.client.ClientHooks.register();
   }
 

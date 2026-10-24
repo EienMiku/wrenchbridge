@@ -19,6 +19,7 @@ public final class ClientHooks {
   }
 
   public static void register() {
+    SharingClient.register();
     modes = new KeyBinding("key.wrenchbridge.modes", Keyboard.KEY_G, "key.categories.wrenchbridge");
     ClientRegistry.registerKeyBinding(modes);
     MinecraftForge.EVENT_BUS.register(ClientHooks.class);

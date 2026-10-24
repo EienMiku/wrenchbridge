@@ -20,6 +20,7 @@ public final class ClientHooks {
   }
 
   public static void register(IEventBus bus) {
+    SharingClient.register();
     bus.addListener(
         (FMLClientSetupEvent event) ->
             event.enqueueWork(

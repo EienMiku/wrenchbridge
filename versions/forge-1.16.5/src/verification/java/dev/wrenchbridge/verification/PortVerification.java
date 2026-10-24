@@ -111,6 +111,10 @@ public final class PortVerification {
                     + verifyNativeMenus(
                         net.minecraftforge.fml.server.ServerLifecycleHooks.getCurrentServer()
                             .overworld());
+            result +=
+                SharingVerification.verify(
+                    net.minecraftforge.fml.server.ServerLifecycleHooks.getCurrentServer()
+                        .overworld());
           } catch (Throwable error) {
             WrenchBridge.LOG.error("Port verification failed", error);
             result = "FAIL: " + error;
@@ -269,7 +273,7 @@ public final class PortVerification {
       check(!WrenchContext.serverOnly() && WrenchContext.hand() == null, "context leaked");
     }
     return "; container main/offhand discovery, full inventory, real cost, mode preservation, menu"
-               + " transactions, detached source rejection";
+        + " transactions, detached source rejection";
   }
 
   private static String verifyOffhand(ServerWorld level) throws Exception {
@@ -433,7 +437,7 @@ public final class PortVerification {
     player.inventory.clearContent();
     level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
     return "; offhand: shared and simulated actions, correct hand, real costs, G targeting, packet"
-               + " roundtrip and rejection, main-hand priority, single action, protection";
+        + " roundtrip and rejection, main-hand priority, single action, protection";
   }
 
   private static String verifyNativeMods(ServerWorld level) throws Exception {
@@ -613,6 +617,6 @@ public final class PortVerification {
       ContainerMenus.forget(player);
     }
     return "; native AE2 menus: main/offhand, full inventory, real stored tool and persisted native"
-               + " card changes";
+        + " card changes";
   }
 }

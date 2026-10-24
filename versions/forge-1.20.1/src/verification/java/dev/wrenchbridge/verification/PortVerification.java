@@ -99,6 +99,7 @@ public final class PortVerification {
                     + verifyContainers(e.getServer().overworld())
                     + verifyNativeMods(e.getServer().overworld())
                     + verifyNativeMenus(e.getServer().overworld());
+            result += SharingVerification.verify(e.getServer().overworld());
           } catch (Throwable error) {
             WrenchBridge.LOG.error("Port verification failed", error);
             result = "FAIL: " + error;
@@ -252,7 +253,7 @@ public final class PortVerification {
       check(!WrenchContext.serverOnly() && WrenchContext.hand() == null, "context leaked");
     }
     return "; container main/offhand discovery, full inventory, real cost, mode preservation, menu"
-               + " transactions, detached source rejection";
+        + " transactions, detached source rejection";
   }
 
   private static String verifyOffhand(ServerLevel level) throws Exception {
@@ -422,7 +423,7 @@ public final class PortVerification {
     player.getInventory().clearContent();
     level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
     return "; offhand: shared and simulated actions, correct hand, real costs, G targeting, packet"
-               + " roundtrip and rejection, main-hand priority, single action, protection";
+        + " roundtrip and rejection, main-hand priority, single action, protection";
   }
 
   private static String verifyNativeMods(ServerLevel level) throws Exception {
@@ -621,6 +622,6 @@ public final class PortVerification {
       ContainerMenus.forget(player);
     }
     return "; native AE2 menus: main/offhand with full inventory, real stored tool, card"
-               + " insertion/removal persisted, detached bag rejected";
+        + " insertion/removal persisted, detached bag rejected";
   }
 }

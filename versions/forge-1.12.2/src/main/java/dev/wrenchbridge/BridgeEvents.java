@@ -75,6 +75,7 @@ public final class BridgeEvents {
       e.setCancellationResult(EnumActionResult.PASS);
       return;
     }
+    if (!SharingControl.allows(e.getEntityPlayer(), e.getItemStack())) return;
     boolean nativeMode = VirtualModes.isNative(held);
     if (!nativeMode
         && (!e.getEntityPlayer().isSneaking()
@@ -103,6 +104,7 @@ public final class BridgeEvents {
 
   @SubscribeEvent(priority = EventPriority.LOWEST)
   public static void use(PlayerInteractEvent.RightClickBlock e) {
+    if (!SharingControl.allows(e.getEntityPlayer(), e.getItemStack())) return;
     if (e.isCanceled() || REENTERING.get()) return;
     boolean nativeMode = VirtualModes.isNative(e.getItemStack());
     if (!nativeMode
