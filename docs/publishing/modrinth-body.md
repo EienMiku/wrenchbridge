@@ -1,10 +1,10 @@
 # Wrench Bridge
 
-Share native dismantling protocols between wrench-like tools, or carry a universal wrench that borrows the functions of your real tools.
+Wrench Bridge adds a universal wrench and lets compatible wrench-like tools from different mods share their dismantling abilities.
 
 ## What it does
 
-- Sneak and use a supported block to dismantle it through its original mod's protocol.
+- Sneak and use a supported block to dismantle it. The universal wrench's shared dismantling mode does not require carrying another tool.
 - Press the configurable **G** key to select a carried native tool or one of its supported modes.
 - Keep the universal wrench in your hand. The actual source tool supplies its data, energy, air, and durability.
 - Use supported carried containers, including Sophisticated Backpacks, as tool sources.
@@ -21,35 +21,29 @@ Craft the wrench with two ingots and two rods; mixed materials are allowed:
 S  
 ```
 
-`I` is an ingot; `S` is a rod. Mixed materials work through the loader's common tags, or Ore Dictionary entries on 1.12.2.
+`I` is any ingot; `S` is any rod or stick.
 
 ## Installation and compatibility
 
-Choose the file for your Minecraft version and loader. Install the same build on client and server; single-player needs only the client installation.
+Choose a file for your Minecraft version and loader from the **Versions** tab, and install any dependencies listed there. Install the same build on client and server; single-player needs only the client installation.
 
-| Minecraft | Loader | Java | Build |
-| --- | --- | --- | --- |
-| 1.12.2 | Forge; **MixinBooter 11.18+ required** | 8 | alpha.10 |
-| 1.16.5 | Forge | 8 | alpha.10 |
-| 1.20.1 | Forge | 17 | alpha.10 |
-| 1.21.1 | NeoForge 21.1.200+ | 21 | alpha.9 |
-| 26.1.2 | NeoForge 26.1.2.122+ | 25 | alpha.10 |
-| 26.2 | NeoForge 26.2.0.93+ | 25 | alpha.10 |
+Integrations include AE2, Mekanism, Create, AnvilCraft, PneumaticCraft and more. These tool mods are optional; available functions follow the installed mods and their native tool behavior.
 
-Supported integrations are optional. The 1.21.1 test lab includes AE2, Mekanism, Create, AnvilCraft, PneumaticCraft, Pretty Pipes, Refined Storage, Ender IO, Powah, RFTools, Integrated Dynamics, Modern Dynamics, Pipez, and Supplementaries. Native protocol coverage depends on the game/mod version.
-
-Compatibility depends on each mod's native protocols. It does not make every block dismantleable. Pipez's wrench configures connections; Pretty Pipes' terminals and pressurizers still need normal mining. Unknown or denied targets are not force-destroyed as a fallback.
-
-Alpha.9 passed 71 server feedback comparisons across 15 tools and 53 client scenarios, alongside existing protection, costs, inventory, offhand, and container-menu checks. These tests cover specific mod versions and representative actions. In the automated Refined Storage case, the original wrench also refuses dismantling, so only matching refusal is established there.
-
-The five alpha.10 ports passed isolated server checks for hand routing, simulation, real costs, mode restoration, protection and container transactions. The Forge ports were checked with real AE2/Mekanism machines; 26.x was checked with real AE2. All five passed native AE2 card-menu checks with a full inventory and a real tool in a carried container. Broader client and overlay playtesting is still needed. See the [port verification record](https://github.com/EienMiku/wrenchbridge/blob/main/docs/alpha10-ports.md) for exact versions and scope.
+[Usage and compatibility notes](https://github.com/EienMiku/wrenchbridge#readme) · [Report an issue](https://github.com/EienMiku/wrenchbridge/issues)
 
 Created by EienMiku, with AI-assisted development. MIT license. Source and issue tracker are linked above.
 
 ## 简体中文
 
-通用扳手与原生扳手互通模组。潜行右键共享拆卸，G 键打开可改键的模式菜单；模拟模式借用随身真实工具的功能与消耗，通用扳手始终留在手中。支持主副手和部分随身容器来源。
+为不同模组的扳手类工具共享拆卸能力，并添加一把可以模拟原工具功能的通用扳手。
 
-提供 Forge 1.12.2、1.16.5、1.20.1 和 NeoForge 1.21.1、26.1.2、26.2 的独立构建。1.12.2 另需 MixinBooter 11.18+。新增五个平台为 alpha.10，已经移植完整模拟机制并通过隔离服务端检查；客户端画面与叠层仍需更多试玩。各第三方工具模组均为可选兼容对象，具体方块行为以原工具为准。
+- **潜行右键**：共享拆卸。通用拆卸不要求携带其它工具。
+- **G 键**：打开模式菜单，可在控制设置中改键。普通右键不会打开模式菜单。
+- **模拟模式**：借用随身真实工具的功能、电量、气压和耐久；通用扳手始终留在手中，原工具保留自己的设置。
+- 支持主副手，以及精妙背包等可识别的随身容器。模拟 AE2 网络工具时，可以直接打开网络信息和卡片收纳界面。
+
+配方如上：`I` 为任意锭，`S` 为任意棍，允许混用材料。
+
+请在「版本」页选择适合自己 Minecraft 版本与加载器的文件，并安装该文件列出的依赖。客户端与服务端安装同一构建，单机只需安装在客户端。各第三方工具模组均为可选兼容对象，具体功能遵循原工具的行为。
 
 作者与原始材质：EienMiku。开发过程使用了 AI 辅助。
