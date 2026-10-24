@@ -1,0 +1,240 @@
+{
+  "image": "supported-blocks-isometric.png",
+  "projection": "orthographic isometric",
+  "elevation_degrees": 35.2643897,
+  "yaw_degrees": 225,
+  "source": "Native Minecraft item/block models rendered in an isolated NeoForge client.",
+  "verification_environment": {
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.248",
+    "wrenchbridge": "0.1.0-alpha.9"
+  },
+  "blocks": [
+    "anvilcraft:frost_metal_block",
+    "ae2:controller",
+    "anvilcraft:royal_steel_block",
+    "ae2:interface",
+    "anvilcraft:overheated_ember_metal_block",
+    "ae2:energy_acceptor",
+    "anvilcraft:ember_metal_block",
+    "create:mechanical_press",
+    "mekanism:basic_energy_cube",
+    "create:gearbox",
+    "integrateddynamics:energy_battery",
+    "enderio:alloy_smelter",
+    "pneumaticcraft:air_compressor",
+    "minecraft:chest",
+    "integrateddynamics:coal_generator",
+    "ae2:charger",
+    "integrateddynamics:variablestore",
+    "mekanism:metallurgic_infuser",
+    "rftoolsutility:crafter1",
+    "ae2:molecular_assembler",
+    "integrateddynamics:proxy",
+    "mekanism:crusher",
+    "integrateddynamics:mechanical_squeezer",
+    "powah:energy_cell_starter",
+    "mekanism:enrichment_chamber",
+    "mekanism:energized_smelter",
+    "enderio:sag_mill",
+    "minecraft:observer",
+    "create:cogwheel",
+    "create:large_cogwheel",
+    "create:shaft",
+    "moderndynamics:item_pipe"
+  ],
+  "dismantle_verification": [
+    {
+      "block": "anvilcraft:frost_metal_block",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "ae2:controller",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "anvilcraft:royal_steel_block",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "ae2:interface",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "anvilcraft:overheated_ember_metal_block",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "ae2:energy_acceptor",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "anvilcraft:ember_metal_block",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "create:mechanical_press",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "mekanism:basic_energy_cube",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "create:gearbox",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "integrateddynamics:energy_battery",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "enderio:alloy_smelter",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "pneumaticcraft:air_compressor",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "minecraft:chest",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "integrateddynamics:coal_generator",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "ae2:charger",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "integrateddynamics:variablestore",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "mekanism:metallurgic_infuser",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "rftoolsutility:crafter1",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "ae2:molecular_assembler",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "integrateddynamics:proxy",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "mekanism:crusher",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "integrateddynamics:mechanical_squeezer",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "powah:energy_cell_starter",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "mekanism:enrichment_chamber",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "mekanism:energized_smelter",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "enderio:sag_mill",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "minecraft:observer",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "create:cogwheel",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "create:large_cogwheel",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "create:shaft",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "moderndynamics:item_pipe",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    }
+  ]
+}
