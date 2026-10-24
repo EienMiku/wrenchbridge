@@ -12,15 +12,9 @@ Wrench Bridge adds a universal wrench and lets compatible wrench-like tools from
 
 The default shared mode preserves ordinary block interactions, such as opening a machine. Explicit native modes retain their intended rotation and configuration behavior. Ordinary right-click does not open the mode menu.
 
-Craft the wrench with two ingots and two rods; mixed materials are allowed:
+Craft the wrench with two ingots and two rods or sticks; mixed materials are allowed:
 
-```text
- I 
- SI
-S  
-```
-
-`I` is any ingot; `S` is any rod or stick.
+![In-game crafting recipe for the universal wrench](https://raw.githubusercontent.com/EienMiku/wrenchbridge/main/docs/images/crafting-recipe.png)
 
 ## Installation and compatibility
 
@@ -41,7 +35,7 @@ Created by EienMiku, with AI-assisted development. MIT license. Source and issue
 - **模拟模式**：借用随身真实工具的功能、电量、气压和耐久；通用扳手始终留在手中，原工具保留自己的设置。
 - 支持主副手，以及精妙背包等可识别的随身容器。
 
-配方如上：`I` 为任意锭，`S` 为任意棍，允许混用材料。
+合成需要两块任意锭和两根任意棍，允许混用材料。
 
 请在「版本」页选择适合自己 Minecraft 版本与加载器的文件，并安装该文件列出的依赖。客户端与服务端安装同一构建，单机只需安装在客户端。各第三方工具模组均为可选兼容对象，具体功能遵循原工具的行为。
 
