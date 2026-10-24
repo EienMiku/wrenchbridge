@@ -14,11 +14,11 @@
     ]
   },
   "lighting": {
-    "type": "soft key with frontal fill",
+    "type": "balanced key with gentle frontal fill",
     "key_direction": [
-      0,
-      0.48191875,
-      0.8762159
+      -0.14002801,
+      0.70014004,
+      0.70014004
     ],
     "fill_direction": [
       0,
