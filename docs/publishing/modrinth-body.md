@@ -14,7 +14,7 @@ The default shared mode preserves ordinary block interactions, such as opening a
 
 Craft the wrench with two ingots and two rods or sticks; mixed materials are allowed:
 
-![In-game crafting recipe for the universal wrench](https://raw.githubusercontent.com/EienMiku/wrenchbridge/main/docs/images/crafting-recipe.png)
+![In-game crafting recipe for the universal wrench](https://raw.githubusercontent.com/EienMiku/wrenchbridge/main/docs/images/crafting-recipe.png?v=f1fd21a0353f)
 
 ## Installation and compatibility
 
