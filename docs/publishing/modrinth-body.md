@@ -8,7 +8,6 @@ Wrench Bridge adds a universal wrench and lets compatible wrench-like tools from
 - Press the configurable **G** key to select a carried native tool or one of its supported modes.
 - Keep the universal wrench in your hand. The actual source tool supplies its data, energy, air, and durability.
 - Use supported carried containers, including Sophisticated Backpacks, as tool sources.
-- Open AE2 network statistics and card storage from a carried container, with card changes saved to the real tool.
 - Use either hand, with the normal priority for meaningful main-hand actions.
 
 The default shared mode preserves ordinary block interactions, such as opening a machine. Explicit native modes retain their intended rotation and configuration behavior. Ordinary right-click does not open the mode menu.
@@ -40,7 +39,7 @@ Created by EienMiku, with AI-assisted development. MIT license. Source and issue
 - **潜行右键**：共享拆卸。通用拆卸不要求携带其它工具。
 - **G 键**：打开模式菜单，可在控制设置中改键。普通右键不会打开模式菜单。
 - **模拟模式**：借用随身真实工具的功能、电量、气压和耐久；通用扳手始终留在手中，原工具保留自己的设置。
-- 支持主副手，以及精妙背包等可识别的随身容器。模拟 AE2 网络工具时，可以直接打开网络信息和卡片收纳界面。
+- 支持主副手，以及精妙背包等可识别的随身容器。
 
 配方如上：`I` 为任意锭，`S` 为任意棍，允许混用材料。
 
