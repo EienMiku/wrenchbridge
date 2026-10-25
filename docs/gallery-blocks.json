@@ -34,50 +34,51 @@
     "wrenchbridge": "0.1.0-alpha.13"
   },
   "continuation": {
-    "marker": "ellipsis",
+    "marker": "bilingual more-examples label",
+    "text": "还有更多…… / AND MORE",
     "meaning": "partial selection; more supported blocks exist"
   },
   "blocks": [
     "anvilcraft:frost_metal_block",
     "ae2:controller",
-    "anvilcraft:overheated_ember_metal_block",
+    "mekanism:ultimate_induction_cell",
     "anvilcraft:ember_metal_block",
-    "powah:energy_cell_spirited",
-    "create:brass_casing",
+    "mekanism:ultimate_energy_cube",
+    "anvilcraft:neutron_irradiator",
     "anvilcraft:royal_steel_block",
     "ae2:interface",
-    "mekanism:basic_energy_cube",
+    "mekanism:ultimate_enriching_factory",
     "ae2:pattern_provider",
-    "create:copper_casing",
+    "create:mechanical_crafter",
     "ae2:energy_acceptor",
     "create:gearbox",
     "integrateddynamics:energy_battery",
     "mekanism:metallurgic_infuser",
     "ae2:molecular_assembler",
     "powah:energy_cell_blazing",
-    "ae2:1k_crafting_storage",
-    "rftoolsutility:crafter1",
+    "ae2:256k_crafting_storage",
+    "rftoolsutility:crafter3",
     "integrateddynamics:variablestore",
     "enderio:alloy_smelter",
     "minecraft:observer",
     "integrateddynamics:coal_generator",
-    "mekanism:enrichment_chamber",
-    "powah:energy_cell_niotic",
+    "mekanism:ultimate_smelting_factory",
+    "powah:ender_cell_nitro",
     "integrateddynamics:proxy",
-    "mekanism:purification_chamber",
-    "create:andesite_casing",
+    "mekanism:ultimate_crushing_factory",
+    "create:smart_chute",
     "integrateddynamics:mechanical_squeezer",
-    "minecraft:furnace",
-    "powah:energy_cell_basic",
-    "mekanism:crusher",
+    "pneumaticcraft:advanced_air_compressor",
+    "powah:thermo_generator_nitro",
+    "anvilcraft:burning_heater",
     "ae2:energy_cell",
-    "enderio:sag_mill",
-    "powah:energy_cell_hardened",
-    "mekanism:osmium_compressor",
-    "powah:energy_cell_starter",
+    "enderio:powered_spawner",
+    "create:brass_casing",
+    "mekanism:ultimate_bin",
+    "rftoolsutility:spawner",
     "mekanism:energized_smelter",
-    "mekanism:combiner",
-    "mekanism:precision_sawmill"
+    "ae2:spatial_io_port",
+    "minecraft:furnace"
   ],
   "dismantle_verification": [
     {
@@ -93,8 +94,8 @@
       "held_preserved": true
     },
     {
-      "block": "anvilcraft:overheated_ember_metal_block",
-      "result": "CONSUME",
+      "block": "mekanism:ultimate_induction_cell",
+      "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
@@ -105,14 +106,14 @@
       "held_preserved": true
     },
     {
-      "block": "powah:energy_cell_spirited",
-      "result": "CONSUME",
+      "block": "mekanism:ultimate_energy_cube",
+      "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
-      "block": "create:brass_casing",
-      "result": "SUCCESS",
+      "block": "anvilcraft:neutron_irradiator",
+      "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
@@ -129,7 +130,7 @@
       "held_preserved": true
     },
     {
-      "block": "mekanism:basic_energy_cube",
+      "block": "mekanism:ultimate_enriching_factory",
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
@@ -141,7 +142,7 @@
       "held_preserved": true
     },
     {
-      "block": "create:copper_casing",
+      "block": "create:mechanical_crafter",
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
@@ -183,13 +184,13 @@
       "held_preserved": true
     },
     {
-      "block": "ae2:1k_crafting_storage",
+      "block": "ae2:256k_crafting_storage",
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
-      "block": "rftoolsutility:crafter1",
+      "block": "rftoolsutility:crafter3",
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
@@ -219,13 +220,13 @@
       "held_preserved": true
     },
     {
-      "block": "mekanism:enrichment_chamber",
+      "block": "mekanism:ultimate_smelting_factory",
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
-      "block": "powah:energy_cell_niotic",
+      "block": "powah:ender_cell_nitro",
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
@@ -237,13 +238,13 @@
       "held_preserved": true
     },
     {
-      "block": "mekanism:purification_chamber",
+      "block": "mekanism:ultimate_crushing_factory",
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
-      "block": "create:andesite_casing",
+      "block": "create:smart_chute",
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
@@ -255,20 +256,20 @@
       "held_preserved": true
     },
     {
-      "block": "minecraft:furnace",
-      "result": "CONSUME",
-      "removed": true,
-      "held_preserved": true
-    },
-    {
-      "block": "powah:energy_cell_basic",
-      "result": "CONSUME",
-      "removed": true,
-      "held_preserved": true
-    },
-    {
-      "block": "mekanism:crusher",
+      "block": "pneumaticcraft:advanced_air_compressor",
       "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "powah:thermo_generator_nitro",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "anvilcraft:burning_heater",
+      "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
@@ -279,26 +280,26 @@
       "held_preserved": true
     },
     {
-      "block": "enderio:sag_mill",
+      "block": "enderio:powered_spawner",
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
-      "block": "powah:energy_cell_hardened",
-      "result": "CONSUME",
-      "removed": true,
-      "held_preserved": true
-    },
-    {
-      "block": "mekanism:osmium_compressor",
+      "block": "create:brass_casing",
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
-      "block": "powah:energy_cell_starter",
-      "result": "CONSUME",
+      "block": "mekanism:ultimate_bin",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "rftoolsutility:spawner",
+      "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
@@ -309,14 +310,14 @@
       "held_preserved": true
     },
     {
-      "block": "mekanism:combiner",
-      "result": "SUCCESS",
+      "block": "ae2:spatial_io_port",
+      "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
-      "block": "mekanism:precision_sawmill",
-      "result": "SUCCESS",
+      "block": "minecraft:furnace",
+      "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     }
