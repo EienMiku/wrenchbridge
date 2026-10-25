@@ -24,6 +24,11 @@ jar { manifest { attributes 'MixinConfigs':'wrenchbridge.mixins.json' } }
 
 tasks.named('sourcesJar') { duplicatesStrategy=DuplicatesStrategy.EXCLUDE }
 
+processResources {
+ inputs.property 'version', project.version
+ filesMatching('mcmod.info') { expand version: project.version }
+}
+
 sourceSets { verification { compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath; runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath } }
 configurations.verificationAnnotationProcessor.extendsFrom(configurations.annotationProcessor)
 jar { manifest { attributes 'FMLCorePlugin':'dev.wrenchbridge.LegacyLoadingPlugin', 'FMLCorePluginContainsFMLMod':'true', 'ForceLoadAsMod':'true' } }
