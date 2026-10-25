@@ -38,6 +38,66 @@
     "text": "还有更多…… / AND MORE",
     "meaning": "partial selection; more supported blocks exist"
   },
+  "display_states": {
+    "properties": {
+      "integrateddynamics:coal_generator": {
+        "lit": "true",
+        "facing": "north"
+      },
+      "ae2:spatial_io_port": {
+        "powered": "true",
+        "facing": "north"
+      },
+      "anvilcraft:burning_heater": {
+        "level": "2"
+      },
+      "minecraft:furnace": {
+        "lit": "true",
+        "facing": "north"
+      },
+      "ae2:controller": {
+        "state": "online",
+        "type": "block"
+      },
+      "integrateddynamics:mechanical_squeezer": {
+        "lit": "true"
+      },
+      "mekanism:ultimate_crushing_factory": {
+        "facing": "north",
+        "active": "true"
+      },
+      "rftoolsutility:spawner": {
+        "facing": "north"
+      },
+      "enderio:powered_spawner": {
+        "powered": "true",
+        "facing": "north"
+      },
+      "pneumaticcraft:advanced_air_compressor": {
+        "on": "true",
+        "facing": "east"
+      },
+      "mekanism:energized_smelter": {
+        "facing": "north",
+        "active": "true"
+      },
+      "enderio:alloy_smelter": {
+        "powered": "true",
+        "facing": "north"
+      },
+      "mekanism:ultimate_enriching_factory": {
+        "facing": "north",
+        "active": "true"
+      },
+      "mekanism:ultimate_smelting_factory": {
+        "facing": "north",
+        "active": "true"
+      }
+    },
+    "controller_animation_texture": "ae2:block/controller_lights",
+    "controller_animation_ticks": 200,
+    "source": "Registered native block states and their own models/textures; no texture recoloring."
+  },
   "blocks": [
     "anvilcraft:frost_metal_block",
     "ae2:controller",
@@ -83,240 +143,320 @@
   "dismantle_verification": [
     {
       "block": "anvilcraft:frost_metal_block",
+      "display_state": "Block{anvilcraft:frost_metal_block}",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "ae2:controller",
+      "display_state": "ControllerBlock[controller][state=online,type=block]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "mekanism:ultimate_induction_cell",
+      "display_state": "Block{mekanism:ultimate_induction_cell}",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "anvilcraft:ember_metal_block",
+      "display_state": "Block{anvilcraft:ember_metal_block}",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "mekanism:ultimate_energy_cube",
+      "display_state": "Block{mekanism:ultimate_energy_cube}[facing=north,fluid_logged=empty]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "anvilcraft:neutron_irradiator",
+      "display_state": "Block{anvilcraft:neutron_irradiator}[type=neutron]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "anvilcraft:royal_steel_block",
+      "display_state": "Block{anvilcraft:royal_steel_block}",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "ae2:interface",
+      "display_state": "InterfaceBlock[interface]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "mekanism:ultimate_enriching_factory",
+      "display_state": "Block{mekanism:ultimate_enriching_factory}[active=true,facing=north,fluid_logged=empty]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "ae2:pattern_provider",
+      "display_state": "PatternProviderBlock[pattern_provider][push_direction=all]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "create:mechanical_crafter",
+      "display_state": "Block{create:mechanical_crafter}[facing=north,pointing=up]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "ae2:energy_acceptor",
+      "display_state": "EnergyAcceptorBlock[energy_acceptor]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "create:gearbox",
+      "display_state": "Block{create:gearbox}[axis=y]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "integrateddynamics:energy_battery",
+      "display_state": "Block{integrateddynamics:energy_battery}",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "mekanism:metallurgic_infuser",
+      "display_state": "Block{mekanism:metallurgic_infuser}[active=false,facing=north,fluid_logged=empty]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "ae2:molecular_assembler",
+      "display_state": "MolecularAssemblerBlock[molecular_assembler][powered=false]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "powah:energy_cell_blazing",
+      "display_state": "Block{powah:energy_cell_blazing}[waterlogged=false]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "ae2:256k_crafting_storage",
+      "display_state": "CraftingUnitBlock[256k_crafting_storage][formed=false,powered=false]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "rftoolsutility:crafter3",
+      "display_state": "Block{rftoolsutility:crafter3}[facing=north]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "integrateddynamics:variablestore",
+      "display_state": "Block{integrateddynamics:variablestore}[facing=north]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "enderio:alloy_smelter",
+      "display_state": "Block{enderio:alloy_smelter}[facing=north,powered=true]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "minecraft:observer",
+      "display_state": "Block{minecraft:observer}[facing=south,powered=false]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "integrateddynamics:coal_generator",
+      "display_state": "Block{integrateddynamics:coal_generator}[facing=north,lit=true]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "mekanism:ultimate_smelting_factory",
+      "display_state": "Block{mekanism:ultimate_smelting_factory}[active=true,facing=north,fluid_logged=empty]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "powah:ender_cell_nitro",
+      "display_state": "Block{powah:ender_cell_nitro}",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "integrateddynamics:proxy",
+      "display_state": "Block{integrateddynamics:proxy}[facing=north]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "mekanism:ultimate_crushing_factory",
+      "display_state": "Block{mekanism:ultimate_crushing_factory}[active=true,facing=north,fluid_logged=empty]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "create:smart_chute",
+      "display_state": "Block{create:smart_chute}[powered=true]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "integrateddynamics:mechanical_squeezer",
+      "display_state": "Block{integrateddynamics:mechanical_squeezer}[lit=true]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "pneumaticcraft:advanced_air_compressor",
+      "display_state": "Block{pneumaticcraft:advanced_air_compressor}[facing=east,on=true,waterlogged=false]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "powah:thermo_generator_nitro",
+      "display_state": "Block{powah:thermo_generator_nitro}",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "anvilcraft:burning_heater",
+      "display_state": "Block{anvilcraft:burning_heater}[level=2]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "ae2:energy_cell",
+      "display_state": "EnergyCellBlock[energy_cell][fullness=0]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "enderio:powered_spawner",
+      "display_state": "Block{enderio:powered_spawner}[facing=north,powered=true]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "create:brass_casing",
+      "display_state": "Block{create:brass_casing}",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "mekanism:ultimate_bin",
+      "display_state": "Block{mekanism:ultimate_bin}[active=false,facing=north]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "rftoolsutility:spawner",
+      "display_state": "Block{rftoolsutility:spawner}[facing=north]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "mekanism:energized_smelter",
+      "display_state": "Block{mekanism:energized_smelter}[active=true,facing=north]",
+      "state_matched": true,
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "ae2:spatial_io_port",
+      "display_state": "SpatialIOPortBlock[spatial_io_port][facing=north,powered=true,spin=0]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
     },
     {
       "block": "minecraft:furnace",
+      "display_state": "Block{minecraft:furnace}[facing=north,lit=true]",
+      "state_matched": true,
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
