@@ -20,7 +20,7 @@ public record SharingPacket(boolean enabled) implements CustomPacketPayload {
 
   public static void register(RegisterPayloadHandlersEvent event) {
     event
-        .registrar("6")
+        .registrar(WrenchBridge.NETWORK_VERSION)
         .playToServer(
             TYPE,
             CODEC,

@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0-alpha.14-dev.2",
+  "minecraft": "1.21.1",
+  "build_neoforge": "21.1.244",
+  "network_protocol": "7",
+  "files": [
+    {
+      "file": "wrenchbridge-neoforge-1.21.1-0.1.0-alpha.14-dev.2.jar",
+      "sha256": "e8a8c94a31d6468b1f954452218a8ca52668d939b7a703ab5c8da323e4fb7acb",
+      "bytes": 194808
+    },
+    {
+      "file": "wrenchbridge-neoforge-1.21.1-0.1.0-alpha.14-dev.2-sources.jar",
+      "sha256": "8378ee19096e67dea3dbb9d798ac9fb2ff24b47b950d7b8e06b12c626074883a",
+      "bytes": 82768
+    }
+  ],
+  "canonical_texture_sha256": "4e59c46c3e14d0057b9954e2ab0a433fa94b6b78ee55315e262015c4108fffe2",
+  "matches_compiled_classes": true,
+  "verification_excluded": true,
+  "client_cases": 8,
+  "server_proxy_cases": 18,
+  "client_regression_cases": 53,
+  "unit_tests": 17
+}

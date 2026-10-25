@@ -64,55 +64,40 @@ public final class VirtualModes {
         String id = item(wrench), selectedMode = mode(wrench);
         if (id.equals("ae2:network_tool") && !player.isShiftKeyDown()) return openNativeMenu(player, hand, hit);
         try {
-            return StoredTools.use(player, id, source -> {
+            return NativeToolExecution.use(player, hand, id, source -> {
                 Item originalItem = source.getItem();
                 boolean pneumatic = ClassProbe.is(originalItem, "me.desht.pneumaticcraft.common.item.PneumaticWrenchItem");
                 if (pneumatic && ((Number) originalItem.getClass().getMethod("getPressure", ItemStack.class)
                         .invoke(originalItem, source)).floatValue() <= 0.1F) return InteractionResult.FAIL;
-                String originalMode = NativeModes.current(originalItem, source);
-                boolean changeMode = !selectedMode.isEmpty() && !selectedMode.equals(originalMode);
-                try {
-                    if (changeMode && !NativeModes.select(originalItem, source, player, selectedMode)) return InteractionResult.FAIL;
-                    var state = player.serverLevel().getBlockState(hit.getBlockPos());
-                    Targets.Kind target = Targets.resolve(state,
-                            player.serverLevel().getBlockEntity(hit.getBlockPos()));
-                    // Validate a real source before preflight, including config modes that can consume costs.
-                    // Only Create's unoverridden default dismantle callback supplies the check itself.
-                    if (player.isShiftKeyDown() && !(Tools.active(source) && BridgeEvents.nativeCreateBreakCheck(target, state))
-                            && !BridgeEvents.breakAllowed(player, player.serverLevel(), hit.getBlockPos())) return InteractionResult.FAIL;
-                    // Match the physical tool's shared-dismantle routing before a native callback can switch modes
-                    // or rotate the target. A pneumatic tool on its own machine must still run its air-cost path.
-                    if (player.isShiftKeyDown() && Tools.active(source) && target != Targets.Kind.UNKNOWN
-                            && !(pneumatic && target == Targets.Kind.PNEUMATIC))
-                        return BridgeEvents.dispatch(player, hand, hit, source);
-                    UseOnContext context = context(player, hand, hit, source);
-                    InteractionResult result = source.onItemUseFirst(context);
-                    if (result != InteractionResult.PASS) return result;
-                    result = originalItem.useOn(context);
-                    if (result != InteractionResult.PASS) return result;
-                    if (pneumatic && Targets.resolve(player.serverLevel().getBlockState(hit.getBlockPos()),
-                            player.serverLevel().getBlockEntity(hit.getBlockPos())) == Targets.Kind.PNEUMATIC)
-                        return InteractionResult.PASS;
-                    if (player.isShiftKeyDown() && Tools.active(source)) return BridgeEvents.dispatch(player, hand, hit, source);
-                    if (ClassProbe.is(originalItem, "dev.dubhe.anvilcraft.item.AnvilHammerItem")) {
-                        ClassProbe.compatibleMethod(originalItem.getClass(), "useBlock", player, hit.getBlockPos(), player.serverLevel(), source,
-                                hand, hit).invoke(null, player, hit.getBlockPos(), player.serverLevel(), source, hand, hit);
-                        return InteractionResult.SUCCESS;
-                    }
-                    // Configuration modes that pass must not fall through to another mod's static wrench-tag handler.
-                    if (!Tools.active(source)) return InteractionResult.PASS;
-                    return BridgeEvents.nativeBlockUse(player, hand, hit, source);
-                } finally {
-                    try {
-                        if (changeMode && !source.isEmpty()) NativeModes.select(originalItem, source, player, originalMode);
-                    } finally {
-                        // A native tool may attempt to replace its held form. That is outside the simulation contract.
-                        if (player.getItemInHand(hand) != wrench) {
-                            player.setItemInHand(hand, wrench);
-                            WrenchBridge.LOG.warn("Blocked a native held-item replacement during {} simulation", id);
-                        }
-                    }
+                var state = player.serverLevel().getBlockState(hit.getBlockPos());
+                Targets.Kind target = Targets.resolve(state,
+                        player.serverLevel().getBlockEntity(hit.getBlockPos()));
+                // Validate a real source before preflight, including config modes that can consume costs.
+                // Only Create's unoverridden default dismantle callback supplies the check itself.
+                if (player.isShiftKeyDown() && !(Tools.active(source) && BridgeEvents.nativeCreateBreakCheck(target, state))
+                        && !BridgeEvents.breakAllowed(player, player.serverLevel(), hit.getBlockPos())) return InteractionResult.FAIL;
+                // Match the physical tool's shared-dismantle routing before a native callback can switch modes
+                // or rotate the target. A pneumatic tool on its own machine must still run its air-cost path.
+                if (player.isShiftKeyDown() && Tools.active(source) && target != Targets.Kind.UNKNOWN
+                        && !(pneumatic && target == Targets.Kind.PNEUMATIC))
+                    return BridgeEvents.dispatch(player, hand, hit, source);
+                UseOnContext context = context(player, hand, hit, source);
+                InteractionResult result = source.onItemUseFirst(context);
+                if (result != InteractionResult.PASS) return result;
+                result = originalItem.useOn(context);
+                if (result != InteractionResult.PASS) return result;
+                if (pneumatic && Targets.resolve(player.serverLevel().getBlockState(hit.getBlockPos()),
+                        player.serverLevel().getBlockEntity(hit.getBlockPos())) == Targets.Kind.PNEUMATIC)
+                    return InteractionResult.PASS;
+                if (player.isShiftKeyDown() && Tools.active(source)) return BridgeEvents.dispatch(player, hand, hit, source);
+                if (ClassProbe.is(originalItem, "dev.dubhe.anvilcraft.item.AnvilHammerItem")) {
+                    ClassProbe.compatibleMethod(originalItem.getClass(), "useBlock", player, hit.getBlockPos(), player.serverLevel(), source,
+                            hand, hit).invoke(null, player, hit.getBlockPos(), player.serverLevel(), source, hand, hit);
+                    return InteractionResult.SUCCESS;
                 }
+                // Configuration modes that pass must not fall through to another mod's static wrench-tag handler.
+                if (!Tools.active(source)) return InteractionResult.PASS;
+                return BridgeEvents.nativeBlockUse(player, hand, hit, source);
             }, InteractionResult.FAIL);
         } catch (ReflectiveOperationException | RuntimeException error) {
             WrenchBridge.LOG.warn("Native simulation rejected {} / {}", id, selectedMode, error);

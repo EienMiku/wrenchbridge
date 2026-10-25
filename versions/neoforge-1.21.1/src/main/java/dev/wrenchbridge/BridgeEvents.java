@@ -57,6 +57,7 @@ public final class BridgeEvents {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void guardMode(PlayerInteractEvent.RightClickBlock event) {
+        if (NativeBlockActions.input(event)) return;
         if (event.isCanceled() || REENTERING.get()) return;
         // A passive empty main hand must not let a machine consume an intentional offhand sneak use.
         // Return PASS so Minecraft's normal two-hand loop can try the held universal wrench next.
@@ -128,6 +129,7 @@ public final class BridgeEvents {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void rightClick(PlayerInteractEvent.RightClickBlock event) {
+        if (NativeBlockActions.input(event)) return;
         if (!SharingControl.allows(event.getEntity(), event.getItemStack())) return;
         if (event.isCanceled() || REENTERING.get()) return;
         if (WrenchUseTransaction.hasDeferredCreate(event) && interactionDenied(event)) {

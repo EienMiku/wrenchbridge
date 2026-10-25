@@ -1,0 +1,77 @@
+{
+  "cases": [
+    {
+      "scenario": 0,
+      "source_details_enabled": true,
+      "native_menu": true,
+      "submit": "native-click",
+      "hand": "MAIN_HAND",
+      "rotated": true,
+      "backpack": false
+    },
+    {
+      "scenario": 1,
+      "source_details_enabled": true,
+      "native_menu": true,
+      "submit": "native-click",
+      "hand": "OFF_HAND",
+      "rotated": true,
+      "backpack": false
+    },
+    {
+      "scenario": 2,
+      "source_details_enabled": true,
+      "native_menu": true,
+      "submit": "native-click",
+      "hand": "MAIN_HAND",
+      "rotated": true,
+      "backpack": true
+    },
+    {
+      "scenario": 3,
+      "source_details_enabled": false,
+      "native_menu": true,
+      "submit": "native-click",
+      "hand": "OFF_HAND",
+      "rotated": true,
+      "backpack": true
+    },
+    {
+      "scenario": 4,
+      "source_details_enabled": true,
+      "native_menu": true,
+      "submit": "native-click",
+      "hand": "MAIN_HAND",
+      "rotated": false,
+      "backpack": false
+    },
+    {
+      "scenario": 5,
+      "source_details_enabled": true,
+      "native_menu": true,
+      "submit": "native-click",
+      "hand": "MAIN_HAND",
+      "rotated": false,
+      "backpack": false
+    },
+    {
+      "scenario": 6,
+      "source_details_enabled": true,
+      "native_menu": true,
+      "submit": "native-click",
+      "hand": "MAIN_HAND",
+      "rotated": true,
+      "backpack": false
+    },
+    {
+      "scenario": 7,
+      "source_details_enabled": true,
+      "native_menu": true,
+      "submit": "native-key-release",
+      "hand": "MAIN_HAND",
+      "rotated": true,
+      "backpack": false
+    }
+  ],
+  "status": "PASS"
+}

@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 @Mod(WrenchBridge.ID)
 public final class WrenchBridge {
     public static final String ID = "wrenchbridge";
+    public static final String NETWORK_VERSION = "7";
     public static final Logger LOG = LogUtils.getLogger();
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
     public static final DeferredItem<UniversalWrenchItem> WRENCH = ITEMS.registerItem("universal_wrench",
@@ -27,6 +28,7 @@ public final class WrenchBridge {
         bus.addListener(SharingPacket::register);
         bus.addListener(CatalogPacket::register);
         bus.addListener(SourceViewPacket::register);
+        bus.addListener(NativeBlockActionPacket::register);
         bus.addListener((net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) -> event.enqueueWork(() -> {
             if (net.neoforged.fml.ModList.get().isLoaded("ae2")) ContainerMenus.register();
         }));

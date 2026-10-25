@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
     id 'net.neoforged.moddev' version '2.0.143'
 }
-version = '0.1.0-alpha.14-dev.1'
+version = '0.1.0-alpha.14-dev.2'
 group = 'dev.wrenchbridge'
 base.archivesName = 'wrenchbridge-neoforge-1.21.1'
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -29,7 +29,7 @@ neoForge {
         }
         verificationClient {
             client()
-            jvmArgument '-Xmx4G'
+            jvmArgument '-Xmx2G'
             gameDirectory = project.file('run-verification-client')
             systemProperty 'wrenchbridge.verifyClient', 'true'
             systemProperty 'wrenchbridge.verifySoundOnly', providers.gradleProperty('verifySoundOnly').getOrElse('false')
@@ -58,6 +58,13 @@ neoForge {
             gameDirectory = project.file('run-source-view-client')
             systemProperty 'wrenchbridge.verifySourceViewClient', 'true'
             programArguments.addAll '--quickPlaySingleplayer', 'Source-View-Check', '--width', '1100', '--height', '700'
+        }
+        nativeProxyClient {
+            client()
+            jvmArgument '-Xmx2G'
+            gameDirectory = project.file('run-native-proxy-client')
+            systemProperty 'wrenchbridge.verifyNativeProxyClient', 'true'
+            programArguments.addAll '--quickPlaySingleplayer', 'Native-Proxy-Check', '--width', '960', '--height', '600'
         }
         settingsOfflineClient {
             client()

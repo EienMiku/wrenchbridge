@@ -25,6 +25,7 @@ public final class SharingControl {
     SharingPreferences.forget(event.getEntity().getUUID());
     SourceViewPacket.forget(event.getEntity().getUUID());
     ServerRequests.forget(event.getEntity().getUUID());
+    NativeBlockActions.forget(event.getEntity().getUUID());
   }
 
   @SubscribeEvent
@@ -32,6 +33,7 @@ public final class SharingControl {
     SharingPreferences.clearServer();
     SourceViewPacket.clearServer();
     ServerRequests.clear();
+    NativeBlockActions.clear();
   }
 
   @SubscribeEvent

@@ -87,6 +87,8 @@ public final class VerificationMod {
                 && Boolean.getBoolean("wrenchbridge.verifySharingClient")) SharingClientVerification.register(bus);
         if (net.neoforged.fml.loading.FMLEnvironment.dist == net.neoforged.api.distmarker.Dist.CLIENT
                 && Boolean.getBoolean("wrenchbridge.verifySourceViewClient")) SourceViewClientVerification.register(bus);
+        if (net.neoforged.fml.loading.FMLEnvironment.dist == net.neoforged.api.distmarker.Dist.CLIENT
+                && Boolean.getBoolean("wrenchbridge.verifyNativeProxyClient")) NativeProxyClientVerification.register();
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, true, PlayerInteractEvent.RightClickBlock.class, event -> {
             if (Boolean.getBoolean("wrenchbridge.verify") && event.getPos().getY() == 95
                     && (event.getLevel().getBlockState(event.getPos()).getBlock().getClass().getName().contains("refinedstorage")

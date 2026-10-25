@@ -24,7 +24,7 @@ public final class CatalogPacket {
         @Override public Type<Reply> type() { return TYPE; }
     }
     public static void register(RegisterPayloadHandlersEvent event) {
-        var registrar = event.registrar("6");
+        var registrar = event.registrar(WrenchBridge.NETWORK_VERSION);
         registrar.playToServer(Request.TYPE, Request.CODEC, (packet, context) -> {
             if (context.player() instanceof ServerPlayer player) {
                 Reply reply = ServerRequests.catalog(player);

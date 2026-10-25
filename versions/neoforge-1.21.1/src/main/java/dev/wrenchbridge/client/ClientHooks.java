@@ -49,7 +49,6 @@ public final class ClientHooks {
         if (hand != null) game.setScreen(new ModesScreen(hand));
     }
     public static void catalog(java.util.List<String> rows) {
-        NativeRenderTools.catalog(rows);
         if (Minecraft.getInstance().screen instanceof ModesScreen screen) screen.catalog(rows);
     }
 }

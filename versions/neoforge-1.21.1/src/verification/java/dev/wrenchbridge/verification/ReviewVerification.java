@@ -30,6 +30,7 @@ public final class ReviewVerification {
     static ItemStack item(String id) { return new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse(id))); }
 
     public static String verify(ServerLevel level) throws Exception {
+        String nativeProxy = NativeProxyVerification.verify(level);
         Map<String, Object> report = new LinkedHashMap<>();
         report.put("neoforge", net.neoforged.fml.ModList.get().getModContainerById("neoforge").orElseThrow().getModInfo().getVersion().toString());
         Map<String, String> mods = new LinkedHashMap<>();
@@ -46,7 +47,7 @@ public final class ReviewVerification {
         Files.writeString(Path.of("review-verification.json"), new GsonBuilder().setPrettyPrinting().create().toJson(report));
         Object audit = report.get("native_grieflogger");
         return "; review: registry-safe tags, live modes, 10 return fault cases, bounded/coalesced request scans; audit="
-                + (audit instanceof List<?> cases ? cases.size() + " native cases" : audit);
+                + (audit instanceof List<?> cases ? cases.size() + " native cases" : audit) + nativeProxy;
     }
 
     private static Map<String, Object> tags() {

@@ -1,7 +1,6 @@
 package dev.wrenchbridge;
 
 import dev.wrenchbridge.core.ClassProbe;
-import dev.wrenchbridge.core.NativeModes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
@@ -11,19 +10,12 @@ public final class ConfiguratorViews {
     private ConfiguratorViews() {}
 
     public static boolean selected(ItemStack held) {
-        return VirtualModes.isNative(held) && ITEM.equals(VirtualModes.item(held));
+        return NativeToolViews.selected(held, ITEM);
     }
 
     public static ItemStack create(Player player, ItemStack held, ItemStack source) {
         if (!selected(held) || source.isEmpty() || !Tools.id(source).equals(ITEM)
                 || !ClassProbe.is(source.getItem(), "mekanism.common.item.ItemConfigurator")) return ItemStack.EMPTY;
-        ItemStack view = source.copyWithCount(1);
-        String mode = VirtualModes.mode(held);
-        try {
-            if (!mode.isEmpty() && !NativeModes.select(view.getItem(), view, player, mode)) return ItemStack.EMPTY;
-        } catch (ReflectiveOperationException | RuntimeException error) {
-            return ItemStack.EMPTY;
-        }
-        return view;
+        return NativeToolViews.create(player, held, source);
     }
 }

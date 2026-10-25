@@ -257,7 +257,7 @@ public final class SourceViewPacket {
   }
 
   public static void register(RegisterPayloadHandlersEvent event) {
-    var registrar = event.registrar("6");
+    var registrar = event.registrar(WrenchBridge.NETWORK_VERSION);
     registrar.playToServer(
         Request.TYPE,
         Request.CODEC,
