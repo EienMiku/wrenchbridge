@@ -1,0 +1,1 @@
+PASS: ; review: registry-safe tags, live modes, 10 return fault cases, bounded/coalesced request scans; audit=23 native cases; native GUI proxy: 18 cases, native packet parity, real sources, permissions, property/target bounds, contents and flood limit; mode messages: 12 action-bar cases across both hands

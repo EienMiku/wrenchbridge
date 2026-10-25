@@ -106,6 +106,8 @@ public final class ReviewVerification {
     }
 
     private static Map<String, Object> tags() {
+        tagValueAndReloadSemantics();
+        traitScopes();
         ItemStack held = new ItemStack(WrenchBridge.WRENCH.get());
         var tag = TagKey.create(Registries.ITEM, ResourceLocation.parse("c:tools/wrench"));
         var blockTag = TagKey.create(Registries.BLOCK, tag.location());
@@ -113,8 +115,12 @@ public final class ReviewVerification {
         check(!WrenchTagKeys.contains(blockTag), "block registry accepted as an item wrench tag");
         var intrusive = net.minecraft.core.Holder.Reference.createIntrusive(new net.minecraft.core.HolderOwner<net.minecraft.world.item.Item>() {}, held.getItem());
         check(!intrusive.is(tag) && intrusive.tags().count() == 0, "unbound intrusive holder failed during registration");
+        var standalone = net.minecraft.core.Holder.Reference.createStandAlone(new net.minecraft.core.HolderOwner<net.minecraft.world.item.Item>() {},
+                net.minecraft.resources.ResourceKey.create(Registries.ITEM, ResourceLocation.parse("review:unbound")));
+        check(!standalone.is(tag), "unbound empty holder failed during registration");
         WrenchContext.run(InteractionHand.MAIN_HAND, held, held, () -> {
             check(held.is(tag) && held.getItem().builtInRegistryHolder().is(tag), "stack/holder temporary wrench identity");
+            check(intrusive.is(tag), "equal-item intrusive holder lost its scoped view");
             check(held.getTags().anyMatch(tag::equals) && held.getItem().builtInRegistryHolder().tags().anyMatch(tag::equals), "tag enumeration");
             check(!BuiltInRegistries.BLOCK.wrapAsHolder(Blocks.STONE).is(blockTag), "forced tool altered a block holder");
             return true;
@@ -127,6 +133,8 @@ public final class ReviewVerification {
         var bean = java.lang.management.ManagementFactory.getThreadMXBean();
         Map<String, Object> result = new LinkedHashMap<>();
         result.put("semantics", "PASS"); result.put("scope", "membership microbenchmark only; not server MSPT");
+        result.put("non_interned_keys", "PASS"); result.put("tag_rebinding", "PASS");
+        result.put("per_item_scope_gate", "PASS");
         if (bean instanceof com.sun.management.ThreadMXBean allocations && allocations.isThreadAllocatedMemorySupported()) {
             allocations.setThreadAllocatedMemoryEnabled(true);
             int count = 300_000, hits = 0;
@@ -144,7 +152,92 @@ public final class ReviewVerification {
         }
         return result;
     }
+
+    @SuppressWarnings("deprecation")
+    private static void tagValueAndReloadSemantics() {
+        ItemStack wrench = new ItemStack(WrenchBridge.WRENCH.get());
+        for (var canonical : WrenchTagKeys.ITEMS) {
+            ResourceLocation id = canonical.location();
+            var equal = new TagKey<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(
+                    new String(id.getNamespace()), new String(id.getPath())));
+            check(equal != canonical && equal.equals(canonical) && WrenchTagKeys.contains(equal), "non-interned tag value rejected");
+            check(!WrenchTagKeys.contains(TagKey.create(Registries.BLOCK, id)), "same-name block tag accepted");
+            check(!WrenchTagKeys.contains(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("review", id.getPath()))), "namespace collision accepted");
+            check(!WrenchTagKeys.contains(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(id.getNamespace(), id.getPath() + "_extra"))), "path prefix accepted");
+            WrenchContext.run(InteractionHand.MAIN_HAND, wrench, wrench, () -> {
+                check(wrench.is(equal) && wrench.getItem().builtInRegistryHolder().is(equal), "scoped non-interned tag lookup");
+                return true;
+            });
+            check(!wrench.is(equal), "non-interned tag escaped its scope");
+        }
+        var registry = BuiltInRegistries.ITEM;
+        Map<TagKey<net.minecraft.world.item.Item>, List<net.minecraft.core.Holder<net.minecraft.world.item.Item>>> original = new HashMap<>();
+        registry.getTags().forEach(pair -> original.put(pair.getFirst(), pair.getSecond().stream().toList()));
+        var tag = WrenchTagKeys.ITEMS.stream().filter(original::containsKey).findFirst().orElseThrow();
+        var stick = net.minecraft.world.item.Items.STICK.builtInRegistryHolder();
+        var apple = net.minecraft.world.item.Items.APPLE.builtInRegistryHolder();
+        try {
+            for (var member : List.of(stick, apple)) {
+                var rebound = new HashMap<>(original); rebound.put(tag, List.of(member));
+                // These are the registry binding operations used when item tags are reloaded.
+                registry.resetTags(); registry.bindTags(rebound);
+                check(stick.is(tag) == (member == stick) && apple.is(tag) == (member == apple), "ordinary holder binding was cached across reload");
+                check(WrenchTagKeys.contains(tag) && !wrench.is(tag), "reload changed tag-name or universal inactive semantics");
+                WrenchContext.run(InteractionHand.MAIN_HAND, wrench, wrench, () -> {
+                    check(wrench.is(tag) && wrench.getItem().builtInRegistryHolder().is(tag), "reload lost scoped wrench identity");
+                    return true;
+                });
+            }
+        } finally {
+            registry.resetTags(); registry.bindTags(original);
+        }
+        for (var member : List.of(stick, apple))
+            check(member.is(tag) == original.get(tag).contains(member), "original tag binding was not restored");
+    }
     private static boolean old(TagKey<?> tag) { return ToolRules.WRENCH_TAGS.contains(tag.location().toString()); }
+
+    private static void traitScopes() {
+        ItemStack held = new ItemStack(WrenchBridge.WRENCH.get());
+        ItemStack first = new ItemStack(net.minecraft.world.item.Items.STICK);
+        ItemStack second = new ItemStack(net.minecraft.world.item.Items.APPLE);
+        var universal = (WrenchTraitScope) (Object) held.getItem();
+        var firstState = (WrenchTraitScope) (Object) first.getItem();
+        var secondState = (WrenchTraitScope) (Object) second.getItem();
+        var tag = WrenchTagKeys.ITEMS.iterator().next();
+        boolean firstBefore = first.is(tag), secondBefore = second.is(tag);
+        check(universal.wrenchbridge$traitState() == 1 && firstState.wrenchbridge$traitState() == 0
+                && secondState.wrenchbridge$traitState() == 0, "trait states leaked before use");
+        try {
+            WrenchContext.run(InteractionHand.MAIN_HAND, held, first, () -> {
+                check(universal.wrenchbridge$traitState() == 3 && firstState.wrenchbridge$traitState() == 2
+                        && secondState.wrenchbridge$traitState() == 0, "unrelated item marked by use");
+                check(first.is(tag) && first.getItemHolder().is(tag), "participating item lacks scoped tags");
+                var task = new java.util.concurrent.FutureTask<Boolean>(() -> first.is(tag));
+                Thread reader = new Thread(task, "WB-trait-isolation"); reader.setDaemon(true); reader.start();
+                try { check(task.get(2, java.util.concurrent.TimeUnit.SECONDS) == firstBefore, "trait view leaked to another thread"); }
+                catch (Exception error) { throw new RuntimeException(error); }
+                WrenchContext.run(InteractionHand.OFF_HAND, held, second, () -> {
+                    check(universal.wrenchbridge$traitState() == 5 && firstState.wrenchbridge$traitState() == 2
+                            && secondState.wrenchbridge$traitState() == 2, "nested scope lost reference counts");
+                    check(first.is(tag) == firstBefore && second.is(tag), "nested view retained outer forced item");
+                    return true;
+                });
+                check(universal.wrenchbridge$traitState() == 3 && secondState.wrenchbridge$traitState() == 0
+                        && first.is(tag), "nested scope did not restore outer view");
+                first.setCount(0);
+                check(!first.is(tag), "consumed empty stack gained wrench traits");
+                throw new IllegalStateException("expected trait scope failure");
+            });
+        } catch (IllegalStateException expected) {
+            check(expected.getMessage().equals("expected trait scope failure"), "unexpected scope failure");
+        }
+        check(universal.wrenchbridge$traitState() == 1 && firstState.wrenchbridge$traitState() == 0
+                && secondState.wrenchbridge$traitState() == 0, "trait states leaked after consumption/exception");
+        check(!held.is(tag) && second.is(tag) == secondBefore, "inactive tag semantics changed");
+        for (var item : BuiltInRegistries.ITEM)
+            check(((WrenchTraitScope) (Object) item).wrenchbridge$traitState()
+                    == (item instanceof UniversalWrenchItem ? 1 : 0), "item trait scope retained after compatibility callbacks");
+    }
 
     private static Map<String, Object> requests(ServerLevel level) throws Exception {
         ServerPlayer player = net.neoforged.neoforge.common.util.FakePlayerFactory.get(level,

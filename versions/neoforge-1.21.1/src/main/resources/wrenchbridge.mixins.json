@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "dev.wrenchbridge.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["WrenchTraitsMixin", "WrenchHolderTraitsMixin", "PneumaticWrenchEventMixin", "SupplementariesWrenchEventMixin", "AE2WrenchHandMixin", "McJtyWrenchHandMixin", "IntegratedMachineHandMixin", "SharedWrenchIntentServerMixin", "AE2MenuSourceMixin", "AE2ContainerMenuActionsMixin", "ServerFeedbackMixin", "CreateWrenchOrderMixin", "GriefLoggerBreakMixin", "GriefLoggerContainerMixin"],
+  "mixins": ["WrenchItemScopeMixin", "WrenchHolderTraitsMixin", "PneumaticWrenchEventMixin", "SupplementariesWrenchEventMixin", "AE2WrenchHandMixin", "McJtyWrenchHandMixin", "IntegratedMachineHandMixin", "SharedWrenchIntentServerMixin", "AE2MenuSourceMixin", "AE2ContainerMenuActionsMixin", "ServerFeedbackMixin", "CreateWrenchOrderMixin", "GriefLoggerBreakMixin", "GriefLoggerContainerMixin"],
   "client": ["MekanismConfiguratorRenderMixin", "SharedWrenchIntentClientMixin", "CreateNativeInputMixin", "CreateNativeScreenMixin", "NativeScreenConstructionMixin"],
   "injectors": {"defaultRequire": 1}
 }

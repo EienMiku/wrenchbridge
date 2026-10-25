@@ -1,0 +1,14 @@
+{
+  "artifact": "wrenchbridge-neoforge-1.21.1-0.1.0-alpha.15-dev.1.jar",
+  "sha256": "f607a3aefa9eb30c3959067c03986045bb6237da74e78907d4f1142121c18e06",
+  "neoforge": "21.1.244",
+  "production_mod_jars": 92,
+  "fixture_sha256": "6c15b35214b0b079c8fb7f683ece558654c6d697895b035420e70916030732af",
+  "passed": true,
+  "ftb_cases": 96,
+  "removed": 24,
+  "denied_preserved": 72,
+  "durable_break_rows": 24,
+  "adapter_errors": [],
+  "scope": "Fresh local 92-mod pack; non-OP, non-member human ServerPlayer; no real client join or production MSPT A/B."
+}

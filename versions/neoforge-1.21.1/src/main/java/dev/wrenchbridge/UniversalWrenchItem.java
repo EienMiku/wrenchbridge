@@ -15,7 +15,10 @@ import net.minecraft.core.BlockPos;
 import net.neoforged.neoforge.common.ItemAbility;
 
 public final class UniversalWrenchItem extends Item {
-    public UniversalWrenchItem(Properties properties) { super(properties); }
+    public UniversalWrenchItem(Properties properties) {
+        super(properties);
+        ((WrenchTraitScope) (Object) this).wrenchbridge$markUniversal();
+    }
 
     @Override public boolean canPerformAction(ItemStack stack, ItemAbility ability) {
         return WrenchContext.forced(stack) && (ability == ItemAbility.get("wrench_dismantle") || ability == ItemAbility.get("wrench_rotate")
