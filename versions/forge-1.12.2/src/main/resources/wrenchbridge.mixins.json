@@ -15,7 +15,10 @@
     "NativeMenuClickMixin",
     "AE2WrenchProtocolMixin",
     "MekanismWrenchProtocolMixin",
-    "MekanismWrenchHandlerMixin"
+    "MekanismWrenchHandlerMixin",
+    "CreateWrenchOrderMixin",
+    "GriefLoggerBreakMixin",
+    "GriefLoggerContainerMixin"
   ],
   "client": [
     "SharedIntentClientMixin",

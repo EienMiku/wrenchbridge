@@ -24,11 +24,23 @@ public final class SharingControl {
       net.minecraftforge.event.entity.player.PlayerEvent.PlayerLoggedOutEvent event) {
     SharingPreferences.forget(event.getEntity().getUUID());
     SourceViewPacket.forget(event.getEntity().getUUID());
+    ServerRequests.forget(event.getEntity().getUUID());
+    NativeBlockActions.forget(event.getEntity().getUUID());
   }
 
   @SubscribeEvent
   public static void stopped(net.minecraftforge.event.server.ServerStoppedEvent event) {
     SharingPreferences.clearServer();
     SourceViewPacket.clearServer();
+    ServerRequests.clear();
+    NativeBlockActions.clear();
+  }
+
+  @SubscribeEvent
+  public static void tick(net.minecraftforge.event.TickEvent.ServerTickEvent event) {
+    if (event.phase == net.minecraftforge.event.TickEvent.Phase.END) {
+      net.minecraft.server.MinecraftServer server = event.getServer();
+      if (server != null) ServerRequests.tick(server);
+    }
   }
 }

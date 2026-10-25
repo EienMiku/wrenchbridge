@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "cases": [
+    "native log rotation MAIN_HAND stored\u003dfalse",
+    "native log rotation OFF_HAND stored\u003dfalse",
+    "native log rotation MAIN_HAND stored\u003dtrue",
+    "native log rotation OFF_HAND stored\u003dtrue",
+    "denied edit",
+    "denied interact",
+    "rejected wrong-mode",
+    "rejected missing-source",
+    "rejected different-block",
+    "rejected non-rotation-property",
+    "rejected multiple-properties",
+    "rejected stale",
+    "rejected far",
+    "rejected invalid-id",
+    "rejected unknown-action",
+    "native hopper retains 17 items and block entity",
+    "unrelated waterlogged state preserved",
+    "8 immediate commits; 1000 excess packets rejected"
+  ]
+}

@@ -58,8 +58,7 @@ public final class CatalogPacket {
           .getServerWorld()
           .addScheduledTask(
               () -> {
-                if (!player.isSpectator())
-                  ModePacket.CHANNEL.sendTo(new Reply(StoredTools.catalog(player)), player);
+                respond(player);
               });
       return null;
     }
@@ -77,6 +76,12 @@ public final class CatalogPacket {
   public static void register() {
     ModePacket.CHANNEL.registerMessage(RequestHandler.class, Request.class, 1, Side.SERVER);
     ModePacket.CHANNEL.registerMessage(ReplyHandler.class, Reply.class, 2, Side.CLIENT);
+  }
+
+  static void respond(EntityPlayerMP player) {
+    if (player == null) return;
+    Reply reply = ServerRequests.catalog(player);
+    if (reply != null) ModePacket.CHANNEL.sendTo(reply, player);
   }
 
   public static void request() {

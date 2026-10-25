@@ -1,6 +1,5 @@
 package dev.wrenchbridge;
 
-import dev.wrenchbridge.core.ClassProbe;
 import dev.wrenchbridge.core.NativeModes;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -11,6 +10,7 @@ import java.util.Set;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.items.IItemHandler;
 
 /**
@@ -18,60 +18,68 @@ import net.minecraftforge.items.IItemHandler;
  */
 public final class StoredTools {
   private static final class Located {
-    public final ItemStack root;
-    public final IItemHandler inventory;
-    public final int slot;
-    public final ItemStack tool;
+    final ItemStack root, tool;
+    final IItemHandler inventory;
+    final int slot;
 
-    public Located(ItemStack root, IItemHandler inventory, int slot, ItemStack tool) {
+    Located(ItemStack root, IItemHandler inventory, int slot, ItemStack tool) {
       this.root = root;
       this.inventory = inventory;
       this.slot = slot;
       this.tool = tool;
     }
-
-    public ItemStack root() {
-      return root;
-    }
-
-    public IItemHandler inventory() {
-      return inventory;
-    }
-
-    public int slot() {
-      return slot;
-    }
-
-    public ItemStack tool() {
-      return tool;
-    }
-
-    public boolean equals(Object o) {
-      if (!(o instanceof Located)) return false;
-      Located other = (Located) o;
-      return java.util.Objects.equals(root, other.root)
-          && java.util.Objects.equals(inventory, other.inventory)
-          && java.util.Objects.equals(slot, other.slot)
-          && java.util.Objects.equals(tool, other.tool);
-    }
-
-    public int hashCode() {
-      return java.util.Objects.hash(root, inventory, slot, tool);
-    }
   }
 
   private StoredTools() {}
+
+  private static final class Curios {
+    static final Class<?> API = api();
+
+    private static Class<?> api() {
+      try {
+        return Class.forName("top.theillusivec4.curios.api.CuriosApi");
+      } catch (ClassNotFoundException | LinkageError error) {
+        return null;
+      }
+    }
+
+    static final ClassValue<Optional<java.lang.reflect.Method>> INVENTORY =
+        new ClassValue<Optional<java.lang.reflect.Method>>() {
+          @Override
+          protected Optional<java.lang.reflect.Method> computeValue(Class<?> type) {
+            if (API == null) return Optional.empty();
+            for (var method : API.getMethods()) {
+              Class<?>[] params = method.getParameterTypes();
+              if (method.getName().equals("getCuriosInventory")
+                  && params.length == 1
+                  && params[0].isAssignableFrom(type)) return Optional.of(method);
+            }
+            return Optional.empty();
+          }
+        };
+    static final ClassValue<Optional<java.lang.reflect.Method>> EQUIPPED =
+        new ClassValue<Optional<java.lang.reflect.Method>>() {
+          @Override
+          protected Optional<java.lang.reflect.Method> computeValue(Class<?> type) {
+            try {
+              return Optional.of(type.getMethod("getEquippedCurios"));
+            } catch (NoSuchMethodException | LinkageError | RuntimeException error) {
+              return Optional.empty();
+            }
+          }
+        };
+  }
 
   private static List<ItemStack> roots(EntityPlayer player) {
     List<ItemStack> roots = new ArrayList<>();
     for (int slot = 0; slot < player.inventory.getSizeInventory(); slot++)
       roots.add(player.inventory.getStackInSlot(slot));
     try {
-      Class<?> api = Class.forName("top.theillusivec4.curios.api.CuriosApi");
-      Object optional =
-          ClassProbe.compatibleMethod(api, "getCuriosInventory", player).invoke(null, player);
+      var method = Curios.INVENTORY.get(player.getClass());
+      Object optional = !method.isPresent() ? null : method.get().invoke(null, player);
       if (optional instanceof Optional<?> value && value.isPresent()) {
-        Object equipped = value.get().getClass().getMethod("getEquippedCurios").invoke(value.get());
+        var getter = Curios.EQUIPPED.get(value.get().getClass());
+        Object equipped = !getter.isPresent() ? null : getter.get().invoke(value.get());
         if (equipped instanceof IItemHandler items)
           for (int slot = 0; slot < Math.min(64, items.getSlots()); slot++)
             roots.add(items.getStackInSlot(slot));
@@ -129,18 +137,16 @@ public final class StoredTools {
     return new ArrayList<>(rows);
   }
 
-  public static Map<String, ItemStack> snapshots(
-      net.minecraft.entity.player.EntityPlayer player, List<String> ids) {
-    Map<String, ItemStack> result = new java.util.LinkedHashMap<String, ItemStack>();
-    Set<String> missing = new LinkedHashSet<String>(ids);
+  public static Map<String, ItemStack> snapshots(EntityPlayer player, List<String> ids) {
+    Map<String, ItemStack> result = new java.util.LinkedHashMap<>();
+    Set<String> missing = new LinkedHashSet<>(ids);
     for (int slot = 0; slot < player.inventory.getSizeInventory(); slot++) {
       if (slot >= 36 && slot != 40) continue;
       ItemStack stack = player.inventory.getStackInSlot(slot);
-      if (!stack.isEmpty()
-          && missing.contains(Tools.id(stack))
-          && eligible(stack, Tools.id(stack))) {
-        result.put(Tools.id(stack), stack.copy());
-        missing.remove(Tools.id(stack));
+      String id = Tools.id(stack);
+      if (!stack.isEmpty() && missing.contains(id) && eligible(stack, id)) {
+        result.put(id, stack.copy());
+        missing.remove(id);
       }
     }
     if (!missing.isEmpty())
@@ -194,16 +200,15 @@ public final class StoredTools {
         if (!eligible(extracted, id) || extracted.getCount() != 1) return unavailable;
         return action.run(extracted);
       } finally {
-        ItemStack remainder = extracted;
-        if (roots(player).stream().anyMatch(root -> root == entry.root))
-          remainder = entry.inventory.insertItem(entry.slot, extracted, false);
-        preserve(player, remainder);
-        changed(player);
+        try {
+          preserve(player, returnTool(player, entry, extracted, false).remainder);
+        } finally {
+          changed(player);
+        }
       }
     }
     player.sendStatusMessage(
-        new net.minecraft.util.text.TextComponentTranslation("message.wrenchbridge.source_missing"),
-        true);
+        new TextComponentTranslation("message.wrenchbridge.source_missing"), true);
     return unavailable;
   }
 
@@ -262,15 +267,10 @@ public final class StoredTools {
         try {
           expected = extracted.copy();
           view = expected.copy();
-          ItemStack remainder = extracted;
-          if (roots(player).stream().anyMatch(root -> root == entry.root)
-              || player.inventory.getItemStack() == entry.root)
-            try {
-              remainder = entry.inventory.insertItem(entry.slot, extracted, false);
-            } catch (RuntimeException error) {
-              valid = false;
-              WrenchBridge.LOG.warn("Container declined menu tool return", error);
-            }
+          if (extracted.isEmpty()) valid = false;
+          Returned returned = returnTool(player, entry, extracted, true);
+          ItemStack remainder = returned.remainder;
+          if (returned.failed) valid = false;
           if (!remainder.isEmpty()) {
             valid = false;
             preserve(player, remainder);
@@ -293,6 +293,60 @@ public final class StoredTools {
 
   public static void forget(EntityPlayerMP player) {
     ContainerMenus.forget(player);
+  }
+
+  private static final class Returned {
+    final ItemStack remainder;
+    final boolean failed;
+
+    Returned(ItemStack remainder, boolean failed) {
+      this.remainder = remainder;
+      this.failed = failed;
+    }
+  }
+
+  /**
+   * Preserve the post-action tool even if a foreign handler mutates the insert argument then
+   * throws.
+   */
+  private static Returned returnTool(
+      EntityPlayerMP player, Located entry, ItemStack extracted, boolean menu) {
+    if (extracted.isEmpty()) return new Returned(ItemStack.EMPTY, false);
+    ItemStack backup = extracted.copy();
+    int before = -1;
+    try {
+      if (roots(player).stream().noneMatch(root -> root == entry.root)
+          && !(menu && player.inventory.getItemStack() == entry.root))
+        return new Returned(backup, true);
+      before = matchingCount(entry.inventory.getStackInSlot(entry.slot), backup);
+      return new Returned(
+          java.util.Objects.requireNonNull(
+              entry.inventory.insertItem(entry.slot, extracted, false)),
+          false);
+    } catch (RuntimeException error) {
+      // Some handlers accept the item before a failing callback. Do not duplicate that accepted
+      // copy.
+      if (before >= 0)
+        try {
+          int accepted =
+              Math.max(
+                  0, matchingCount(entry.inventory.getStackInSlot(entry.slot), backup) - before);
+          backup.shrink(Math.min(backup.getCount(), accepted));
+        } catch (RuntimeException unreadable) {
+          error.addSuppressed(unreadable);
+        }
+      WrenchBridge.LOG.warn(
+          "Container declined borrowed tool return; preserving the unreturned remainder", error);
+      return new Returned(backup, true);
+    }
+  }
+
+  private static int matchingCount(ItemStack stack, ItemStack expected) {
+    if (stack.isEmpty() || expected.isEmpty()) return 0;
+    ItemStack a = stack.copy(), b = expected.copy();
+    a.setCount(1);
+    b.setCount(1);
+    return ItemStack.areItemStacksEqual(a, b) ? stack.getCount() : 0;
   }
 
   private static void preserve(EntityPlayerMP player, ItemStack remainder) {

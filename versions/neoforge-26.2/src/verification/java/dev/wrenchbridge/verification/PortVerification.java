@@ -83,6 +83,7 @@ public final class PortVerification {
                     + verifyNativeMenus(e.getServer().overworld());
             result += SharingVerification.verify(e.getServer().overworld());
             result += SourceViewVerification.verify(e.getServer().overworld());
+            result += PortUpgradeVerification.verify(e.getServer().overworld());
           } catch (Throwable error) {
             WrenchBridge.LOG.error("Port verification failed", error);
             result = "FAIL: " + error;

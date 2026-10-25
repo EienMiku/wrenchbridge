@@ -17,7 +17,10 @@
     "AE2ToolContentsMixin",
     "AE2ContainerActionsMixin",
     "NativeMenuClickMixin",
-    "AE2LegacyWrenchMixin"
+    "AE2LegacyWrenchMixin",
+    "CreateWrenchOrderMixin",
+    "GriefLoggerBreakMixin",
+    "GriefLoggerContainerMixin"
   ],
   "client": [
     "MekanismConfiguratorRenderMixin",

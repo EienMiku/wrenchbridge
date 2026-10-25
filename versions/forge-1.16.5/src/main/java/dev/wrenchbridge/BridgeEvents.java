@@ -27,6 +27,10 @@ public final class BridgeEvents {
 
   private BridgeEvents() {}
 
+  public static boolean isDispatching() {
+    return REENTERING.get();
+  }
+
   public static boolean ownsPneumaticClick(PlayerInteractEvent.RightClickBlock event) {
     if (!SharingControl.allows(event.getPlayer(), event.getItemStack())) return false;
     if (!event.getPlayer().isShiftKeyDown()) return false;
@@ -159,6 +163,14 @@ public final class BridgeEvents {
   public static void rightClick(PlayerInteractEvent.RightClickBlock event) {
     if (!SharingControl.allows(event.getPlayer(), event.getItemStack())) return;
     if (event.isCanceled() || REENTERING.get()) return;
+    if (WrenchUseTransaction.hasDeferredCreate(event) && interactionDenied(event)) {
+      event.setCanceled(true);
+      event.setCancellationResult(ActionResultType.FAIL);
+      return;
+    }
+    WrenchUseTransaction.runCreate(event);
+    if (event.isCanceled()) return;
+
     if (VirtualModes.isNative(event.getItemStack())) {
       boolean disabled = interactionDenied(event);
       event.setCanceled(true);
@@ -391,9 +403,14 @@ public final class BridgeEvents {
     }
   }
 
-  private static boolean breakAllowed(ServerPlayerEntity player, ServerWorld level, BlockPos pos) {
-    return !MinecraftForge.EVENT_BUS.post(
-        new BlockEvent.BreakEvent(level, pos, level.getBlockState(pos), player));
+  static boolean breakAllowed(ServerPlayerEntity player, ServerWorld level, BlockPos pos) {
+    return WrenchUseTransaction.permission(
+        player,
+        level,
+        pos,
+        () ->
+            !MinecraftForge.EVENT_BUS.post(
+                new BlockEvent.BreakEvent(level, pos, level.getBlockState(pos), player)));
   }
 
   @SubscribeEvent

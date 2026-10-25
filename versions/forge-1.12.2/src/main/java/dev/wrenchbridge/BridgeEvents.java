@@ -43,6 +43,10 @@ public final class BridgeEvents {
 
   private BridgeEvents() {}
 
+  public static boolean isDispatching() {
+    return REENTERING.get();
+  }
+
   public static boolean knownTarget(Block block) {
     return NAMESPACES.contains(ForgeRegistries.BLOCKS.getKey(block).getNamespace());
   }
@@ -106,6 +110,14 @@ public final class BridgeEvents {
   public static void use(PlayerInteractEvent.RightClickBlock e) {
     if (!SharingControl.allows(e.getEntityPlayer(), e.getItemStack())) return;
     if (e.isCanceled() || REENTERING.get()) return;
+    if (WrenchUseTransaction.hasDeferredCreate(e) && interactionDenied(e)) {
+      e.setCanceled(true);
+      e.setCancellationResult(EnumActionResult.FAIL);
+      return;
+    }
+    WrenchUseTransaction.runCreate(e);
+    if (e.isCanceled()) return;
+
     boolean nativeMode = VirtualModes.isNative(e.getItemStack());
     if (!nativeMode
         && (!e.getEntityPlayer().isSneaking()

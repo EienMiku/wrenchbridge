@@ -20,13 +20,14 @@ public record ModePacket(String itemId, String mode, boolean offhand) {
 
   static final SimpleChannel CHANNEL =
       NetworkRegistry.ChannelBuilder.named(new ResourceLocation(WrenchBridge.ID, "mode"))
-          .networkProtocolVersion(() -> "6")
-          .clientAcceptedVersions("6"::equals)
-          .serverAcceptedVersions("6"::equals)
+          .networkProtocolVersion(() -> "7")
+          .clientAcceptedVersions("7"::equals)
+          .serverAcceptedVersions("7"::equals)
           .simpleChannel();
 
   public static void register() {
     SharingPacket.register();
+    NativeBlockActionPacket.register();
     SourceViewPacket.register();
     CatalogPacket.register();
     CHANNEL
@@ -35,7 +36,7 @@ public record ModePacket(String itemId, String mode, boolean offhand) {
         .decoder(ModePacket::decode)
         .consumerMainThread(
             (p, c) -> {
-              if (c.get().getSender() != null) select(p, c.get().getSender());
+              if (c.get().getSender() != null) ServerRequests.mode(p, c.get().getSender());
               c.get().setPacketHandled(true);
             })
         .add();
@@ -55,11 +56,13 @@ public record ModePacket(String itemId, String mode, boolean offhand) {
     CHANNEL.sendToServer(p);
   }
 
-  static void select(ModePacket packet, ServerPlayer player) {
+  static boolean select(ModePacket packet, ServerPlayer player) {
     if (VirtualModes.select(player, packet.hand(), packet.itemId, packet.mode)) {
       ItemStack wrench = player.getItemInHand(packet.hand());
-      var id = VirtualModes.isNative(wrench)
-          ? net.minecraft.resources.ResourceLocation.tryParse(VirtualModes.item(wrench)) : null;
+      var id =
+          VirtualModes.isNative(wrench)
+              ? net.minecraft.resources.ResourceLocation.tryParse(VirtualModes.item(wrench))
+              : null;
       Component selection =
           id == null
               ? Component.translatable("screen.wrenchbridge.shared")
@@ -68,6 +71,8 @@ public record ModePacket(String itemId, String mode, boolean offhand) {
                   VirtualModes.mode(wrench));
       player.displayClientMessage(
           Component.translatable("message.wrenchbridge.selected", selection), true);
+      return true;
     }
+    return false;
   }
 }

@@ -50,7 +50,7 @@ public final class SourceViewClient {
     owner();
     ticks++;
     views.clear();
-    if (connection == null || !SharingPreferences.enabled(ClientOption.SOURCE_DETAILS)) {
+    if (connection == null) {
       observed.clear();
       cached.clear();
       return;
@@ -102,6 +102,11 @@ public final class SourceViewClient {
   }
 
   public static ItemStack view(ItemStack wrench) {
+    if (!SharingPreferences.enabled(ClientOption.SOURCE_DETAILS)) return ItemStack.EMPTY;
+    return nativeSource(wrench);
+  }
+
+  public static ItemStack nativeSource(ItemStack wrench) {
     if (!Minecraft.getMinecraft().isCallingFromMinecraftThread()) return ItemStack.EMPTY;
     try {
       return resolve(wrench);
@@ -111,9 +116,7 @@ public final class SourceViewClient {
   }
 
   private static ItemStack resolve(ItemStack wrench) {
-    if (inside
-        || !VirtualModes.isNative(wrench)
-        || !SharingPreferences.enabled(ClientOption.SOURCE_DETAILS)) return ItemStack.EMPTY;
+    if (inside || !VirtualModes.isNative(wrench)) return ItemStack.EMPTY;
     owner();
     Minecraft game = Minecraft.getMinecraft();
     if (game.player == null || connection == null) return ItemStack.EMPTY;

@@ -3,7 +3,7 @@ plugins { id 'java-library'; id 'net.minecraftforge.gradle' version '6.0.54' }
 apply plugin: 'org.spongepowered.mixin'
 mixin { add sourceSets.main, 'wrenchbridge.refmap.json'; config 'wrenchbridge.mixins.json' }
 jarJar.enable()
-version = '0.1.0-alpha.13'
+version = '0.1.0-alpha.14'
 group='dev.wrenchbridge'
 base.archivesName='wrenchbridge-forge-1.20.1'
 java.toolchain.languageVersion=JavaLanguageVersion.of(17)
@@ -39,4 +39,20 @@ tasks.named('sourcesJar') { duplicatesStrategy=DuplicatesStrategy.EXCLUDE }
 if(providers.gradleProperty('nativeVerification').isPresent()) {
  repositories { maven { url='https://api.modrinth.com/maven' }; maven { url='https://modmaven.dev' } }
  dependencies { runtimeOnly fg.deobf('maven.modrinth:ae2:jYgSnxye'); runtimeOnly fg.deobf('maven.modrinth:mekanism:uxe1WQp4'); runtimeOnly fg.deobf('maven.modrinth:guideme:i7Tp1AHw') }
+}
+
+if(providers.gradleProperty('createVerification').isPresent()) {
+ repositories { maven { url='https://api.modrinth.com/maven' } }
+ dependencies { runtimeOnly fg.deobf('maven.modrinth:create:8amzvn9x') }
+}
+
+minecraft.runs {
+ nativeProxyClient {
+  parent project.minecraft.runs.client
+  workingDirectory project.file('run-native-proxy-client')
+  jvmArgs '-Xmx2G'
+  property 'wrenchbridge.verifyNativeProxyClient','true'
+  args '--quickPlaySingleplayer','Native-Proxy-Check','--width','960','--height','600'
+  mods { wrenchbridge_verification { source sourceSets.verification } }
+ }
 }

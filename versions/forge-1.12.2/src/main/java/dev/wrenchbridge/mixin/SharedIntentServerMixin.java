@@ -25,7 +25,18 @@ public abstract class SharedIntentServerMixin {
       float y,
       float z,
       Operation<EnumActionResult> original) {
-    return WrenchContext.sharedUse(
-        p, hand, tool, () -> original.call(p, world, tool, hand, pos, face, x, y, z));
+    if (!(p instanceof net.minecraft.entity.player.EntityPlayerMP))
+      return original.call(p, world, tool, hand, pos, face, x, y, z);
+    return WrenchUseTransaction.use(
+        (net.minecraft.entity.player.EntityPlayerMP) p,
+        hand,
+        tool,
+        new net.minecraft.util.math.RayTraceResult(
+            new net.minecraft.util.math.Vec3d(pos.getX() + x, pos.getY() + y, pos.getZ() + z),
+            face,
+            pos),
+        () ->
+            WrenchContext.sharedUse(
+                p, hand, tool, () -> original.call(p, world, tool, hand, pos, face, x, y, z)));
   }
 }

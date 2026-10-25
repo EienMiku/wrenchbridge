@@ -85,8 +85,9 @@ public final class VirtualModes {
     if ((id.equals("ae2:network_tool") || id.equals("appliedenergistics2:network_tool"))
         && !player.isShiftKeyDown()) return openNativeMenu(player, hand, hit);
     try {
-      return StoredTools.use(
+      return NativeToolExecution.use(
           player,
+          hand,
           id,
           source -> {
             Item originalItem = source.getItem();

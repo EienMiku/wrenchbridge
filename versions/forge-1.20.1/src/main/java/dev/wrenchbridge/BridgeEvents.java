@@ -29,6 +29,10 @@ public final class BridgeEvents {
 
   private BridgeEvents() {}
 
+  public static boolean isDispatching() {
+    return REENTERING.get();
+  }
+
   public static boolean ownsPneumaticClick(PlayerInteractEvent.RightClickBlock event) {
     if (!SharingControl.allows(event.getEntity(), event.getItemStack())) return false;
     if (!event.getEntity().isShiftKeyDown()) return false;
@@ -54,6 +58,7 @@ public final class BridgeEvents {
 
   @SubscribeEvent(priority = EventPriority.HIGHEST)
   public static void guardMode(PlayerInteractEvent.RightClickBlock event) {
+    if (NativeBlockActions.input(event)) return;
     if (event.isCanceled() || REENTERING.get()) return;
     // A passive empty main hand must not let a machine consume an intentional offhand sneak use.
     // Return PASS so Minecraft's normal two-hand loop can try the held universal wrench next.
@@ -153,8 +158,17 @@ public final class BridgeEvents {
 
   @SubscribeEvent(priority = EventPriority.LOWEST)
   public static void rightClick(PlayerInteractEvent.RightClickBlock event) {
+    if (NativeBlockActions.input(event)) return;
     if (!SharingControl.allows(event.getEntity(), event.getItemStack())) return;
     if (event.isCanceled() || REENTERING.get()) return;
+    if (WrenchUseTransaction.hasDeferredCreate(event) && interactionDenied(event)) {
+      event.setCanceled(true);
+      event.setCancellationResult(InteractionResult.FAIL);
+      return;
+    }
+    WrenchUseTransaction.runCreate(event);
+    if (event.isCanceled()) return;
+
     if (VirtualModes.isNative(event.getItemStack())) {
       boolean disabled = interactionDenied(event);
       event.setCanceled(true);
@@ -380,9 +394,14 @@ public final class BridgeEvents {
     }
   }
 
-  private static boolean breakAllowed(ServerPlayer player, ServerLevel level, BlockPos pos) {
-    return !MinecraftForge.EVENT_BUS.post(
-        new BlockEvent.BreakEvent(level, pos, level.getBlockState(pos), player));
+  static boolean breakAllowed(ServerPlayer player, ServerLevel level, BlockPos pos) {
+    return WrenchUseTransaction.permission(
+        player,
+        level,
+        pos,
+        () ->
+            !MinecraftForge.EVENT_BUS.post(
+                new BlockEvent.BreakEvent(level, pos, level.getBlockState(pos), player)));
   }
 
   @SubscribeEvent

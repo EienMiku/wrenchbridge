@@ -28,6 +28,10 @@ public final class BridgeEvents {
 
   private BridgeEvents() {}
 
+  public static boolean isDispatching() {
+    return REENTERING.get();
+  }
+
   public static boolean ownsPneumaticClick(PlayerInteractEvent.RightClickBlock event) {
     if (!SharingControl.allows(event.getEntity(), event.getItemStack())) return false;
     if (!event.getEntity().isShiftKeyDown()) return false;
@@ -154,6 +158,14 @@ public final class BridgeEvents {
   public static void rightClick(PlayerInteractEvent.RightClickBlock event) {
     if (!SharingControl.allows(event.getEntity(), event.getItemStack())) return;
     if (event.isCanceled() || REENTERING.get()) return;
+    if (WrenchUseTransaction.hasDeferredCreate(event) && interactionDenied(event)) {
+      event.setCanceled(true);
+      event.setCancellationResult(InteractionResult.FAIL);
+      return;
+    }
+    WrenchUseTransaction.runCreate(event);
+    if (event.isCanceled()) return;
+
     if (VirtualModes.isNative(event.getItemStack())) {
       boolean disabled = interactionDenied(event);
       event.setCanceled(true);
@@ -388,12 +400,17 @@ public final class BridgeEvents {
     }
   }
 
-  private static boolean breakAllowed(ServerPlayer player, ServerLevel level, BlockPos pos) {
-    return !NeoForge.EVENT_BUS
-        .post(
-            new net.neoforged.neoforge.event.level.block.BreakBlockEvent(
-                level, pos, level.getBlockState(pos), player))
-        .isCanceled();
+  static boolean breakAllowed(ServerPlayer player, ServerLevel level, BlockPos pos) {
+    return WrenchUseTransaction.permission(
+        player,
+        level,
+        pos,
+        () ->
+            !NeoForge.EVENT_BUS
+                .post(
+                    new net.neoforged.neoforge.event.level.block.BreakBlockEvent(
+                        level, pos, level.getBlockState(pos), player))
+                .isCanceled());
   }
 
   @SubscribeEvent

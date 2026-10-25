@@ -44,6 +44,18 @@ public final class ModePacket implements IMessage {
     buffer.writeBoolean(offhand);
   }
 
+  public String itemId() {
+    return itemId;
+  }
+
+  public String mode() {
+    return mode;
+  }
+
+  public net.minecraft.util.EnumHand hand() {
+    return offhand ? net.minecraft.util.EnumHand.OFF_HAND : net.minecraft.util.EnumHand.MAIN_HAND;
+  }
+
   public static void register() {
     SharingPacket.register();
     SourceViewPacket.register();
@@ -59,18 +71,12 @@ public final class ModePacket implements IMessage {
     @Override
     public IMessage onMessage(ModePacket packet, MessageContext context) {
       EntityPlayerMP player = context.getServerHandler().player;
-      player.getServerWorld().addScheduledTask(() -> select(packet, player));
+      player.getServerWorld().addScheduledTask(() -> ServerRequests.mode(packet, player));
       return null;
     }
   }
 
-  private static void select(ModePacket packet, EntityPlayerMP player) {
-    VirtualModes.select(
-        player,
-        packet.offhand
-            ? net.minecraft.util.EnumHand.OFF_HAND
-            : net.minecraft.util.EnumHand.MAIN_HAND,
-        packet.itemId,
-        packet.mode);
+  static boolean select(ModePacket packet, EntityPlayerMP player) {
+    return VirtualModes.select(player, packet.hand(), packet.itemId, packet.mode);
   }
 }

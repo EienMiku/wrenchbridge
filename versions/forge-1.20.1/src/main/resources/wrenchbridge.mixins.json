@@ -15,11 +15,17 @@
     "AE2MenuSourceMixin",
     "AE2ContainerMenuActionsMixin",
     "ServerFeedbackMixin",
-    "AE2HostSourceMixin"
+    "AE2HostSourceMixin",
+    "CreateWrenchOrderMixin",
+    "GriefLoggerBreakMixin",
+    "GriefLoggerContainerMixin"
   ],
   "client": [
     "MekanismConfiguratorRenderMixin",
-    "SharedWrenchIntentClientMixin"
+    "SharedWrenchIntentClientMixin",
+    "CreateNativeInputMixin",
+    "CreateNativeScreenMixin",
+    "NativeScreenConstructionMixin"
   ],
   "injectors": {
     "defaultRequire": 1

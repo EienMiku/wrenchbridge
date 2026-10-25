@@ -3,6 +3,7 @@ package dev.wrenchbridge.mixin;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import dev.wrenchbridge.WrenchContext;
+import dev.wrenchbridge.WrenchUseTransaction;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.management.PlayerInteractionManager;
@@ -22,7 +23,13 @@ public abstract class SharedWrenchIntentServerMixin {
       Hand hand,
       BlockRayTraceResult hit,
       Operation<ActionResultType> original) {
-    return WrenchContext.sharedUse(
-        player, hand, held, () -> original.call(player, level, held, hand, hit));
+    return WrenchUseTransaction.use(
+        player,
+        hand,
+        held,
+        hit,
+        () ->
+            WrenchContext.sharedUse(
+                player, hand, held, () -> original.call(player, level, held, hand, hit)));
   }
 }

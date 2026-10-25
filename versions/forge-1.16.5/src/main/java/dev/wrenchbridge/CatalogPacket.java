@@ -58,10 +58,7 @@ public final class CatalogPacket {
                   .enqueueWork(
                       () -> {
                         var player = context.get().getSender();
-                        if (player != null && !player.isSpectator())
-                          channel.send(
-                              PacketDistributor.PLAYER.with(() -> player),
-                              new Reply(StoredTools.catalog(player)));
+                        respond(player);
                       });
               context.get().setPacketHandled(true);
             })
@@ -93,6 +90,12 @@ public final class CatalogPacket {
     List<String> rows = new ArrayList<>();
     for (int i = 0; i < size; i++) rows.add(buffer.readUtf(256));
     return rows;
+  }
+
+  static void respond(net.minecraft.entity.player.ServerPlayerEntity player) {
+    if (player == null) return;
+    Reply reply = ServerRequests.catalog(player);
+    if (reply != null) ModePacket.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), reply);
   }
 
   public static void request() {

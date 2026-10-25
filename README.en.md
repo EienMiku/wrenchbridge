@@ -4,7 +4,7 @@
 
 A universal wrench and a compatibility bridge for modded Minecraft. Share supported dismantling protocols between wrench-like tools, and borrow the native functions of tools you carry through a configurable mode palette.
 
-Downloads cover **Forge 1.12.2, 1.16.5, 1.20.1 and NeoForge 1.21.1, 26.1.2, 26.2**, all at **0.1.0-alpha.13**. Install the matching game/loader file on both client and server. Single-player requires only the client installation. **Forge 1.12.2 also requires MixinBooter 11.18 or newer.**
+Downloads cover **Forge 1.12.2, 1.16.5, 1.20.1 and NeoForge 1.21.1, 26.1.2, 26.2**, all at **0.1.0-alpha.14**. Install the matching game/loader file on both client and server. Single-player requires only the client installation. **Forge 1.12.2 also requires MixinBooter 11.18 or newer.** See the [release notes](docs/publishing/release-alpha14.md) and [port checks](docs/alpha14-ports.md).
 
 ## Use
 
@@ -12,8 +12,9 @@ Downloads cover **Forge 1.12.2, 1.16.5, 1.20.1 and NeoForge 1.21.1, 26.1.2, 26.2
 - Press **G** to open the searchable mode palette. Change this binding in Minecraft's controls. Ordinary right-click does not open the palette.
 - Open **Mods → Wrench Bridge → Config** without holding a tool or loading a world. A separate **Open Wrench Bridge settings** key can be assigned in Controls; it is unbound by default and works empty-handed in game.
 - **Other wrenches** sharing is enabled by default. Toggle it in the mod-list configuration screen or **Sharing settings** at the bottom of the G palette. It controls Wrench Bridge's extra sharing for other tools; native compatibility and the universal wrench's abilities remain available. The choice is saved locally and synchronized per player on login.
-- Simulated configuration overlays, mode menu icons and mode instructions have separate switches, all ON by default. Reset restores the four options without changing key bindings.
+- Simulated configuration overlays, mode menu icons, mode instructions and source tool status have separate switches, all ON by default. Reset restores all five options without changing key bindings.
 - Select a carried native tool to simulate its functions. The universal wrench stays in your hand; the real source tool supplies its data, energy, air, and durability. Its selected mode is restored after the action.
+- Create 6 simulations on Forge 1.20.1 and NeoForge 1.21.1 support Create's own **Open Block Rotation Menu** binding. Assign it in Controls. Either hand and carried-container sources work; native previews, permissions and reach checks are retained.
 - In the default shared mode, ordinary use keeps the block's normal interaction, such as opening a machine. Explicit native modes retain their intended rotation or configuration behavior.
 - Public item-handler containers, including supported Sophisticated Backpacks, can supply tools. One container level is searched; remote storage and nested container chains are not scanned.
 - Simulated AE2 network tools can open native network statistics and card storage from carried containers, even with a full player inventory. Card changes persist to the real tool.

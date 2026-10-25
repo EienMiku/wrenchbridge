@@ -1,8 +1,8 @@
 # Native tool callback prototype
 
-Preview `0.1.0-alpha.14-dev.2`, Minecraft 1.21.1 / NeoForge. This is a local prototype, not a published release. Its Wrench Bridge network protocol is **7**; use this build on both sides of a temporary multiplayer test. The other Minecraft ports have not received this prototype.
+Originally verified as preview `0.1.0-alpha.14-dev.2`, Minecraft 1.21.1 / NeoForge. The callback work is included in **alpha.14**; the shared pieces are now ported to the other builds, with Create's native wheel also supported on Forge 1.20.1. See the [port coverage](alpha14-ports.md). The 1.21.1 network protocol is **7**; use matching builds on both sides.
 
-Runtime artifact SHA256: `e8a8c94a31d6468b1f954452218a8ca52668d939b7a703ab5c8da323e4fb7acb`. The [packaging record](native-tool-proxy/jar-verification.json) checks the tested compiled classes, verification-source exclusion, and unchanged author texture.
+Historical dev.2 runtime artifact SHA256: `e8a8c94a31d6468b1f954452218a8ca52668d939b7a703ab5c8da323e4fb7acb`. The [preview packaging record](native-tool-proxy/jar-verification.json) checks the tested compiled classes, verification-source exclusion, and unchanged author texture. Released artifacts have their own checksum manifest.
 
 ## Try the native Create wheel
 

@@ -13,7 +13,10 @@
     "SharedWrenchIntentServerMixin",
     "AE2MenuSourceMixin",
     "AE2ContainerMenuActionsMixin",
-    "ServerFeedbackMixin"
+    "ServerFeedbackMixin",
+    "CreateWrenchOrderMixin",
+    "GriefLoggerBreakMixin",
+    "GriefLoggerContainerMixin"
   ],
   "client": [
     "MekanismConfiguratorRenderMixin",

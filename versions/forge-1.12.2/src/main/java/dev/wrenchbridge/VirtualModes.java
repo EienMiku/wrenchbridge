@@ -78,8 +78,9 @@ public final class VirtualModes {
     String id = item(wrench), selected = mode(wrench);
     if (hasNativeMenu(wrench) && !player.isSneaking()) return openNativeMenu(player, hand, hit);
     try {
-      return StoredTools.use(
+      return NativeToolExecution.use(
           player,
+          hand,
           id,
           source -> {
             Item nativeItem = source.getItem();

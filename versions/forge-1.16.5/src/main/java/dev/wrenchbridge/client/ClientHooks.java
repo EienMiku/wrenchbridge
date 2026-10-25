@@ -67,7 +67,7 @@ public final class ClientHooks {
   }
 
   public static void catalog(java.util.List<String> rows) {
-    NativeRenderTools.catalog(rows);
+
     if (Minecraft.getInstance().screen instanceof ModesScreen)
       ((ModesScreen) Minecraft.getInstance().screen).catalog(rows);
   }

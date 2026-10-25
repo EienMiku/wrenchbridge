@@ -22,5 +22,15 @@ public final class SharingControl {
       net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedOutEvent event) {
     SharingPreferences.forget(event.player.getUniqueID());
     SourceViewPacket.forget(event.player.getUniqueID());
+    ServerRequests.forget(event.player.getUniqueID());
+  }
+
+  @SubscribeEvent
+  public static void tick(net.minecraftforge.fml.common.gameevent.TickEvent.ServerTickEvent event) {
+    if (event.phase == net.minecraftforge.fml.common.gameevent.TickEvent.Phase.END) {
+      net.minecraft.server.MinecraftServer server =
+          net.minecraftforge.fml.common.FMLCommonHandler.instance().getMinecraftServerInstance();
+      if (server != null) ServerRequests.tick(server);
+    }
   }
 }

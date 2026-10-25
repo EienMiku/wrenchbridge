@@ -72,6 +72,10 @@ public final class PortVerification {
   public PortVerification() {
     IEventBus bus =
         net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get().getModEventBus();
+    if (net.minecraftforge.fml.loading.FMLEnvironment.dist
+            == net.minecraftforge.api.distmarker.Dist.CLIENT
+        && Boolean.getBoolean("wrenchbridge.verifyNativeProxyClient"))
+      NativeProxyClientVerification.register();
     BLOCKS.register(bus);
     ITEMS.register(bus);
     MinecraftForge.EVENT_BUS.addListener(
@@ -101,6 +105,8 @@ public final class PortVerification {
                     + verifyNativeMenus(e.getServer().overworld());
             result += SharingVerification.verify(e.getServer().overworld());
             result += SourceViewVerification.verify(e.getServer().overworld());
+            result += PortUpgradeVerification.verify(e.getServer().overworld());
+            result += NativeProxyVerification.verify(e.getServer().overworld());
           } catch (Throwable error) {
             WrenchBridge.LOG.error("Port verification failed", error);
             result = "FAIL: " + error;

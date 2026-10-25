@@ -54,9 +54,9 @@ public final class ModePacket {
 
   static final SimpleChannel CHANNEL =
       NetworkRegistry.ChannelBuilder.named(new ResourceLocation(WrenchBridge.ID, "mode"))
-          .networkProtocolVersion(() -> "6")
-          .clientAcceptedVersions("6"::equals)
-          .serverAcceptedVersions("6"::equals)
+          .networkProtocolVersion(() -> "7")
+          .clientAcceptedVersions("7"::equals)
+          .serverAcceptedVersions("7"::equals)
           .simpleChannel();
 
   public static void register() {
@@ -72,7 +72,8 @@ public final class ModePacket {
               c.get()
                   .enqueueWork(
                       () -> {
-                        if (c.get().getSender() != null) select(p, c.get().getSender());
+                        if (c.get().getSender() != null)
+                          ServerRequests.mode(p, c.get().getSender());
                       });
               c.get().setPacketHandled(true);
             })
@@ -93,11 +94,13 @@ public final class ModePacket {
     CHANNEL.sendToServer(p);
   }
 
-  static void select(ModePacket packet, ServerPlayerEntity player) {
+  static boolean select(ModePacket packet, ServerPlayerEntity player) {
     if (VirtualModes.select(player, packet.hand(), packet.itemId, packet.mode)) {
       ItemStack wrench = player.getItemInHand(packet.hand());
-      var id = VirtualModes.isNative(wrench)
-          ? net.minecraft.util.ResourceLocation.tryParse(VirtualModes.item(wrench)) : null;
+      var id =
+          VirtualModes.isNative(wrench)
+              ? net.minecraft.util.ResourceLocation.tryParse(VirtualModes.item(wrench))
+              : null;
       ITextComponent selection =
           id == null
               ? new net.minecraft.util.text.TranslationTextComponent("screen.wrenchbridge.shared")
@@ -108,6 +111,8 @@ public final class ModePacket {
           new net.minecraft.util.text.TranslationTextComponent(
               "message.wrenchbridge.selected", selection),
           true);
+      return true;
     }
+    return false;
   }
 }

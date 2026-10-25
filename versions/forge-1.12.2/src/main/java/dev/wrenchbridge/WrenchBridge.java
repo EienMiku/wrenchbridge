@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 @Mod(
     modid = WrenchBridge.ID,
     name = "Wrench Bridge",
-    version = "0.1.0-alpha.13",
+    version = "0.1.0-alpha.14",
     acceptedMinecraftVersions = "[1.12.2]",
     guiFactory = "dev.wrenchbridge.client.ConfigGuiFactory",
     dependencies = "required-after:mixinbooter@[11.18,);")
@@ -26,6 +26,8 @@ public final class WrenchBridge {
   public void serverStopped(net.minecraftforge.fml.common.event.FMLServerStoppedEvent event) {
     dev.wrenchbridge.core.SharingPreferences.clearServer();
     SourceViewPacket.clearServer();
+    ServerRequests.clear();
+    ServerRequests.clear();
   }
 
   public static final String ID = "wrenchbridge";
