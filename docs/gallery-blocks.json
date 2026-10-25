@@ -7,10 +7,11 @@
     "type": "edge-connected native cube scene",
     "shape": "centered trapezoid",
     "row_lengths": [
-      4,
-      5,
       6,
-      7
+      7,
+      8,
+      9,
+      10
     ]
   },
   "lighting": {
@@ -30,31 +31,53 @@
   "verification_environment": {
     "minecraft": "1.21.1",
     "neoforge": "21.1.248",
-    "wrenchbridge": "0.1.0-alpha.9"
+    "wrenchbridge": "0.1.0-alpha.13"
+  },
+  "continuation": {
+    "marker": "ellipsis",
+    "meaning": "partial selection; more supported blocks exist"
   },
   "blocks": [
     "anvilcraft:frost_metal_block",
     "ae2:controller",
     "anvilcraft:overheated_ember_metal_block",
     "anvilcraft:ember_metal_block",
+    "powah:energy_cell_spirited",
+    "create:brass_casing",
     "anvilcraft:royal_steel_block",
     "ae2:interface",
     "mekanism:basic_energy_cube",
+    "ae2:pattern_provider",
+    "create:copper_casing",
     "ae2:energy_acceptor",
     "create:gearbox",
     "integrateddynamics:energy_battery",
     "mekanism:metallurgic_infuser",
     "ae2:molecular_assembler",
+    "powah:energy_cell_blazing",
+    "ae2:1k_crafting_storage",
     "rftoolsutility:crafter1",
     "integrateddynamics:variablestore",
     "enderio:alloy_smelter",
     "minecraft:observer",
     "integrateddynamics:coal_generator",
     "mekanism:enrichment_chamber",
+    "powah:energy_cell_niotic",
     "integrateddynamics:proxy",
-    "powah:energy_cell_starter",
+    "mekanism:purification_chamber",
+    "create:andesite_casing",
     "integrateddynamics:mechanical_squeezer",
-    "minecraft:furnace"
+    "minecraft:furnace",
+    "powah:energy_cell_basic",
+    "mekanism:crusher",
+    "ae2:energy_cell",
+    "enderio:sag_mill",
+    "powah:energy_cell_hardened",
+    "mekanism:osmium_compressor",
+    "powah:energy_cell_starter",
+    "mekanism:energized_smelter",
+    "mekanism:combiner",
+    "mekanism:precision_sawmill"
   ],
   "dismantle_verification": [
     {
@@ -82,6 +105,18 @@
       "held_preserved": true
     },
     {
+      "block": "powah:energy_cell_spirited",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "create:brass_casing",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
       "block": "anvilcraft:royal_steel_block",
       "result": "CONSUME",
       "removed": true,
@@ -95,6 +130,18 @@
     },
     {
       "block": "mekanism:basic_energy_cube",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "ae2:pattern_provider",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "create:copper_casing",
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
@@ -125,6 +172,18 @@
     },
     {
       "block": "ae2:molecular_assembler",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "powah:energy_cell_blazing",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "ae2:1k_crafting_storage",
       "result": "CONSUME",
       "removed": true,
       "held_preserved": true
@@ -166,14 +225,26 @@
       "held_preserved": true
     },
     {
+      "block": "powah:energy_cell_niotic",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
       "block": "integrateddynamics:proxy",
       "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
     {
-      "block": "powah:energy_cell_starter",
-      "result": "CONSUME",
+      "block": "mekanism:purification_chamber",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "create:andesite_casing",
+      "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     },
@@ -186,6 +257,66 @@
     {
       "block": "minecraft:furnace",
       "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "powah:energy_cell_basic",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "mekanism:crusher",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "ae2:energy_cell",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "enderio:sag_mill",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "powah:energy_cell_hardened",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "mekanism:osmium_compressor",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "powah:energy_cell_starter",
+      "result": "CONSUME",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "mekanism:energized_smelter",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "mekanism:combiner",
+      "result": "SUCCESS",
+      "removed": true,
+      "held_preserved": true
+    },
+    {
+      "block": "mekanism:precision_sawmill",
+      "result": "SUCCESS",
       "removed": true,
       "held_preserved": true
     }
