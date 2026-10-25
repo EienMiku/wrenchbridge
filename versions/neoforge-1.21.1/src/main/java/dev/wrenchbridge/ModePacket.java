@@ -30,7 +30,7 @@ public record ModePacket(String itemId, String mode, boolean offhand) implements
     static boolean select(ModePacket packet, ServerPlayer player) {
         if (VirtualModes.select(player, packet.hand(), packet.itemId, packet.mode)) {
             ItemStack wrench = player.getItemInHand(packet.hand());
-            var id = net.minecraft.resources.ResourceLocation.tryParse(VirtualModes.item(wrench));
+            var id = VirtualModes.isNative(wrench) ? ResourceLocation.tryParse(VirtualModes.item(wrench)) : null;
             Component selection = id == null ? Component.translatable("screen.wrenchbridge.shared")
                     : NativeModeNames.choice(new ItemStack(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(id)), VirtualModes.mode(wrench));
             player.displayClientMessage(Component.translatable("message.wrenchbridge.selected", selection), true);

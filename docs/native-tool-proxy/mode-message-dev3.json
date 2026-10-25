@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0-alpha.14-dev.3",
+  "neoforge": "21.1.244",
+  "status": "PASS",
+  "shared_translation": "screen.wrenchbridge.shared",
+  "native_components_preserved": true,
+  "rejected_selection_silent": true,
+  "cases": 12,
+  "hands": [
+    "MAIN_HAND",
+    "OFF_HAND"
+  ]
+}

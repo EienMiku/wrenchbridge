@@ -58,7 +58,8 @@ public record ModePacket(String itemId, String mode, boolean offhand) {
   static void select(ModePacket packet, ServerPlayer player) {
     if (VirtualModes.select(player, packet.hand(), packet.itemId, packet.mode)) {
       ItemStack wrench = player.getItemInHand(packet.hand());
-      var id = net.minecraft.resources.ResourceLocation.tryParse(VirtualModes.item(wrench));
+      var id = VirtualModes.isNative(wrench)
+          ? net.minecraft.resources.ResourceLocation.tryParse(VirtualModes.item(wrench)) : null;
       Component selection =
           id == null
               ? Component.translatable("screen.wrenchbridge.shared")

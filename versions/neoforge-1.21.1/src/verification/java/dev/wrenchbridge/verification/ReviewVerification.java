@@ -10,6 +10,8 @@ import java.nio.file.Path;
 import java.util.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -30,8 +32,10 @@ public final class ReviewVerification {
     static ItemStack item(String id) { return new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse(id))); }
 
     public static String verify(ServerLevel level) throws Exception {
+        Map<String, Object> modeMessages = modeSelectionMessages(level);
         String nativeProxy = NativeProxyVerification.verify(level);
         Map<String, Object> report = new LinkedHashMap<>();
+        report.put("mode_selection_messages", modeMessages);
         report.put("neoforge", net.neoforged.fml.ModList.get().getModContainerById("neoforge").orElseThrow().getModInfo().getVersion().toString());
         Map<String, String> mods = new LinkedHashMap<>();
         for (String id : List.of("create", "grieflogger", "zxcopt", "ae2", "mekanism", "curios", "supplementaries"))
@@ -47,7 +51,58 @@ public final class ReviewVerification {
         Files.writeString(Path.of("review-verification.json"), new GsonBuilder().setPrettyPrinting().create().toJson(report));
         Object audit = report.get("native_grieflogger");
         return "; review: registry-safe tags, live modes, 10 return fault cases, bounded/coalesced request scans; audit="
-                + (audit instanceof List<?> cases ? cases.size() + " native cases" : audit) + nativeProxy;
+                + (audit instanceof List<?> cases ? cases.size() + " native cases" : audit) + nativeProxy
+                + "; mode messages: 12 action-bar cases across both hands";
+    }
+
+    private static Map<String, Object> modeSelectionMessages(ServerLevel level) throws Exception {
+        class MessagePlayer extends net.neoforged.neoforge.common.util.FakePlayer {
+            Component message;
+            boolean actionBar;
+            int messages;
+            MessagePlayer() { super(level, new com.mojang.authlib.GameProfile(
+                    UUID.fromString("963149e8-39cf-46da-aacd-63fba31ecb06"), "WBModeMessage")); }
+            @Override public void displayClientMessage(Component text, boolean overlay) {
+                message = text; actionBar = overlay; messages++;
+            }
+            Component selection() {
+                check(actionBar && message.getContents() instanceof TranslatableContents text
+                        && text.getKey().equals("message.wrenchbridge.selected")
+                        && text.getArgs().length == 1 && text.getArgs()[0] instanceof Component,
+                        "selection feedback lost its action-bar translation");
+                return (Component) ((TranslatableContents) message.getContents()).getArgs()[0];
+            }
+        }
+        var select = ModePacket.class.getDeclaredMethod("select", ModePacket.class, ServerPlayer.class);
+        select.setAccessible(true);
+        int cases = 0;
+        for (InteractionHand hand : InteractionHand.values()) {
+            var player = new MessagePlayer();
+            ItemStack wrench = new ItemStack(WrenchBridge.WRENCH.get());
+            player.setItemInHand(hand, wrench);
+            ItemStack tool = item("wrenchbridge:mode_wrench"), plainTool = item("wrenchbridge:foreign_wrench");
+            player.getInventory().setItem(9, tool); player.getInventory().setItem(10, plainTool);
+            check((boolean) select.invoke(null, new ModePacket("wrenchbridge:mode_wrench", "CONFIG", hand == InteractionHand.OFF_HAND), player), "native selection rejected");
+            check(player.selection().equals(NativeModeNames.choice(tool, "CONFIG")), "native tool/mode label changed"); cases++;
+            for (int repeat = 0; repeat < 2; repeat++) {
+                check((boolean) select.invoke(null, new ModePacket("wrenchbridge:universal_wrench", "", hand == InteractionHand.OFF_HAND), player), "shared selection rejected");
+                check(!VirtualModes.isNative(wrench) && player.selection().getContents() instanceof TranslatableContents text
+                        && text.getKey().equals("screen.wrenchbridge.shared"), "shared mode displayed an item name instead of its own label"); cases++;
+            }
+            check((boolean) select.invoke(null, new ModePacket("wrenchbridge:foreign_wrench", "", hand == InteractionHand.OFF_HAND), player), "plain native selection rejected");
+            check(player.selection().equals(plainTool.getHoverName()), "native tool without enum lost its name"); cases++;
+            int count = player.messages;
+            check(!(boolean) select.invoke(null, new ModePacket("wrenchbridge:missing_tool", "", hand == InteractionHand.OFF_HAND), player)
+                    && player.messages == count && VirtualModes.item(wrench).equals("wrenchbridge:foreign_wrench"), "rejected selection changed feedback/profile"); cases++;
+            player.getInventory().setItem(9, ItemStack.EMPTY); player.getInventory().setItem(10, ItemStack.EMPTY);
+            check((boolean) select.invoke(null, new ModePacket("wrenchbridge:universal_wrench", "", hand == InteractionHand.OFF_HAND), player)
+                    && player.selection().equals(Component.translatable("screen.wrenchbridge.shared"))
+                    && player.getItemInHand(hand) == wrench, "shared label after removing source"); cases++;
+            player.getInventory().clearContent();
+        }
+        return Map.of("status", "PASS", "cases", cases, "hands", List.of("MAIN_HAND", "OFF_HAND"),
+                "shared_translation", "screen.wrenchbridge.shared", "native_components_preserved", true,
+                "rejected_selection_silent", true);
     }
 
     private static Map<String, Object> tags() {
