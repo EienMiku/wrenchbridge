@@ -5,6 +5,7 @@ import dev.wrenchbridge.core.NativeModes;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import net.minecraft.entity.player.EntityPlayer;
@@ -126,6 +127,29 @@ public final class StoredTools {
       if (rows.size() >= 256) break;
     }
     return new ArrayList<>(rows);
+  }
+
+  public static Map<String, ItemStack> snapshots(
+      net.minecraft.entity.player.EntityPlayer player, List<String> ids) {
+    Map<String, ItemStack> result = new java.util.LinkedHashMap<String, ItemStack>();
+    Set<String> missing = new LinkedHashSet<String>(ids);
+    for (int slot = 0; slot < player.inventory.getSizeInventory(); slot++) {
+      if (slot >= 36 && slot != 40) continue;
+      ItemStack stack = player.inventory.getStackInSlot(slot);
+      if (!stack.isEmpty()
+          && missing.contains(Tools.id(stack))
+          && eligible(stack, Tools.id(stack))) {
+        result.put(Tools.id(stack), stack.copy());
+        missing.remove(Tools.id(stack));
+      }
+    }
+    if (!missing.isEmpty())
+      for (Located entry : find(player)) {
+        String id = Tools.id(entry.tool);
+        if (missing.remove(id)) result.put(id, entry.tool.copy());
+        if (missing.isEmpty()) break;
+      }
+    return result;
   }
 
   public static ItemStack peek(EntityPlayerMP player, String id) {
@@ -277,6 +301,7 @@ public final class StoredTools {
   }
 
   private static void changed(EntityPlayerMP player) {
+    SourceViewPacket.changed(player);
     player.inventory.markDirty();
     player.inventoryContainer.detectAndSendChanges();
     player.openContainer.detectAndSendChanges();

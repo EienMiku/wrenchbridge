@@ -24,7 +24,7 @@ public final class SharingSettingsScreen extends GuiScreen {
 
   public void initGui() {
     buttonList.clear();
-    int w = Math.min(280, width - 32), top = Math.max(50, height / 2 - 54);
+    int w = Math.min(280, width - 32), top = Math.max(50, height / 2 - 66);
     for (ClientOption option : ClientOption.values())
       buttonList.add(
           new GuiButton(

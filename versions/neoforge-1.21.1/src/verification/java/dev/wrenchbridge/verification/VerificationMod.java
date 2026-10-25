@@ -80,6 +80,8 @@ public final class VerificationMod {
                 && Boolean.getBoolean("wrenchbridge.verifyClient")) ClientVerification.register(bus);
         if (net.neoforged.fml.loading.FMLEnvironment.dist == net.neoforged.api.distmarker.Dist.CLIENT
                 && Boolean.getBoolean("wrenchbridge.verifySharingClient")) SharingClientVerification.register(bus);
+        if (net.neoforged.fml.loading.FMLEnvironment.dist == net.neoforged.api.distmarker.Dist.CLIENT
+                && Boolean.getBoolean("wrenchbridge.verifySourceViewClient")) SourceViewClientVerification.register(bus);
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, true, PlayerInteractEvent.RightClickBlock.class, event -> {
             if (Boolean.getBoolean("wrenchbridge.verify") && event.getPos().getY() == 95
                     && (event.getLevel().getBlockState(event.getPos()).getBlock().getClass().getName().contains("refinedstorage")
@@ -131,6 +133,7 @@ public final class VerificationMod {
                 compat += verifyContainerMenus(event.getServer().overworld());
                 compat += FeedbackVerification.verify(event.getServer().overworld());
                 compat += SharingVerification.verify(event.getServer().overworld());
+                compat += SourceViewVerification.verify(event.getServer().overworld());
                 result = "PASS: native dispatch, protection, mode guard, inventory conservation, invalid packet, enum modes" + compat;
             }
             catch (Throwable error) { WrenchBridge.LOG.error("Verification failed", error); result = "FAIL: " + error; }

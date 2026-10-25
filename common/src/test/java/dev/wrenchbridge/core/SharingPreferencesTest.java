@@ -101,6 +101,7 @@ class SharingPreferencesTest {
     assertTrue(SharingPreferences.enabled(SharingPreferences.ClientOption.CONFIGURATOR_OVERLAY));
     assertTrue(SharingPreferences.enabled(SharingPreferences.ClientOption.MENU_ICONS));
     assertTrue(SharingPreferences.enabled(SharingPreferences.ClientOption.MODE_HINTS));
+    assertTrue(SharingPreferences.enabled(SharingPreferences.ClientOption.SOURCE_DETAILS));
     SharingPreferences.resetClientOptions();
     assertTrue(new String(Files.readAllBytes(config), "UTF-8").contains("futureSetting=kept"));
   }

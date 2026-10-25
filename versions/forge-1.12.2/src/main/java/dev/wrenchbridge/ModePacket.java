@@ -46,6 +46,7 @@ public final class ModePacket implements IMessage {
 
   public static void register() {
     SharingPacket.register();
+    SourceViewPacket.register();
     CHANNEL.registerMessage(Handler.class, ModePacket.class, 0, Side.SERVER);
     CatalogPacket.register();
   }

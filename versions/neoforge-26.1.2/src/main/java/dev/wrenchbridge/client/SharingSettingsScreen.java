@@ -32,7 +32,7 @@ public final class SharingSettingsScreen extends Screen {
 
   protected void init() {
     optionButtons.clear();
-    int w = Math.min(280, width - 32), top = Math.max(50, height / 2 - 54);
+    int w = Math.min(280, width - 32), top = Math.max(50, height / 2 - 66);
     for (ClientOption option : ClientOption.values()) {
       Button button =
           addRenderableWidget(

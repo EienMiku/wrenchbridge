@@ -40,7 +40,7 @@ public record ModePacket(String itemId, String mode, boolean offhand)
   }
 
   public static void register(RegisterPayloadHandlersEvent event) {
-    event.registrar("5").playToServer(TYPE, CODEC, ModePacket::handle);
+    event.registrar("6").playToServer(TYPE, CODEC, ModePacket::handle);
   }
 
   private static void handle(ModePacket packet, IPayloadContext context) {

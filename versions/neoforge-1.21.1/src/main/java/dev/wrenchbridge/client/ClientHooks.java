@@ -15,6 +15,7 @@ public final class ClientHooks {
     private ClientHooks() {}
     public static void register(IEventBus bus) {
         SharingClient.register();
+        SourceViewClient.register(bus);
         bus.addListener((RegisterKeyMappingsEvent event) -> {
             modes = new KeyMapping("key.wrenchbridge.modes", InputConstants.Type.KEYSYM,
                     GLFW.GLFW_KEY_G, "key.categories.wrenchbridge");
@@ -25,6 +26,7 @@ public final class ClientHooks {
         });
         NeoForge.EVENT_BUS.addListener((ClientTickEvent.Post event) -> {
             var game = Minecraft.getInstance();
+            SourceViewClient.tick();
             NativeRenderTools.tick(game.player);
             if (modes == null) return;
             while (settings.consumeClick()) {

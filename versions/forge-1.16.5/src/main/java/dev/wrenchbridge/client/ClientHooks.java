@@ -39,6 +39,7 @@ public final class ClientHooks {
     MinecraftForge.EVENT_BUS.addListener(
         (TickEvent.ClientTickEvent event) -> {
           if (event.phase != TickEvent.Phase.END) return;
+          SourceViewClient.tick();
           NativeRenderTools.tick(Minecraft.getInstance().player);
           if (modes == null) return;
           while (settings.consumeClick()) {

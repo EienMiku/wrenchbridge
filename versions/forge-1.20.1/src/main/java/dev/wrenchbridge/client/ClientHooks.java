@@ -17,6 +17,7 @@ public final class ClientHooks {
 
   public static void register(IEventBus bus) {
     SharingClient.register();
+    SourceViewClient.register(bus);
     bus.addListener(
         (RegisterKeyMappingsEvent event) -> {
           modes =
@@ -38,6 +39,7 @@ public final class ClientHooks {
         (TickEvent.ClientTickEvent event) -> {
           if (event.phase != TickEvent.Phase.END) return;
           var game = Minecraft.getInstance();
+          SourceViewClient.tick();
           NativeRenderTools.tick(game.player);
           if (modes == null) return;
           while (settings.consumeClick()) {

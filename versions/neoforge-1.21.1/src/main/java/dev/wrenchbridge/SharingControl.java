@@ -23,10 +23,12 @@ public final class SharingControl {
   public static void logout(
       net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedOutEvent event) {
     SharingPreferences.forget(event.getEntity().getUUID());
+    SourceViewPacket.forget(event.getEntity().getUUID());
   }
 
   @SubscribeEvent
   public static void stopped(net.neoforged.neoforge.event.server.ServerStoppedEvent event) {
     SharingPreferences.clearServer();
+    SourceViewPacket.clearServer();
   }
 }

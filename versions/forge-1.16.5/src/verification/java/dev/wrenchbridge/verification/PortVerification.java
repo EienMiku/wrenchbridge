@@ -115,6 +115,10 @@ public final class PortVerification {
                 SharingVerification.verify(
                     net.minecraftforge.fml.server.ServerLifecycleHooks.getCurrentServer()
                         .overworld());
+            result +=
+                SourceViewVerification.verify(
+                    net.minecraftforge.fml.server.ServerLifecycleHooks.getCurrentServer()
+                        .overworld());
           } catch (Throwable error) {
             WrenchBridge.LOG.error("Port verification failed", error);
             result = "FAIL: " + error;

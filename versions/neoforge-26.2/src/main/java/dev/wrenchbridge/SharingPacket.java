@@ -20,7 +20,7 @@ public record SharingPacket(boolean enabled) implements CustomPacketPayload {
 
   public static void register(RegisterPayloadHandlersEvent event) {
     event
-        .registrar("5")
+        .registrar("6")
         .playToServer(
             TYPE,
             CODEC,

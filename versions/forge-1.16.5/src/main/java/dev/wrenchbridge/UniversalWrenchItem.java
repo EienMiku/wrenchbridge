@@ -66,5 +66,31 @@ public class UniversalWrenchItem extends Item {
                   "tooltip.wrenchbridge.profile", selection.copy().withStyle(TextFormatting.AQUA))
               .withStyle(TextFormatting.GRAY));
     }
+    if (net.minecraftforge.fml.loading.FMLEnvironment.dist
+        == net.minecraftforge.api.distmarker.Dist.CLIENT)
+      dev.wrenchbridge.client.SourceViewClient.appendTooltip(stack, context, lines, flag);
+  }
+
+  @Override
+  public boolean showDurabilityBar(ItemStack stack) {
+    return net.minecraftforge.fml.loading.FMLEnvironment.dist
+            == net.minecraftforge.api.distmarker.Dist.CLIENT
+        && dev.wrenchbridge.client.SourceViewClient.barVisible(stack);
+  }
+
+  @Override
+  public double getDurabilityForDisplay(ItemStack stack) {
+    return net.minecraftforge.fml.loading.FMLEnvironment.dist
+            == net.minecraftforge.api.distmarker.Dist.CLIENT
+        ? dev.wrenchbridge.client.SourceViewClient.barFraction(stack)
+        : 1;
+  }
+
+  @Override
+  public int getRGBDurabilityForDisplay(ItemStack stack) {
+    return net.minecraftforge.fml.loading.FMLEnvironment.dist
+            == net.minecraftforge.api.distmarker.Dist.CLIENT
+        ? dev.wrenchbridge.client.SourceViewClient.barColor(stack)
+        : 0;
   }
 }

@@ -22,7 +22,7 @@ public record ModePacket(String itemId, String mode, boolean offhand) implements
             ByteBufCodecs.BOOL, ModePacket::offhand, ModePacket::new);
     @Override public Type<ModePacket> type() { return TYPE; }
     public static void register(RegisterPayloadHandlersEvent event) {
-        event.registrar("5").playToServer(TYPE, CODEC, ModePacket::handle);
+        event.registrar("6").playToServer(TYPE, CODEC, ModePacket::handle);
     }
     private static void handle(ModePacket packet, IPayloadContext context) {
         if (context.player() instanceof ServerPlayer player) select(packet, player);

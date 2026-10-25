@@ -56,5 +56,26 @@ public class UniversalWrenchItem extends Item {
             .setStyle(new Style().setColor(TextFormatting.GRAY))
             .getFormattedText());
     lines.add(TextFormatting.GRAY + I18n.translateToLocal("tooltip.wrenchbridge.native"));
+    dev.wrenchbridge.client.SourceViewClient.appendTooltip(stack, world, lines, flag);
+  }
+
+  @Override
+  public boolean showDurabilityBar(ItemStack stack) {
+    return net.minecraftforge.fml.common.FMLCommonHandler.instance().getSide().isClient()
+        && dev.wrenchbridge.client.SourceViewClient.barVisible(stack);
+  }
+
+  @Override
+  public double getDurabilityForDisplay(ItemStack stack) {
+    return net.minecraftforge.fml.common.FMLCommonHandler.instance().getSide().isClient()
+        ? dev.wrenchbridge.client.SourceViewClient.barFraction(stack)
+        : 1;
+  }
+
+  @Override
+  public int getRGBDurabilityForDisplay(ItemStack stack) {
+    return net.minecraftforge.fml.common.FMLCommonHandler.instance().getSide().isClient()
+        ? dev.wrenchbridge.client.SourceViewClient.barColor(stack)
+        : 0;
   }
 }

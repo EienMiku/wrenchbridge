@@ -26,6 +26,7 @@ public final class WrenchBridge {
     bus.addListener(ModePacket::register);
     bus.addListener(SharingPacket::register);
     bus.addListener(CatalogPacket::register);
+    bus.addListener(SourceViewPacket::register);
     bus.addListener(
         (net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) ->
             event.enqueueWork(

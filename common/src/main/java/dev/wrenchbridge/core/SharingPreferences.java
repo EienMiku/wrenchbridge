@@ -22,7 +22,8 @@ public final class SharingPreferences {
     OTHER_WRENCHES(KEY, "other_wrenches"),
     CONFIGURATOR_OVERLAY("showConfiguratorOverlay", "configurator_overlay"),
     MENU_ICONS("showMenuIcons", "menu_icons"),
-    MODE_HINTS("showModeHints", "mode_hints");
+    MODE_HINTS("showModeHints", "mode_hints"),
+    SOURCE_DETAILS("showSourceDetails", "source_details");
     public final String property, translationKey, hintKey;
 
     ClientOption(String property, String translation) {

@@ -44,6 +44,13 @@ neoForge {
             systemProperty 'wrenchbridge.verifySharingResume', providers.gradleProperty('verifySharingResume').getOrElse('false')
             programArguments.addAll '--quickPlaySingleplayer', 'Sharing-Check', '--width', '960', '--height', '600'
         }
+        sourceViewClient {
+            client()
+            jvmArgument '-Xmx2G'
+            gameDirectory = project.file('run-source-view-client')
+            systemProperty 'wrenchbridge.verifySourceViewClient', 'true'
+            programArguments.addAll '--quickPlaySingleplayer', 'Source-View-Check', '--width', '1100', '--height', '700'
+        }
         settingsOfflineClient {
             client()
             jvmArgument '-Xmx2G'

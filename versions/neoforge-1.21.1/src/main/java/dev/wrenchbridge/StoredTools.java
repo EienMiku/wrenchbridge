@@ -79,6 +79,25 @@ public final class StoredTools {
         return new ArrayList<>(rows);
     }
 
+    public static Map<String, ItemStack> snapshots(Player player, List<String> ids) {
+        Map<String, ItemStack> result = new java.util.LinkedHashMap<>();
+        Set<String> missing = new LinkedHashSet<>(ids);
+        for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
+            if (slot >= 36 && slot != 40) continue;
+            ItemStack stack = player.getInventory().getItem(slot);
+            String id = Tools.id(stack);
+            if (!stack.isEmpty() && missing.contains(id) && eligible(stack, id)) {
+                result.put(id, stack.copy());
+                missing.remove(id);
+            }
+        }
+        if (!missing.isEmpty()) for (Located entry : find(player)) {
+            String id = Tools.id(entry.tool);
+            if (missing.remove(id)) result.put(id, entry.tool.copy());
+            if (missing.isEmpty()) break;
+        }
+        return result;
+    }
     public static ItemStack peek(ServerPlayer player, String id) {
         for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
             if (slot >= 36 && slot != 40) continue;
@@ -173,6 +192,7 @@ public final class StoredTools {
         if (!remainder.isEmpty() && !player.getInventory().add(remainder)) player.drop(remainder, false);
     }
     private static void changed(ServerPlayer player) {
+        SourceViewPacket.changed(player);
         player.getInventory().setChanged(); player.inventoryMenu.broadcastChanges(); player.containerMenu.broadcastChanges();
     }
 }

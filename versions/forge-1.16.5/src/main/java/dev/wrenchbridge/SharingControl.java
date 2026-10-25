@@ -21,10 +21,12 @@ public final class SharingControl {
   public static void logout(
       net.minecraftforge.event.entity.player.PlayerEvent.PlayerLoggedOutEvent event) {
     SharingPreferences.forget(event.getPlayer().getUUID());
+    SourceViewPacket.forget(event.getPlayer().getUUID());
   }
 
   @SubscribeEvent
   public static void stopped(net.minecraftforge.fml.event.server.FMLServerStoppedEvent event) {
     SharingPreferences.clearServer();
+    SourceViewPacket.clearServer();
   }
 }

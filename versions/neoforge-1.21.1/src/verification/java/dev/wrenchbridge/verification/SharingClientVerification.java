@@ -60,6 +60,13 @@ public final class SharingClientVerification {
         try {
           check(game.player == null && game.level == null, "offline check loaded a world");
           var menu = openModListSettings();
+          game.screen.resize(game, 320, 240);
+          for (ClientOption option : ClientOption.values()) {
+            var row = button(game.screen, option.translationKey, true);
+            check(
+                row.getY() >= 50 && row.getY() + row.getHeight() <= game.screen.height - 66,
+                "option outside minimum-height content: " + option);
+          }
           for (ClientOption option : ClientOption.values())
             button(game.screen, option.translationKey, true).onPress();
           check(!SharingPreferences.clientDefaults(), "offline options did not change");
@@ -71,7 +78,7 @@ public final class SharingClientVerification {
           ClientHooks.openSettings();
           check(game.screen instanceof SharingSettingsScreen, "settings need a player or wrench");
           finish(
-              "PASS: actual mod-list configuration button, four options and reset without a loaded"
+              "PASS: actual mod-list configuration button, five options and reset without a loaded"
                   + " world, direct settings entry without a wrench");
         } catch (Throwable error) {
           WrenchBridge.LOG.error("Offline settings check failed", error);
@@ -224,7 +231,7 @@ public final class SharingClientVerification {
       } else if (phase == 4 && ticks - since >= 15) {
         check(serverEnabled() == RESUME, "final synchronization");
         finish(
-            "PASS: actual mod-list entry, empty-hand bound shortcut, four options/reset, native"
+            "PASS: actual mod-list entry, empty-hand bound shortcut, five options/reset, native"
                 + " overlay OFF/ON, menu icon layout, palette return, UI OFF/ON, real C2S"
                 + " synchronization, persistence"
                 + (RESUME ? ", saved OFF restored on next login" : ", OFF saved for next launch"));

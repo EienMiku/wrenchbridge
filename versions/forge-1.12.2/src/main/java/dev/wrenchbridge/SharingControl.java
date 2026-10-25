@@ -21,5 +21,6 @@ public final class SharingControl {
   public static void logout(
       net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedOutEvent event) {
     SharingPreferences.forget(event.player.getUniqueID());
+    SourceViewPacket.forget(event.player.getUniqueID());
   }
 }

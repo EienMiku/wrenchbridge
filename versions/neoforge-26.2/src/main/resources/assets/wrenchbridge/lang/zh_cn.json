@@ -59,5 +59,10 @@
   "setting.wrenchbridge.mode_hints": "模式说明提示：%s",
   "setting.wrenchbridge.mode_hints_hint": "在模式菜单的悬停提示中显示使用说明。",
   "setting.wrenchbridge.reset": "恢复默认",
-  "setting.wrenchbridge.reset_hint": "恢复以上选项的默认值，不修改按键绑定。"
+  "setting.wrenchbridge.reset_hint": "恢复以上选项的默认值，不修改按键绑定。",
+  "setting.wrenchbridge.source_details": "原工具状态：%s",
+  "setting.wrenchbridge.source_details_hint": "在模拟模式下显示实际来源工具的完整原生提示和物品栏状态标记，保留来源工具自身的设置。",
+  "tooltip.wrenchbridge.source_details": "来源工具",
+  "tooltip.wrenchbridge.source_waiting": "正在同步来源工具状态……",
+  "tooltip.wrenchbridge.source_unavailable": "来源工具状态不可用"
 }

@@ -80,5 +80,31 @@ public final class UniversalWrenchItem extends Item {
                   "tooltip.wrenchbridge.profile", selection.copy().withStyle(ChatFormatting.AQUA))
               .withStyle(ChatFormatting.GRAY));
     }
+    if (net.neoforged.fml.loading.FMLEnvironment.getDist()
+        == net.neoforged.api.distmarker.Dist.CLIENT)
+      dev.wrenchbridge.client.SourceViewClient.appendTooltip(stack, context, lines, flag);
+  }
+
+  @Override
+  public boolean isBarVisible(ItemStack stack) {
+    return net.neoforged.fml.loading.FMLEnvironment.getDist()
+            == net.neoforged.api.distmarker.Dist.CLIENT
+        && dev.wrenchbridge.client.SourceViewClient.barVisible(stack);
+  }
+
+  @Override
+  public int getBarWidth(ItemStack stack) {
+    return net.neoforged.fml.loading.FMLEnvironment.getDist()
+            == net.neoforged.api.distmarker.Dist.CLIENT
+        ? dev.wrenchbridge.client.SourceViewClient.barWidth(stack)
+        : 0;
+  }
+
+  @Override
+  public int getBarColor(ItemStack stack) {
+    return net.neoforged.fml.loading.FMLEnvironment.getDist()
+            == net.neoforged.api.distmarker.Dist.CLIENT
+        ? dev.wrenchbridge.client.SourceViewClient.barColor(stack)
+        : 0;
   }
 }

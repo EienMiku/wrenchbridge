@@ -25,6 +25,7 @@ public final class WrenchBridge {
   @Mod.EventHandler
   public void serverStopped(net.minecraftforge.fml.common.event.FMLServerStoppedEvent event) {
     dev.wrenchbridge.core.SharingPreferences.clearServer();
+    SourceViewPacket.clearServer();
   }
 
   public static final String ID = "wrenchbridge";

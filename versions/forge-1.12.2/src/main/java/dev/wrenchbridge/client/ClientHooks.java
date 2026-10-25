@@ -32,6 +32,7 @@ public final class ClientHooks {
   @SubscribeEvent
   public static void tick(TickEvent.ClientTickEvent event) {
     if (event.phase != TickEvent.Phase.END || modes == null) return;
+    SourceViewClient.tick();
     NativeRenderTools.tick(Minecraft.getMinecraft().player);
     while (settings.isPressed()) {
       if (Minecraft.getMinecraft().currentScreen == null) openSettings();
