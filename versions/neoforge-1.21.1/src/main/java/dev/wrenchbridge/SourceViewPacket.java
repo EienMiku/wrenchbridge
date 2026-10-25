@@ -67,35 +67,45 @@ public final class SourceViewPacket {
   }
 
   private static final class Session {
-    int token, last;
+    int token, last, captured;
+    boolean dirty;
     List<String> ids;
 
     Session(int token, int tick, List<String> ids) {
       this.token = token;
       this.last = tick;
+      this.captured = tick;
       this.ids = new ArrayList<String>(ids);
     }
   }
 
   private static final Map<UUID, Session> SESSIONS = new HashMap<UUID, Session>();
+  private static final Set<UUID> PENDING = new HashSet<>();
 
   public static void forget(UUID player) {
     SESSIONS.remove(player);
+    PENDING.remove(player);
   }
 
   public static void clearServer() {
     SESSIONS.clear();
+    PENDING.clear();
   }
 
   public static Reply reply(ServerPlayer p, Request request) {
     if (p.isSpectator() || request.ids.size() > SourceViewLimits.MAX_SOURCES) return null;
     int now = p.getServer().getTickCount();
     Session previous = SESSIONS.get(p.getUUID());
-    if (previous != null && now - previous.last < SourceViewLimits.REFRESH_TICKS) return null;
     List<String> ids = new ArrayList<String>(new LinkedHashSet<String>(request.ids));
     for (String id : ids)
       if (id.isEmpty() || id.length() > SourceViewLimits.MAX_ID_BYTES) return null;
-    SESSIONS.put(p.getUUID(), new Session(request.token, now, ids));
+    Session session = previous == null ? new Session(request.token, now, ids) : previous;
+    session.token = request.token; session.last = now; session.ids = ids;
+    SESSIONS.put(p.getUUID(), session);
+    if (previous != null && now - previous.captured < SourceViewLimits.REFRESH_TICKS) {
+      session.dirty = true; PENDING.add(p.getUUID()); return null;
+    }
+    session.captured = now; session.dirty = false; PENDING.remove(p.getUUID());
     try {
       return capture(p, request.token, ids);
     } catch (RuntimeException | LinkageError error) {
@@ -120,11 +130,33 @@ public final class SourceViewPacket {
     Session session = SESSIONS.get(p.getUUID());
     if (session != null
         && p.getServer().getTickCount() - session.last <= SourceViewLimits.EXPIRE_TICKS)
-      try {
-        send(p, capture(p, session.token, session.ids));
-      } catch (RuntimeException | LinkageError error) {
-        WrenchBridge.LOG.debug("Native source display update was unavailable", error);
-      }
+      { session.dirty = true; PENDING.add(p.getUUID()); }
+  }
+
+  static Reply flush(ServerPlayer p) {
+    Session session = SESSIONS.get(p.getUUID());
+    int now = p.getServer().getTickCount();
+    if (session == null || !session.dirty) return null;
+    if (p.isSpectator() || now - session.last > SourceViewLimits.EXPIRE_TICKS) {
+      forget(p.getUUID()); return null;
+    }
+    if (now - session.captured < SourceViewLimits.REFRESH_TICKS) return null;
+    session.captured = now; session.dirty = false; PENDING.remove(p.getUUID());
+    try { return capture(p, session.token, session.ids); }
+    catch (RuntimeException | LinkageError error) {
+      WrenchBridge.LOG.debug("Native source display update was unavailable", error);
+      return null;
+    }
+  }
+
+  static void tick(net.minecraft.server.MinecraftServer server) {
+    if (PENDING.isEmpty()) return;
+    for (UUID id : List.copyOf(PENDING)) {
+      ServerPlayer player = server.getPlayerList().getPlayer(id);
+      if (player == null) { forget(id); continue; }
+      Reply reply = flush(player);
+      if (reply != null) send(player, reply);
+    }
   }
 
   public static byte[] encodeStack(net.minecraft.world.entity.player.Player p, ItemStack source) {

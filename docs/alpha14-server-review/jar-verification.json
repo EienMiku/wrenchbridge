@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0-alpha.14-dev.1",
+  "minecraft": "1.21.1",
+  "build_neoforge": "21.1.244",
+  "runtime_jar": "wrenchbridge-neoforge-1.21.1-0.1.0-alpha.14-dev.1.jar",
+  "runtime_sha256": "c7fffaed572193ceef00df6c00416e077a512105d0acf50af21b7a89a317d169",
+  "runtime_bytes": 168017,
+  "sources_jar": "wrenchbridge-neoforge-1.21.1-0.1.0-alpha.14-dev.1-sources.jar",
+  "sources_sha256": "7a349eecb28d299490aafac60ed8b5eaed648f45e05213eaadeca266ab700d76",
+  "class_major": 65,
+  "canonical_texture_sha256": "4e59c46c3e14d0057b9954e2ab0a433fa94b6b78ee55315e262015c4108fffe2",
+  "release_excludes_verification": true,
+  "tag_mixins_no_stringify_or_location_parse": true,
+  "matches_compiled_main_classes": true
+}

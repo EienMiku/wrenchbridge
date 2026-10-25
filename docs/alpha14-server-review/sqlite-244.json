@@ -1,0 +1,175 @@
+{
+  "status": "PASS",
+  "neoforge": "21.1.244",
+  "mods": {
+    "create": "6.0.10",
+    "grieflogger": "1.2.9-1.21.1",
+    "ae2": "19.2.18",
+    "mekanism": "10.7.19",
+    "curios": "9.5.1+1.21.1"
+  },
+  "cases": 23,
+  "checks": [
+    {
+      "scenario": "no-removal",
+      "break_rows": 0,
+      "interaction_rows": 1,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "rotation-only",
+      "break_rows": 0,
+      "interaction_rows": 1,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "removed",
+      "break_rows": 1,
+      "interaction_rows": 0,
+      "container_rows": 1,
+      "container_amount": 16
+    },
+    {
+      "scenario": "exception-after-removal",
+      "break_rows": 1,
+      "interaction_rows": 0,
+      "container_rows": 1,
+      "container_amount": 16
+    },
+    {
+      "scenario": "virtual-missing-source",
+      "break_rows": 0,
+      "interaction_rows": 2,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-universal-MAIN_HAND-edit-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-universal-MAIN_HAND-interact-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-universal-MAIN_HAND-allowed",
+      "break_rows": 1,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-universal-OFF_HAND-edit-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-universal-OFF_HAND-interact-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-universal-OFF_HAND-allowed",
+      "break_rows": 1,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-foreign-MAIN_HAND-edit-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-foreign-MAIN_HAND-interact-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-foreign-MAIN_HAND-allowed",
+      "break_rows": 1,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-foreign-OFF_HAND-edit-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-foreign-OFF_HAND-interact-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-foreign-OFF_HAND-allowed",
+      "break_rows": 1,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-virtual-MAIN_HAND-edit-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-virtual-MAIN_HAND-interact-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-virtual-MAIN_HAND-allowed",
+      "break_rows": 1,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-virtual-OFF_HAND-edit-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-virtual-OFF_HAND-interact-denied",
+      "break_rows": 0,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    },
+    {
+      "scenario": "create-virtual-OFF_HAND-allowed",
+      "break_rows": 1,
+      "interaction_rows": 0,
+      "container_rows": 0,
+      "container_amount": 0
+    }
+  ]
+}

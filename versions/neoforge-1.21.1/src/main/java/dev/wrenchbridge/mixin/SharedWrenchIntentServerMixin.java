@@ -3,6 +3,7 @@ package dev.wrenchbridge.mixin;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import dev.wrenchbridge.WrenchContext;
+import dev.wrenchbridge.WrenchUseTransaction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerPlayerGameMode;
 import net.minecraft.world.InteractionHand;
@@ -17,6 +18,7 @@ public abstract class SharedWrenchIntentServerMixin {
     @WrapMethod(method = "useItemOn")
     private InteractionResult wrenchbridge$sharedUse(ServerPlayer player, Level level, ItemStack held,
             InteractionHand hand, BlockHitResult hit, Operation<InteractionResult> original) {
-        return WrenchContext.sharedUse(player, hand, held, () -> original.call(player, level, held, hand, hit));
+        return WrenchUseTransaction.use(player, hand, held, hit, () ->
+                WrenchContext.sharedUse(player, hand, held, () -> original.call(player, level, held, hand, hit)));
     }
 }

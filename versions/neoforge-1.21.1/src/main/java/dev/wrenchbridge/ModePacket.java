@@ -25,15 +25,17 @@ public record ModePacket(String itemId, String mode, boolean offhand) implements
         event.registrar("6").playToServer(TYPE, CODEC, ModePacket::handle);
     }
     private static void handle(ModePacket packet, IPayloadContext context) {
-        if (context.player() instanceof ServerPlayer player) select(packet, player);
+        if (context.player() instanceof ServerPlayer player) ServerRequests.mode(packet, player);
     }
-    static void select(ModePacket packet, ServerPlayer player) {
+    static boolean select(ModePacket packet, ServerPlayer player) {
         if (VirtualModes.select(player, packet.hand(), packet.itemId, packet.mode)) {
             ItemStack wrench = player.getItemInHand(packet.hand());
             var id = net.minecraft.resources.ResourceLocation.tryParse(VirtualModes.item(wrench));
             Component selection = id == null ? Component.translatable("screen.wrenchbridge.shared")
                     : NativeModeNames.choice(new ItemStack(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(id)), VirtualModes.mode(wrench));
             player.displayClientMessage(Component.translatable("message.wrenchbridge.selected", selection), true);
+            return true;
         }
+        return false;
     }
 }

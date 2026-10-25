@@ -1,0 +1,131 @@
+{
+  "neoforge": "21.1.248",
+  "mods": {
+    "create": "6.0.10",
+    "ae2": "19.2.18",
+    "mekanism": "10.7.19",
+    "curios": "9.5.1+1.21.1",
+    "supplementaries": "1.21.1-4.0.2"
+  },
+  "tag_semantics_and_membership_microbenchmark": {
+    "semantics": "PASS",
+    "scope": "membership microbenchmark only; not server MSPT",
+    "old_ns_per_check": 76.973,
+    "old_bytes_per_check": 61.907893333333334,
+    "new_ns_per_check": 40.42733333333333,
+    "new_bytes_per_check": 2.1333333333333333E-4
+  },
+  "borrowed_returns": [
+    {
+      "scenario": "ordinary-normal",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 1,
+      "player_inventory_count": 0,
+      "dropped_count": 0,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-return-denied",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 1,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-return-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 1,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-mutates-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 1,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-after-accept-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 1,
+      "player_inventory_count": 0,
+      "dropped_count": 0,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-action-throws",
+      "native_action_ran": true,
+      "exception": "java.lang.IllegalStateException: expected action failure",
+      "handler_count": 1,
+      "player_inventory_count": 0,
+      "dropped_count": 0,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-consumed",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 0,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "menu-return-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 1,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "menu-mutates-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 1,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "menu-after-accept-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 1,
+      "player_inventory_count": 0,
+      "dropped_count": 0,
+      "conserved": true,
+      "post_action_state_preserved": true
+    }
+  ],
+  "request_coalescing": {
+    "over_budget_mode_packets": 1000,
+    "live_latest_state": true,
+    "coalesced_catalog_requests": 1000,
+    "cadence_ticks": 10,
+    "coalesced_source_requests_and_changes": 1000,
+    "duplicate_mode_packets": 1000,
+    "rapid_distinct_mode_selections": 8,
+    "status": "PASS"
+  },
+  "native_grieflogger": "SKIPPED: GriefLogger not installed"
+}

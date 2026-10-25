@@ -10,17 +10,38 @@ import java.util.List;
 public final class NativeModes {
     private NativeModes() {}
 
+    private static final class Candidate {
+        final Method method;
+        final Class<?>[] params;
+        Candidate(Method method) { this.method = method; this.params = method.getParameterTypes(); }
+    }
+    private static final class Methods {
+        final List<Candidate> getters = new ArrayList<Candidate>();
+        final List<Candidate> setters = new ArrayList<Candidate>();
+        Methods(Class<?> type) {
+            Method[] methods = type.getMethods();
+            for (String name : new String[]{"getMode", "getWrenchMode", "getCurrentMode", "getState"})
+                for (Method method : methods)
+                    if (method.getName().equals(name)) getters.add(new Candidate(method));
+            for (Method method : methods)
+                if (method.getName().equals("setMode") || method.getName().equals("setWrenchMode")
+                        || method.getName().equals("setState")) setters.add(new Candidate(method));
+        }
+    }
+    // Cache parsing, including unsupported types. Never cache a stack's current mode or source.
+    private static final ClassValue<Methods> METHODS = new ClassValue<Methods>() {
+        @Override protected Methods computeValue(Class<?> type) { return new Methods(type); }
+    };
+
     private static Object read(Object item, Object stack) {
-        for (String name : new String[]{"getMode", "getWrenchMode", "getCurrentMode", "getState"}) {
-            for (Method method : item.getClass().getMethods()) {
-                if (!method.getName().equals(name)) continue;
-                Class<?>[] params = method.getParameterTypes();
-                try {
-                    if (params.length == 1 && params[0].isInstance(stack)) return method.invoke(item, stack);
-                    if (params.length == 0 && method.getReturnType().isEnum()) return method.invoke(item);
-                } catch (ReflectiveOperationException | RuntimeException ignored) {
-                    // Failure to inspect a mode is not permission to invoke native gameplay code.
-                }
+        for (Candidate candidate : METHODS.get(item.getClass()).getters) {
+            Method method = candidate.method;
+            Class<?>[] params = candidate.params;
+            try {
+                if (params.length == 1 && params[0].isInstance(stack)) return method.invoke(item, stack);
+                if (params.length == 0 && method.getReturnType().isEnum()) return method.invoke(item);
+            } catch (ReflectiveOperationException | RuntimeException ignored) {
+                // Failure to inspect a mode is not permission to invoke native gameplay code.
             }
         }
         return null;
@@ -45,26 +66,24 @@ public final class NativeModes {
         if (!(current instanceof Enum)) return false;
         for (Object choice : ((Enum<?>) current).getDeclaringClass().getEnumConstants()) {
             if (!((Enum<?>) choice).name().equals(name)) continue;
-            Method setter = setter(item, stack, player, choice);
+            Candidate setter = setter(item, stack, player, choice);
             if (setter == null) return false;
             Object[] arguments = arguments(setter, stack, player, choice);
-            setter.invoke(Modifier.isStatic(setter.getModifiers()) ? null : item, arguments);
+            setter.method.invoke(Modifier.isStatic(setter.method.getModifiers()) ? null : item, arguments);
             return true;
         }
         return false;
     }
 
-    private static Method setter(Object item, Object stack, Object player, Object mode) {
-        for (Method method : item.getClass().getMethods()) {
-            if (!method.getName().equals("setMode") && !method.getName().equals("setWrenchMode")
-                    && !method.getName().equals("setState")) continue;
-            if (arguments(method, stack, player, mode) != null) return method;
+    private static Candidate setter(Object item, Object stack, Object player, Object mode) {
+        for (Candidate candidate : METHODS.get(item.getClass()).setters) {
+            if (arguments(candidate, stack, player, mode) != null) return candidate;
         }
         return null;
     }
 
-    private static Object[] arguments(Method method, Object stack, Object player, Object mode) {
-        Class<?>[] params = method.getParameterTypes();
+    private static Object[] arguments(Candidate candidate, Object stack, Object player, Object mode) {
+        Class<?>[] params = candidate.params;
         if (params.length < 2 || params.length > 3) return null;
         Object[] values = new Object[params.length];
         boolean hasStack = false, hasMode = false;

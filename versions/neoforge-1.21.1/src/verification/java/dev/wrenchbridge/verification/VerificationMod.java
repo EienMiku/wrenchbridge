@@ -52,12 +52,17 @@ public final class VerificationMod {
     private static final java.util.function.Supplier<ModeTool> MODE_TOOL = MODE_ITEMS.registerItem("mode_wrench", properties -> new ModeTool(properties.stacksTo(1).durability(64)));
     private static final java.util.function.Supplier<Item> MENU_BAG = ITEMS.registerItem("menu_bag", Item::new);
     private static final class MenuHandler extends net.neoforged.neoforge.items.ItemStackHandler {
-        boolean denyExtraction, denyReturn, throwReturn;
+        boolean denyExtraction, denyReturn, throwReturn, mutateThenThrow, throwAfterReturn;
+        int reads;
         MenuHandler() { super(1); }
+        @Override public ItemStack getStackInSlot(int slot) { reads++; return super.getStackInSlot(slot); }
         @Override public ItemStack extractItem(int slot, int count, boolean simulate) { return denyExtraction ? ItemStack.EMPTY : super.extractItem(slot, count, simulate); }
         @Override public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
             if (throwReturn) throw new IllegalStateException("expected container return refusal");
-            return denyReturn ? stack : super.insertItem(slot, stack, simulate);
+            if (mutateThenThrow && !simulate) { stack.setCount(0); throw new IllegalStateException("expected input mutation before refusal"); }
+            ItemStack remainder = denyReturn ? stack : super.insertItem(slot, stack, simulate);
+            if (throwAfterReturn && !simulate) throw new IllegalStateException("expected failure after acceptance");
+            return remainder;
         }
     }
     private static MenuHandler menuHandler;
@@ -117,6 +122,9 @@ public final class VerificationMod {
             if (!Boolean.getBoolean("wrenchbridge.verify")) return;
             String result;
             try {
+                if (Boolean.getBoolean("wrenchbridge.verifyReviewOnly")) {
+                    result = "PASS: " + ReviewVerification.verify(event.getServer().overworld());
+                } else {
                 verify(event.getServer().overworld());
                 String compat = verifyInstalledMods(event.getServer().overworld());
                 compat += verifyBackpack(event.getServer().overworld());
@@ -135,7 +143,9 @@ public final class VerificationMod {
                 compat += SharingVerification.verify(event.getServer().overworld());
                 compat += SourceViewVerification.verify(event.getServer().overworld());
                 compat += DurabilityVerification.verify(event.getServer().overworld());
+                compat += ReviewVerification.verify(event.getServer().overworld());
                 result = "PASS: native dispatch, protection, mode guard, inventory conservation, invalid packet, enum modes" + compat;
+                }
             }
             catch (Throwable error) { WrenchBridge.LOG.error("Verification failed", error); result = "FAIL: " + error; }
             try { Files.writeString(Path.of("verification-result.txt"), result); }

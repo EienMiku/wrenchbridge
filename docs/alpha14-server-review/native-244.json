@@ -1,0 +1,385 @@
+{
+  "neoforge": "21.1.244",
+  "mods": {
+    "create": "6.0.10",
+    "grieflogger": "1.2.9-1.21.1",
+    "ae2": "19.2.18",
+    "mekanism": "10.7.19",
+    "curios": "9.5.1+1.21.1"
+  },
+  "tag_semantics_and_membership_microbenchmark": {
+    "semantics": "PASS",
+    "scope": "membership microbenchmark only; not server MSPT",
+    "old_ns_per_check": 51.51433333333333,
+    "old_bytes_per_check": 61.907893333333334,
+    "new_ns_per_check": 35.291,
+    "new_bytes_per_check": 2.1333333333333333E-4
+  },
+  "borrowed_returns": [
+    {
+      "scenario": "ordinary-normal",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 1,
+      "player_inventory_count": 0,
+      "dropped_count": 0,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-return-denied",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 1,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-return-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 1,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-mutates-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 1,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-after-accept-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 1,
+      "player_inventory_count": 0,
+      "dropped_count": 0,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-action-throws",
+      "native_action_ran": true,
+      "exception": "java.lang.IllegalStateException: expected action failure",
+      "handler_count": 1,
+      "player_inventory_count": 0,
+      "dropped_count": 0,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "ordinary-consumed",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 0,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "menu-return-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 1,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "menu-mutates-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 0,
+      "player_inventory_count": 0,
+      "dropped_count": 1,
+      "conserved": true,
+      "post_action_state_preserved": true
+    },
+    {
+      "scenario": "menu-after-accept-throws",
+      "native_action_ran": true,
+      "exception": "",
+      "handler_count": 1,
+      "player_inventory_count": 0,
+      "dropped_count": 0,
+      "conserved": true,
+      "post_action_state_preserved": true
+    }
+  ],
+  "request_coalescing": {
+    "coalesced_catalog_requests": 1000,
+    "live_latest_state": true,
+    "over_budget_mode_packets": 1000,
+    "status": "PASS",
+    "rapid_distinct_mode_selections": 8,
+    "duplicate_mode_packets": 1000,
+    "coalesced_source_requests_and_changes": 1000,
+    "cadence_ticks": 10
+  },
+  "native_grieflogger": [
+    {
+      "x": 128,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 2,
+      "scenario": "no-removal",
+      "snapshot_items": 0
+    },
+    {
+      "x": 130,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 2,
+      "scenario": "rotation-only",
+      "snapshot_items": 0
+    },
+    {
+      "x": 132,
+      "y": 110,
+      "z": 0,
+      "container_writes": 1,
+      "interaction_cleanup": 1,
+      "block_writes": 1,
+      "break_events": 2,
+      "scenario": "removed",
+      "snapshot_items": 16
+    },
+    {
+      "x": 134,
+      "y": 110,
+      "z": 0,
+      "container_writes": 1,
+      "interaction_cleanup": 1,
+      "block_writes": 1,
+      "break_events": 2,
+      "scenario": "exception-after-removal",
+      "snapshot_items": 16
+    },
+    {
+      "x": 136,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 0,
+      "scenario": "virtual-missing-source",
+      "snapshot_items": 0
+    },
+    {
+      "x": 138,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 1,
+      "scenario": "create-universal-MAIN_HAND-edit-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 140,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 0,
+      "scenario": "create-universal-MAIN_HAND-interact-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 142,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 1,
+      "break_events": 1,
+      "scenario": "create-universal-MAIN_HAND-allowed",
+      "snapshot_items": 0
+    },
+    {
+      "x": 144,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 1,
+      "scenario": "create-universal-OFF_HAND-edit-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 146,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 0,
+      "scenario": "create-universal-OFF_HAND-interact-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 148,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 1,
+      "break_events": 1,
+      "scenario": "create-universal-OFF_HAND-allowed",
+      "snapshot_items": 0
+    },
+    {
+      "x": 150,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 1,
+      "scenario": "create-foreign-MAIN_HAND-edit-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 152,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 0,
+      "scenario": "create-foreign-MAIN_HAND-interact-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 154,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 1,
+      "break_events": 1,
+      "scenario": "create-foreign-MAIN_HAND-allowed",
+      "snapshot_items": 0
+    },
+    {
+      "x": 156,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 1,
+      "scenario": "create-foreign-OFF_HAND-edit-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 158,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 0,
+      "scenario": "create-foreign-OFF_HAND-interact-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 160,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 1,
+      "break_events": 1,
+      "scenario": "create-foreign-OFF_HAND-allowed",
+      "snapshot_items": 0
+    },
+    {
+      "x": 162,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 1,
+      "scenario": "create-virtual-MAIN_HAND-edit-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 164,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 0,
+      "scenario": "create-virtual-MAIN_HAND-interact-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 166,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 1,
+      "break_events": 1,
+      "scenario": "create-virtual-MAIN_HAND-allowed",
+      "snapshot_items": 0
+    },
+    {
+      "x": 168,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 1,
+      "scenario": "create-virtual-OFF_HAND-edit-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 170,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 0,
+      "break_events": 0,
+      "scenario": "create-virtual-OFF_HAND-interact-denied",
+      "snapshot_items": 0
+    },
+    {
+      "x": 172,
+      "y": 110,
+      "z": 0,
+      "container_writes": 0,
+      "interaction_cleanup": 0,
+      "block_writes": 1,
+      "break_events": 1,
+      "scenario": "create-virtual-OFF_HAND-allowed",
+      "snapshot_items": 0
+    }
+  ]
+}

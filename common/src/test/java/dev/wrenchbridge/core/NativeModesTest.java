@@ -22,6 +22,35 @@ class NativeModesTest {
         public Mode getState(Stack stack) { return stack.mode; }
         public void setState(Stack stack, Mode mode) { stack.mode = mode; }
     }
+    public static final class FailingGetterTool {
+        public Mode getMode(Stack stack) { throw new IllegalStateException("getter unavailable"); }
+        public Mode getState(Stack stack) { return stack.mode; }
+        public void setState(Stack stack, Mode mode) { stack.mode = mode; }
+    }
+    public static final class AmbiguousTool {
+        int setterCalls;
+        public Mode getMode(Stack stack) { return stack.mode; }
+        public void setMode(Object a, Object b) { setterCalls++; }
+    }
+    @Test void cachedMetadataStillReadsEachStackAndRecoversFromGetterFailure() throws Exception {
+        FailingGetterTool tool = new FailingGetterTool();
+        Stack first = new Stack(), second = new Stack();
+        assertEquals("CONFIGURE", NativeModes.current(tool, first));
+        assertTrue(NativeModes.select(tool, first, new Player(), "WRENCH"));
+        assertEquals("WRENCH", NativeModes.current(tool, first));
+        assertEquals("CONFIGURE", NativeModes.current(tool, second));
+        first.mode = Mode.CONFIGURE;
+        assertEquals("CONFIGURE", NativeModes.current(tool, first));
+    }
+    @Test void negativeAndAmbiguousStructuresDoNotInvokeGameplayOrSetters() throws Exception {
+        AmbiguousTool tool = new AmbiguousTool();
+        for (int i = 0; i < 3; i++) {
+            assertTrue(NativeModes.choices(tool, new Stack(), new Player()).isEmpty());
+            assertFalse(NativeModes.select(tool, new Stack(), new Player(), "WRENCH"));
+            assertEquals("", NativeModes.current(new Object(), new Stack()));
+        }
+        assertEquals(0, tool.setterCalls);
+    }
     @Test void supportsGenericRadialModesAndLegacyStateSetters() throws Exception {
         Stack stack = new Stack(); Player player = new Player();
         assertTrue(NativeModes.select(new ErasedTool(), stack, player, "WRENCH"));

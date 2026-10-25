@@ -26,7 +26,16 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 
 public final class BridgeEvents {
     private static final ThreadLocal<Boolean> REENTERING = ThreadLocal.withInitial(() -> false);
+    private static final ClassValue<Boolean> CREATE_BREAK_CHECK = new ClassValue<>() {
+        @Override protected Boolean computeValue(Class<?> type) {
+            try {
+                return type.getMethod("onSneakWrenched", BlockState.class, UseOnContext.class)
+                        .getDeclaringClass().getName().equals("com.simibubi.create.content.equipment.wrench.IWrenchable");
+            } catch (NoSuchMethodException | LinkageError | RuntimeException error) { return false; }
+        }
+    };
     private BridgeEvents() {}
+    public static boolean isDispatching() { return REENTERING.get(); }
 
     public static boolean ownsPneumaticClick(PlayerInteractEvent.RightClickBlock event) {
         if (!SharingControl.allows(event.getEntity(), event.getItemStack())) return false;
@@ -68,7 +77,8 @@ public final class BridgeEvents {
         if (!event.getEntity().isShiftKeyDown()
                 || !Tools.candidate(event.getItemStack())) return;
         BlockState state = event.getLevel().getBlockState(event.getPos());
-        if (Targets.resolve(state, event.getLevel().getBlockEntity(event.getPos())) == Targets.Kind.UNKNOWN
+        Targets.Kind target = Targets.resolve(state, event.getLevel().getBlockEntity(event.getPos()));
+        if (target == Targets.Kind.UNKNOWN
                 || !event.getItemStack().is(WrenchBridge.WRENCH.get()) && nativeOwns(event, state)) return;
         // Native tag listeners may run before our adapter. Check intent and protection before those listeners.
         boolean denied = !Tools.active(event.getItemStack()) || interactionDenied(event);
@@ -76,7 +86,7 @@ public final class BridgeEvents {
             ServerLevel level = player.serverLevel();
             denied = player.isSpectator() || !player.mayBuild() || !level.mayInteract(player, event.getPos())
                     || !player.mayUseItemAt(event.getPos(), event.getFace(), event.getItemStack())
-                    || !breakAllowed(player, level, event.getPos());
+                    || !nativeCreateBreakCheck(target, state) && !breakAllowed(player, level, event.getPos());
         }
         if (denied) {
             event.setCanceled(true);
@@ -86,8 +96,7 @@ public final class BridgeEvents {
 
     private static boolean denied(ServerPlayer player, PlayerInteractEvent.RightClickBlock event) {
         return player.isSpectator() || !player.mayBuild() || !player.serverLevel().mayInteract(player, event.getPos())
-                || !player.mayUseItemAt(event.getPos(), event.getFace(), event.getItemStack())
-                || player.isShiftKeyDown() && !breakAllowed(player, player.serverLevel(), event.getPos());
+                || !player.mayUseItemAt(event.getPos(), event.getFace(), event.getItemStack());
     }
 
     private static boolean interactionDenied(PlayerInteractEvent.RightClickBlock event) {
@@ -121,6 +130,12 @@ public final class BridgeEvents {
     public static void rightClick(PlayerInteractEvent.RightClickBlock event) {
         if (!SharingControl.allows(event.getEntity(), event.getItemStack())) return;
         if (event.isCanceled() || REENTERING.get()) return;
+        if (WrenchUseTransaction.hasDeferredCreate(event) && interactionDenied(event)) {
+            // A native HIGH listener may have been deferred, including tools in their own scope.
+            event.setCanceled(true); event.setCancellationResult(InteractionResult.FAIL); return;
+        }
+        WrenchUseTransaction.runCreate(event);
+        if (event.isCanceled()) return;
         if (VirtualModes.isNative(event.getItemStack())) {
             boolean disabled = interactionDenied(event);
             event.setCanceled(true);
@@ -168,7 +183,9 @@ public final class BridgeEvents {
 
     static InteractionResult dispatch(ServerPlayer player, InteractionHand hand, BlockHitResult hit, ItemStack source) throws ReflectiveOperationException {
         ServerLevel level = player.serverLevel();
-        Targets.Kind kind = Targets.resolve(level.getBlockState(hit.getBlockPos()), level.getBlockEntity(hit.getBlockPos()));
+        BlockState state = level.getBlockState(hit.getBlockPos());
+        Targets.Kind kind = Targets.resolve(state, level.getBlockEntity(hit.getBlockPos()));
+        if (!nativeCreateBreakCheck(kind, state) && !breakAllowed(player, level, hit.getBlockPos())) return InteractionResult.FAIL;
         return switch (kind) {
             case ANVIL -> anvil(player, level, hit.getBlockPos(), source);
             case CREATE -> create(player, level, hand, hit, source);
@@ -272,8 +289,14 @@ public final class BridgeEvents {
         }
     }
 
-    private static boolean breakAllowed(ServerPlayer player, ServerLevel level, BlockPos pos) {
-        return !NeoForge.EVENT_BUS.post(new BlockEvent.BreakEvent(level, pos, level.getBlockState(pos), player)).isCanceled();
+    static boolean breakAllowed(ServerPlayer player, ServerLevel level, BlockPos pos) {
+        return WrenchUseTransaction.permission(player, level, pos, () ->
+                !NeoForge.EVENT_BUS.post(new BlockEvent.BreakEvent(level, pos, level.getBlockState(pos), player)).isCanceled());
+    }
+
+    /** Only the native default implementation is known to post its own cancellable BreakEvent. */
+    static boolean nativeCreateBreakCheck(Targets.Kind target, BlockState state) {
+        return target == Targets.Kind.CREATE && CREATE_BREAK_CHECK.get(state.getBlock().getClass());
     }
 
     @SubscribeEvent public static void commands(RegisterCommandsEvent event) {

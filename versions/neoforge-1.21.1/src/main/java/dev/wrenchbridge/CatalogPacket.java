@@ -26,8 +26,10 @@ public final class CatalogPacket {
     public static void register(RegisterPayloadHandlersEvent event) {
         var registrar = event.registrar("6");
         registrar.playToServer(Request.TYPE, Request.CODEC, (packet, context) -> {
-            if (context.player() instanceof ServerPlayer player && !player.isSpectator())
-                PacketDistributor.sendToPlayer(player, new Reply(StoredTools.catalog(player)));
+            if (context.player() instanceof ServerPlayer player) {
+                Reply reply = ServerRequests.catalog(player);
+                if (reply != null) PacketDistributor.sendToPlayer(player, reply);
+            }
         });
         registrar.playToClient(Reply.TYPE, Reply.CODEC, (packet, context) -> dev.wrenchbridge.client.ClientHooks.catalog(packet.rows));
     }

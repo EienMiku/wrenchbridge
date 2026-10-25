@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "dev.wrenchbridge.verification.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["SoundBroadcastObserverMixin", "NativeFeedbackObserverMixin", "RotationFeedbackObserverMixin"],
+  "mixins": ["SoundBroadcastObserverMixin", "NativeFeedbackObserverMixin", "RotationFeedbackObserverMixin", "AuditBlockObserverMixin", "AuditCleanupObserverMixin", "AuditContainerObserverMixin"],
   "client": ["OverlayObserverMixin", "SwingObserverMixin"],
   "injectors": {"defaultRequire": 1}
 }

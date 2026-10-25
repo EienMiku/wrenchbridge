@@ -73,8 +73,13 @@ public final class VirtualModes {
                 boolean changeMode = !selectedMode.isEmpty() && !selectedMode.equals(originalMode);
                 try {
                     if (changeMode && !NativeModes.select(originalItem, source, player, selectedMode)) return InteractionResult.FAIL;
-                    Targets.Kind target = Targets.resolve(player.serverLevel().getBlockState(hit.getBlockPos()),
+                    var state = player.serverLevel().getBlockState(hit.getBlockPos());
+                    Targets.Kind target = Targets.resolve(state,
                             player.serverLevel().getBlockEntity(hit.getBlockPos()));
+                    // Validate a real source before preflight, including config modes that can consume costs.
+                    // Only Create's unoverridden default dismantle callback supplies the check itself.
+                    if (player.isShiftKeyDown() && !(Tools.active(source) && BridgeEvents.nativeCreateBreakCheck(target, state))
+                            && !BridgeEvents.breakAllowed(player, player.serverLevel(), hit.getBlockPos())) return InteractionResult.FAIL;
                     // Match the physical tool's shared-dismantle routing before a native callback can switch modes
                     // or rotate the target. A pneumatic tool on its own machine must still run its air-cost path.
                     if (player.isShiftKeyDown() && Tools.active(source) && target != Targets.Kind.UNKNOWN

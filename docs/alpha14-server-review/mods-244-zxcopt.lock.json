@@ -1,0 +1,110 @@
+[
+  {
+    "file": "anvilcraft-neoforge-1.21.1-1.6.0+pre-release.11.jar",
+    "sha256": "ec462d324d6899c92fef12fe90485a943f1e89c4e4efa289e05a836f89bcaac5"
+  },
+  {
+    "file": "appliedenergistics2-19.2.18.jar",
+    "sha256": "df15a07f86ca1ca93aa66373f9d5d84dd3d4586631fceb38f4fbc85dad591e39"
+  },
+  {
+    "file": "architectury-13.0.11-neoforge.jar",
+    "sha256": "9cc92f2c09533fc5482c60f993bd891c655a0e32b637037cdcb7c2b23adedeeb"
+  },
+  {
+    "file": "cloth-config-15.0.140-neoforge.jar",
+    "sha256": "65e722e0d98431a07c45f8bdd8d529a217cc8c175fde1740248bd5c1b4f3c0d4"
+  },
+  {
+    "file": "commoncapabilities-1.21.1-neoforge-2.11.6.jar",
+    "sha256": "494fd342065cad35c8a729cb66dfc1287fc592e6800809e8f461362cf73ef520"
+  },
+  {
+    "file": "create-1.21.1-6.0.10.jar",
+    "sha256": "ef87fe5709f1ba1f5b8bb20a2925b5afb4669e178fd6d8bf10c167759eefe37a"
+  },
+  {
+    "file": "curios-neoforge-9.5.1+1.21.1.jar",
+    "sha256": "a45df2125c26219974aba7507ffc9afe7b83acc941a386af3faacb1cc0056fde"
+  },
+  {
+    "file": "cyclopscore-1.21.1-neoforge-1.30.0.jar",
+    "sha256": "45b36d7ac402096a71beb0d1538d04a77f1e05f84e181a03b15fddcd2175e98b"
+  },
+  {
+    "file": "enderio-8.2.12-beta.jar",
+    "sha256": "5fe098153dddc2e7ccd9d38b0341dbc61f3072150958c916e5ef63f395e4eab1"
+  },
+  {
+    "file": "grieflogger-1.2.9-1.21.1-neoforge.jar",
+    "sha256": "f9680f1015081a2eacbb876c3190d3e3170b5401d8140714a5fd12b1d1b65957"
+  },
+  {
+    "file": "guideme-21.1.20.jar",
+    "sha256": "94139e34b8b4e025f1c3e56cc1c677d86b2b2f0bba2dca1c44003042993d16ed"
+  },
+  {
+    "file": "integrateddynamics-1.21.1-neoforge-1.38.1.jar",
+    "sha256": "b157b220d90d58501c8bce1161d03b1d307c940e2b5ad79b9f318eda6c0f2a89"
+  },
+  {
+    "file": "mcjtylib-1.21-9.0.21.jar",
+    "sha256": "b8eca900d4fe77a495c74137bd6be79c67281e5d7ae67ca55f59980c64960a0e"
+  },
+  {
+    "file": "Mekanism-1.21.1-10.7.19.85.jar",
+    "sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43"
+  },
+  {
+    "file": "Modern-Dynamics-0.9.6.jar",
+    "sha256": "4357833f16a8f890e4399de3c606a27644add1384d5d1e7246648a818e9cbdab"
+  },
+  {
+    "file": "moonlight-1.21.1-3.7.2-neoforge.jar",
+    "sha256": "4a9f15108607cc70273f8a0b6eb24e1e99af8eef44bc3ae8681767ca7ce21b0f"
+  },
+  {
+    "file": "pipez-neoforge-1.21.1-1.2.31.jar",
+    "sha256": "9b37e922443ea3452daeacbfba4bcf69de07692183c4ee09f1d1e82c9fc5cc5f"
+  },
+  {
+    "file": "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar",
+    "sha256": "647ce20d52cf139f3b693b9b4c4753966a95a6dafc82d9e538ae4ae5b0249f9c"
+  },
+  {
+    "file": "Powah-6.2.10.jar",
+    "sha256": "0e604a7356111c1dd44a00ea42fc1aa960d9faeb978261349df1138fcee4d0b4"
+  },
+  {
+    "file": "PrettyPipes-1.22.1-all.jar",
+    "sha256": "9654677fff808c6d2096e3a5f3086c4866f288dd8dbf4eb9345a2dd955b04caa"
+  },
+  {
+    "file": "refinedstorage-neoforge-2.0.9.jar",
+    "sha256": "e9c758dddcdfa9c02a7370ca3f4f972a285a1e38ca434bd1fc15cb223ffa06ab"
+  },
+  {
+    "file": "rftoolsbase-1.21-6.0.11.jar",
+    "sha256": "5195ba530e6cf9ba61c9954a3297679e6d29aa1b6182e27ae14ea43463dd4b00"
+  },
+  {
+    "file": "rftoolsutility-1.21-7.0.12.jar",
+    "sha256": "1fdbf7505c6d6f4ef93b8b15961c9c1a6a4d35a5d676297f8f647916238f4d2a"
+  },
+  {
+    "file": "sophisticatedbackpacks-1.21.1-3.26.9.2195.jar",
+    "sha256": "de4a51eb3757ee273b56a41620d6598cd3af8578a5a02c4b5a784e42ab4bee2b"
+  },
+  {
+    "file": "sophisticatedcore-1.21.1-1.5.7.2381.jar",
+    "sha256": "33ff373cd62e2bef84ca5dd18ffea1c7508842a3156d021f1a0101063f69fb39"
+  },
+  {
+    "file": "supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
+    "sha256": "d2ba7b839a2268e4e223457e813d11aa2476c3bf708a7bba691d8fc851778a4b"
+  },
+  {
+    "file": "zxcopt-1.8.0.jar",
+    "sha256": "0eabfb15fcecd85bd21a95bb441a86802666445309f64598a62a009417fbec8f"
+  }
+]
