@@ -134,6 +134,7 @@ public final class VerificationMod {
                 compat += FeedbackVerification.verify(event.getServer().overworld());
                 compat += SharingVerification.verify(event.getServer().overworld());
                 compat += SourceViewVerification.verify(event.getServer().overworld());
+                compat += DurabilityVerification.verify(event.getServer().overworld());
                 result = "PASS: native dispatch, protection, mode guard, inventory conservation, invalid packet, enum modes" + compat;
             }
             catch (Throwable error) { WrenchBridge.LOG.error("Verification failed", error); result = "FAIL: " + error; }
