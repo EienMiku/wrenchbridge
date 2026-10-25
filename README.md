@@ -2,7 +2,7 @@
 
 [English](README.en.md) · [下载 / Releases](https://github.com/EienMiku/wrenchbridge/releases) · [反馈问题](https://github.com/EienMiku/wrenchbridge/issues)
 
-当前六个平台统一为 **`0.1.0-alpha.14`**。通用扳手保留原工具的提示、状态和真实消耗，选择模式不会移动或转换原工具。各平台已接入共用的模拟视图、借用事务及请求合并；支持的 Create 版本还可使用原生旋转菜单。见[更新说明](docs/publishing/release-alpha14.md)与[移植验证](docs/alpha14-ports.md)。
+当前六个平台统一为 **`0.1.0-alpha.15`**。通用扳手保留原工具的提示、状态和真实消耗，选择模式不会移动或转换原工具。本次减少普通标签查询的闲置开销，临时扳手识别仅在原生操作期间启用。见[更新说明](docs/publishing/release-alpha15.md)与[验证记录](docs/trait-scope-review.md)。
 
 支持 Forge 1.12.2、1.16.5、1.20.1 与 NeoForge 1.21.1、26.1.2、26.2，各平台提供独立 JAR。原生协议覆盖与移植范围见 [移植记录](docs/alpha10-ports.md)。
 

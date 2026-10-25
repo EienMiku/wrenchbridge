@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "hands": 2,
+  "duplicate_mode_requests_per_hand": 1000,
+  "catalog_requests_per_hand": 1000,
+  "snapshot_requests_and_changes_per_hand": 1000,
+  "live_latest_snapshot": true,
+  "projection_mode_costs_and_physical_hand": true,
+  "scoped_permissions_and_audit": true
+}

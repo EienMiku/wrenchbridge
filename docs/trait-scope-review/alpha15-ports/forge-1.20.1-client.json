@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "scenario": 0,
+      "backpack": false,
+      "rotated": true,
+      "hand": "MAIN_HAND",
+      "submit": "native-click",
+      "native_menu": true,
+      "source_details_enabled": true
+    },
+    {
+      "scenario": 1,
+      "backpack": false,
+      "rotated": true,
+      "hand": "OFF_HAND",
+      "submit": "native-click",
+      "native_menu": true,
+      "source_details_enabled": true
+    },
+    {
+      "scenario": 2,
+      "backpack": true,
+      "rotated": true,
+      "hand": "MAIN_HAND",
+      "submit": "native-click",
+      "native_menu": true,
+      "source_details_enabled": true
+    },
+    {
+      "scenario": 3,
+      "backpack": true,
+      "rotated": true,
+      "hand": "OFF_HAND",
+      "submit": "native-click",
+      "native_menu": true,
+      "source_details_enabled": false
+    },
+    {
+      "scenario": 4,
+      "backpack": false,
+      "rotated": false,
+      "hand": "MAIN_HAND",
+      "submit": "native-click",
+      "native_menu": true,
+      "source_details_enabled": true
+    },
+    {
+      "scenario": 5,
+      "backpack": false,
+      "rotated": false,
+      "hand": "MAIN_HAND",
+      "submit": "native-click",
+      "native_menu": true,
+      "source_details_enabled": true
+    },
+    {
+      "scenario": 6,
+      "backpack": false,
+      "rotated": true,
+      "hand": "MAIN_HAND",
+      "submit": "native-click",
+      "native_menu": true,
+      "source_details_enabled": true
+    },
+    {
+      "scenario": 7,
+      "backpack": false,
+      "rotated": true,
+      "hand": "MAIN_HAND",
+      "submit": "native-key-release",
+      "native_menu": true,
+      "source_details_enabled": true
+    }
+  ]
+}

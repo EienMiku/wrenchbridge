@@ -1,0 +1,44 @@
+{
+  "note": "Uncontrolled production trial; sample counts are not a zero-cost or saved-MSPT claim.",
+  "unprofiled": {
+    "before": {
+      "windows": 12,
+      "mean": 33.00833333333333,
+      "min": 31.0,
+      "max": 35.4,
+      "mean_window_p50": 31.925,
+      "mean_window_p95": 42.71666666666667,
+      "mean_window_p99": 55.516666666666666
+    },
+    "after": {
+      "windows": 6,
+      "mean": 35.21666666666667,
+      "min": 33.3,
+      "max": 38.3,
+      "mean_window_p50": 33.916666666666664,
+      "mean_window_p95": 44.68333333333334,
+      "mean_window_p99": 84.33333333333333
+    },
+    "all": {
+      "windows": 18,
+      "mean": 33.74444444444445,
+      "min": 31.0,
+      "max": 38.3,
+      "mean_window_p50": 32.58888888888889,
+      "mean_window_p95": 43.37222222222222,
+      "mean_window_p99": 65.12222222222222
+    }
+  },
+  "jfr": {
+    "alpha14": {
+      "busy": 1297,
+      "wrench_inclusive_samples": 9,
+      "classifier_samples": 9
+    },
+    "alpha15": {
+      "busy": 974,
+      "wrench_inclusive_samples": 1,
+      "classifier_samples": 0
+    }
+  }
+}

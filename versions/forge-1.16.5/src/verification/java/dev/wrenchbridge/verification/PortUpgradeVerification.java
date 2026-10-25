@@ -49,6 +49,7 @@ public final class PortUpgradeVerification {
             level,
             new com.mojang.authlib.GameProfile(
                 UUID.fromString("c90980bb-b79d-46a5-be51-2aa08b3e573f"), "WBPortUpgrade"));
+    TraitScopeVerification.verify();
     int messageCases = 0;
     try {
       for (Hand hand : Hand.values()) {
@@ -229,6 +230,7 @@ public final class PortUpgradeVerification {
       check(permissions[0] == 2, "permission preflight repeated inside one action");
       Map<String, Object> report = new LinkedHashMap<>();
       report.put("status", "PASS");
+      report.put("per_use_trait_scopes", "PASS");
       report.put("hands", 2);
       report.put("duplicate_mode_requests_per_hand", 1000);
       report.put("catalog_requests_per_hand", 1000);
@@ -244,7 +246,7 @@ public final class PortUpgradeVerification {
               .toJson(report)
               .getBytes(java.nio.charset.StandardCharsets.UTF_8));
       return "; alpha14: both-hand native projections/real costs, mode restoration,"
-                 + " bounded/coalesced requests, latest snapshot, permission and audit scope";
+          + " bounded/coalesced requests, latest snapshot, permission and audit scope";
     } finally {
       forget(player);
       player.inventory.clearContent();

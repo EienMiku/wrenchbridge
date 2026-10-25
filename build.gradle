@@ -1,6 +1,6 @@
 plugins { id 'java-library' }
 group = 'dev.wrenchbridge'
-version = '0.1.0-alpha.14'
+version = '0.1.0-alpha.15'
 repositories { mavenCentral() }
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 sourceSets.main.java.srcDir 'common/src/main/java'

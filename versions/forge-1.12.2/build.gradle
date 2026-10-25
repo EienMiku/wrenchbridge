@@ -1,5 +1,5 @@
 plugins { id 'java-library'; id 'com.gtnewhorizons.retrofuturagradle' version '1.4.5' }
-version = '0.1.0-alpha.14'
+version = '0.1.0-alpha.15'
 group='dev.wrenchbridge'
 base.archivesName='wrenchbridge-forge-1.12.2'
 java.toolchain.languageVersion=JavaLanguageVersion.of(8)

@@ -4,7 +4,7 @@
 
 A universal wrench and a compatibility bridge for modded Minecraft. Share supported dismantling protocols between wrench-like tools, and borrow the native functions of tools you carry through a configurable mode palette.
 
-Downloads cover **Forge 1.12.2, 1.16.5, 1.20.1 and NeoForge 1.21.1, 26.1.2, 26.2**, all at **0.1.0-alpha.14**. Install the matching game/loader file on both client and server. Single-player requires only the client installation. **Forge 1.12.2 also requires MixinBooter 11.18 or newer.** See the [release notes](docs/publishing/release-alpha14.md) and [port checks](docs/alpha14-ports.md).
+Downloads cover **Forge 1.12.2, 1.16.5, 1.20.1 and NeoForge 1.21.1, 26.1.2, 26.2**, all at **0.1.0-alpha.15**. This release reduces idle tag-lookup work by limiting temporary wrench traits to native actions. Install the matching game/loader file on both client and server. Single-player requires only the client installation. **Forge 1.12.2 also requires MixinBooter 11.18 or newer.** See the [release notes](docs/publishing/release-alpha15.md) and [verification](docs/trait-scope-review.md).
 
 ## Use
 

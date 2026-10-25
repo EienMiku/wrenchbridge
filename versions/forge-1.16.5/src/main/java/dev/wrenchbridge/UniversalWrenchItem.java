@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 public class UniversalWrenchItem extends Item {
   public UniversalWrenchItem(Properties properties) {
     super(properties);
+    ((WrenchTraitScope) (Object) this).wrenchbridge$markUniversal();
   }
 
   @Override

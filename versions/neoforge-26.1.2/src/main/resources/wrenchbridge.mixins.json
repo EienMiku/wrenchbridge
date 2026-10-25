@@ -4,6 +4,7 @@
   "package": "dev.wrenchbridge.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "WrenchItemScopeMixin",
     "WrenchHolderTraitsMixin",
     "PneumaticWrenchEventMixin",
     "SupplementariesWrenchEventMixin",

@@ -129,15 +129,32 @@ public final class WrenchContext {
       InteractionHand hand, ItemStack held, ItemStack used, Supplier<T> action) {
     var previous = ACTIVE.get();
     var previousHand = HAND.get();
-    ACTIVE.set(java.util.List.of(held, used));
-    HAND.set(hand);
+    // Capture the item identities before the callback can consume or replace either stack.
+    WrenchTraitScope heldTraits =
+        held.isEmpty() ? null : (WrenchTraitScope) (Object) held.getItem();
+    WrenchTraitScope usedTraits =
+        used.isEmpty() || used.getItem() == held.getItem()
+            ? null
+            : (WrenchTraitScope) (Object) used.getItem();
+    if (heldTraits != null) heldTraits.wrenchbridge$retainTraits();
     try {
-      return action.get();
+      if (usedTraits != null) usedTraits.wrenchbridge$retainTraits();
+      try {
+        ACTIVE.set(java.util.List.of(held, used));
+        HAND.set(hand);
+        try {
+          return action.get();
+        } finally {
+          if (previous == null) ACTIVE.remove();
+          else ACTIVE.set(previous);
+          if (previousHand == null) HAND.remove();
+          else HAND.set(previousHand);
+        }
+      } finally {
+        if (usedTraits != null) usedTraits.wrenchbridge$releaseTraits();
+      }
     } finally {
-      if (previous == null) ACTIVE.remove();
-      else ACTIVE.set(previous);
-      if (previousHand == null) HAND.remove();
-      else HAND.set(previousHand);
+      if (heldTraits != null) heldTraits.wrenchbridge$releaseTraits();
     }
   }
 }

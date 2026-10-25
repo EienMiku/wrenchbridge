@@ -17,6 +17,7 @@ import net.minecraftforge.common.ToolAction;
 public final class UniversalWrenchItem extends Item {
   public UniversalWrenchItem(Properties properties) {
     super(properties);
+    ((WrenchTraitScope) (Object) this).wrenchbridge$markUniversal();
   }
 
   @Override
